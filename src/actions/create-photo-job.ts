@@ -10,7 +10,7 @@ import {
 } from '@/db/photocraft.schema';
 import { userActionClient } from '@/lib/safe-action';
 import { runFalEdit } from '@/lib/fal';
-import { eq, sql } from 'drizzle-orm';
+import { and, eq, gte, sql } from 'drizzle-orm';
 
 const schema = z.object({
   tool: z.enum([
@@ -43,6 +43,8 @@ export const createPhotoJob = userActionClient
     const cost = TOOL_CREDIT_COST[tool];
     const db = await getDb();
 
+    // Pre-check only — no deduction here. Credits are deducted atomically
+    // AFTER a successful run, so failed jobs never cost the user anything.
     const rows = await db
       .select()
       .from(creditBalance)
@@ -59,17 +61,8 @@ export const createPhotoJob = userActionClient
       inputUrl: parsedInput.inputUrl,
       params: parsedInput.params,
       costCredits: cost,
-      status: 'pending',
+      status: 'processing',
     });
-    await db
-      .update(creditBalance)
-      .set({ balance: sql`${creditBalance.balance} - ${cost}` })
-      .where(eq(creditBalance.userId, userId));
-
-    await db
-      .update(photoJob)
-      .set({ status: 'processing' })
-      .where(eq(photoJob.id, id));
 
     try {
       const outputUrl = await runFalEdit({
@@ -77,16 +70,45 @@ export const createPhotoJob = userActionClient
         imageUrl: parsedInput.inputUrl,
         params: parsedInput.params as Record<string, unknown>,
       });
+
+      // Atomic deduct guarded by balance >= cost: concurrent jobs cannot
+      // overspend the account even though the deduction happens on success.
+      const deducted = await db
+        .update(creditBalance)
+        .set({ balance: sql`${creditBalance.balance} - ${cost}` })
+        .where(
+          and(
+            eq(creditBalance.userId, userId),
+            gte(creditBalance.balance, cost)
+          )
+        )
+        .returning({ userId: creditBalance.userId });
+
+      if (deducted.length === 0) {
+        await db
+          .update(photoJob)
+          .set({ status: 'failed', error: 'INSUFFICIENT_CREDITS', outputUrl })
+          .where(eq(photoJob.id, id));
+        throw new Error('INSUFFICIENT_CREDITS');
+      }
+
       await db
         .update(photoJob)
         .set({ outputUrl, status: 'done' })
         .where(eq(photoJob.id, id));
     } catch (e) {
       const msg = e instanceof Error ? e.message : 'FAL_FAILED';
-      await db
-        .update(photoJob)
-        .set({ status: 'failed', error: msg })
-        .where(eq(photoJob.id, id));
+      // Only mark failed if not already handled above (insufficient credits
+      // path already wrote outputUrl + status).
+      if (msg !== 'INSUFFICIENT_CREDITS') {
+        await db
+          .update(photoJob)
+          .set({ status: 'failed', error: msg })
+          .where(eq(photoJob.id, id));
+      }
+      if (msg === 'INSUFFICIENT_CREDITS') {
+        throw e;
+      }
     }
 
     return { jobId: id };

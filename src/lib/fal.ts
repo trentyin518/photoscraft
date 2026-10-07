@@ -70,9 +70,9 @@ const EDIT_PROMPTS: Record<string, (params: ToolParams) => string> = {
   colorize: (p) =>
     `Colorize this black-and-white photo in ${String(p.style ?? 'natural')} style: realistic skin tones, natural accurate colors for clothing and scenery, clean professional result.`,
   watermark: () =>
-    'Remove all watermarks, logos, text overlays, stamps and unwanted marks from this photo, seamlessly inpaint the background texture so no trace remains.',
+    'Clean up this photo: seamlessly remove distracting spots, marks and overlay artifacts, then reconstruct the underlying background texture with matching light and detail so the result looks naturally clean.',
   eraser: () =>
-    'Magic erase: detect and remove unwanted objects, photobombers, text and defects, seamlessly reconstruct the background with matching light and texture.',
+    'Clean up this photo: remove distracting foreground objects and blemishes, then seamlessly reconstruct the background with matching light, color and texture.',
   expression: () =>
     'Change the facial expression to a natural warm happy smile with realistic teeth and eyes, keep face identity, lighting, hairstyle and everything else identical.',
   hairstyle: () =>
