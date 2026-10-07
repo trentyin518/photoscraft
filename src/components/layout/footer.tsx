@@ -101,8 +101,10 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
       <div className="border-t py-8">
         <Container className="px-4 flex items-center justify-between gap-x-4">
           <span className="text-muted-foreground text-sm">
-            &copy; {new Date().getFullYear()} {t('Metadata.name')}. All Rights
-            Reserved.
+            {t('Marketing.footer.rights', {
+              year: new Date().getFullYear(),
+              name: t('Metadata.name'),
+            })}
           </span>
 
           <div className="flex items-center gap-x-4">

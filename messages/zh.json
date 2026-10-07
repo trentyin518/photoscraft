@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "name": "PhotoCraft Demo",
-    "title": "PhotoCraft - 最好的 AI SaaS 模板",
-    "description": "PhotoCraft 是构建 AI SaaS 的最佳模板，使用 PhotoCraft 可以在几天内轻松构建您的 AI SaaS，简单且毫不费力。"
+    "name": "PhotoCraft",
+    "title": "PhotoCraft - AI 照片增强、老照片修复、去背景水印",
+    "description": "PhotoCraft 是 AI 照片编辑器：增强模糊照片、修复上色老照片，秒级去除水印与背景。"
   },
   "Common": {
     "login": "登录",
@@ -359,17 +359,21 @@
         }
       },
       "home": {
-        "title": "Home"
+        "title": "首页"
+      },
+      "editor": {
+        "title": "编辑器"
       }
     },
     "footer": {
-      "tagline": "Give your photos a fresh, vibrant look with AI",
+      "tagline": "用 AI 给每张照片焕然一新的生动色彩",
       "product": {
         "title": "产品",
         "items": {
           "features": "功能",
           "pricing": "价格",
-          "faq": "常见问题"
+          "faq": "常见问题",
+          "editor": "编辑器"
         }
       },
       "resources": {
@@ -396,7 +400,9 @@
           "privacyPolicy": "隐私政策",
           "termsOfService": "服务条款"
         }
-      }
+      },
+      "rights": "© {year} {name}。版权所有。",
+      "builtWith": "构建于"
     },
     "avatar": {
       "dashboard": "工作台",
@@ -407,6 +413,9 @@
   "Dashboard": {
     "dashboard": {
       "title": "仪表盘"
+    },
+    "editor": {
+      "title": "编辑器"
     },
     "admin": {
       "title": "系统管理",
@@ -903,6 +912,103 @@
       "description": "PhotoCraft 可让您在几天内轻松构建您的 AI SaaS",
       "primaryButton": "开始使用",
       "secondaryButton": "查看演示"
+    }
+  },
+  "PhotoTools": {
+    "categories": {
+      "enhance": "增强",
+      "background": "背景",
+      "creative": "创意",
+      "fun": "趣味",
+      "all": "全部"
+    },
+    "tools": {
+      "enhance": {
+        "title": "AI 照片增强",
+        "tagline": "去模糊、降噪，一键 4K 清晰"
+      },
+      "restore": {
+        "title": "AI 老照片修复",
+        "tagline": "修复划痕、折痕与破损"
+      },
+      "colorize": {
+        "title": "AI 照片上色",
+        "tagline": "黑白 → 生动色彩"
+      },
+      "eraser": {
+        "title": "AI 魔法擦除",
+        "tagline": "去除物体、人物与文字"
+      },
+      "watermark": {
+        "title": "水印去除",
+        "tagline": "清除 Logo 与叠加层"
+      },
+      "bg": {
+        "title": "AI 背景移除",
+        "tagline": "精准抠图，发丝级边缘"
+      },
+      "bg_change": {
+        "title": "AI 背景更换",
+        "tagline": "一键影棚级背景"
+      },
+      "sky": {
+        "title": "AI 天空替换",
+        "tagline": "日落、星空、戏剧性天空"
+      },
+      "room": {
+        "title": "AI 房间设计",
+        "tagline": "照片级室内重装"
+      },
+      "avatar": {
+        "title": "AI 头像生成",
+        "tagline": "专业影棚头像"
+      },
+      "scene": {
+        "title": "AI 场景生成",
+        "tagline": "带你入镜的电影感场景"
+      },
+      "anime": {
+        "title": "AI 动漫生成",
+        "tagline": "照片 → 动漫插画"
+      },
+      "cartoon": {
+        "title": "AI 卡通化",
+        "tagline": "趣味卡通肖像"
+      },
+      "hairstyle": {
+        "title": "AI 发型更换",
+        "tagline": "即刻试戴新发型"
+      },
+      "expression": {
+        "title": "AI 表情调整",
+        "tagline": "自然微笑，本色出镜"
+      },
+      "transform": {
+        "title": "AI 变身",
+        "tagline": "时尚大片式改妆"
+      }
+    },
+    "hero": {
+      "badge": "16 款 AI 工具 · 免注册试用 · 秒级出图",
+      "titleA": "每张照片的问题，",
+      "titleB": "一键搞定",
+      "subtitle": "增强、修复、上色、擦除、抠背景或转成动漫——在下方选个工具并上传即可。",
+      "upload": "上传照片",
+      "browse": "浏览工具",
+      "trust": "★ 4.9 · 已增强 200 万+ 照片",
+      "freePreview": "免费预览 · 仅下载时付费",
+      "steps": "三步：选工具 → 上传 → 下载。零学习成本。",
+      "hot": "热门",
+      "credits": {
+        "one": "积分",
+        "other": "积分"
+      },
+      "allTools": "全部工具",
+      "uploadHint": "拖拽 / 点击上传（JPG/PNG/WebP ≤20MB）",
+      "download": "下载结果",
+      "before": "原图",
+      "after": "效果",
+      "run": "运行"
     }
   }
 }

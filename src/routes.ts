@@ -6,7 +6,6 @@ export enum Routes {
 
   // marketing pages (PhotoCraft only)
   FAQ = '/#faqs',
-  Features = '/#features',
   Pricing = '/pricing',
   Editor = '/editor',
   About = '/about',

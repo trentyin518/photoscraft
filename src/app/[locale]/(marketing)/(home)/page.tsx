@@ -1,4 +1,3 @@
-import CallToActionSection from '@/components/blocks/calltoaction/calltoaction';
 import FaqSection from '@/components/blocks/faqs/faqs';
 import PricingSection from '@/components/blocks/pricing/pricing';
 import { PhotoHomeHero, PhotoToolGrid } from '@/components/photocraft/home-tools';
@@ -34,12 +33,13 @@ interface HomePageProps {
 export default async function HomePage(_props: HomePageProps) {
   return (
     <>
-      <div className="flex flex-col bg-[#07070d]">
+      <div className="flex flex-col">
         <PhotoHomeHero />
         <PhotoToolGrid />
-        <PricingSection />
-        <FaqSection />
-        <CallToActionSection />
+        <div className="bg-background">
+          <PricingSection />
+          <FaqSection />
+        </div>
       </div>
     </>
   );

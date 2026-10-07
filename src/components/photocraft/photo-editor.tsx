@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { ArrowLeftIcon } from 'lucide-react';
 import { usePhotoEditorStore } from '@/stores/photo-editor-store';
 import { createPhotoJob } from '@/actions/create-photo-job';
-import { PHOTO_TOOLS } from '@/config/photo-tools';
+import { PHOTO_TOOLS, getPhotoToolText } from '@/config/photo-tools';
+import { useTranslations } from 'next-intl';
 import type { PhotoToolType } from '@/db/photocraft.schema';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
@@ -34,13 +35,16 @@ export function PhotoEditor({
 }) {
   const { tool, inputUrl, outputUrl, status, params, set } =
     usePhotoEditorStore();
+  const t = useTranslations('PhotoTools');
+  const tr = t as unknown as (key: string) => string;
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
 
   useEffect(() => {
     set({ tool: initialTool });
   }, [initialTool, set]);
-  const current = PHOTO_TOOLS.find((t) => t.id === tool) ?? PHOTO_TOOLS[0];
+  const current = PHOTO_TOOLS.find((item) => item.id === tool) ?? PHOTO_TOOLS[0];
+  const currentText = getPhotoToolText(current, tr);
 
   const onFile = async (f: File) => {
     setErr(null);
@@ -105,25 +109,28 @@ export function PhotoEditor({
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
-            {PHOTO_TOOLS.map((t) => (
-              <SelectItem key={t.id} value={t.id}>
-                {t.title} · {t.cost} credit{t.cost > 1 ? 's' : ''}
-              </SelectItem>
-            ))}
+            {PHOTO_TOOLS.map((item) => {
+              const text = getPhotoToolText(item, tr);
+              return (
+                <SelectItem key={item.id} value={item.id}>
+                  {text.title} · {item.cost} {t('hero.credits.other')}
+                </SelectItem>
+              );
+            })}
           </SelectContent>
         </Select>
       </div>
       <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
         <div className="rounded-xl border p-4 min-h-105 flex flex-col gap-4">
           <div>
-            <h1 className="text-xl font-bold">{current.title}</h1>
-            <p className="text-sm text-muted-foreground">{current.tagline}</p>
+            <h1 className="text-xl font-bold">{currentText.title}</h1>
+            <p className="text-sm text-muted-foreground">{currentText.tagline}</p>
           </div>
           <label className="flex h-56 cursor-pointer items-center justify-center rounded-lg border-dashed border-2 text-sm text-muted-foreground overflow-hidden">
             {inputUrl ? (
               <img src={inputUrl} alt="" className="h-full object-contain" />
             ) : (
-              'Drag / click to upload (JPG/PNG/WebP ≤20MB)'
+              t('hero.uploadHint')
             )}
             <input
               type="file"
@@ -138,11 +145,11 @@ export function PhotoEditor({
           {inputUrl && outputUrl && (
             <div className="grid grid-cols-2 gap-2">
               <div>
-                <p className="text-xs mb-1">Before</p>
+                <p className="text-xs mb-1">{t('hero.before')}</p>
                 <img src={inputUrl} alt="before" className="rounded" />
               </div>
               <div>
-                <p className="text-xs mb-1">After</p>
+                <p className="text-xs mb-1">{t('hero.after')}</p>
                 <img src={outputUrl} alt="after" className="rounded" />
               </div>
             </div>
@@ -187,8 +194,7 @@ export function PhotoEditor({
             </div>
           )}
           <Button onClick={run} disabled={!inputUrl || busy}>
-            Run {current.title} ({current.cost} credit
-            {current.cost > 1 ? 's' : ''})
+            Run {currentText.title} ({current.cost} {t('hero.credits.other')})
           </Button>
           <Button
             variant="outline"

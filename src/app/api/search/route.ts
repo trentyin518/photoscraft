@@ -30,9 +30,23 @@ const searchAPI = createI18nSearchAPI('advanced', {
   ),
 
   // Configure special language tokenizers and search options
+  // Every locale in docsI18nConfig.languages must be mapped to an Orama
+  // supported language, otherwise `createI18nSearchAPI('advanced', ...)`
+  // throws `LANGUAGE_NOT_SUPPORTED` at build time on Vercel.
   localeMap: {
+    en: 'english',
+    de: 'german',
+    fr: 'french',
+    es: 'spanish',
+    it: 'italian',
+    pt: 'portuguese',
+    nl: 'dutch',
+    ru: 'russian',
+    ja: 'japanese',
+    ko: 'korean',
     // Chinese configuration with Mandarin tokenizer
     zh: {
+      language: 'chinese',
       components: {
         tokenizer: createTokenizer(),
       },
@@ -43,9 +57,6 @@ const searchAPI = createI18nSearchAPI('advanced', {
         tolerance: 0,
       },
     },
-
-    // Use the default English tokenizer for English content
-    en: 'english',
   },
 
   // Global search configuration

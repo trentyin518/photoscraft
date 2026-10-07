@@ -13,7 +13,11 @@ import type { PhotoToolType } from '@/db/photocraft.schema';
 
 export interface PhotoTool {
   id: PhotoToolType;
+  /** Translation key under the `PhotoTools.tools` namespace (defaults to id) */
+  key: string;
+  /** English fallback, replaced by `PhotoTools.tools.{key}.title` at render */
   title: string;
+  /** English fallback, replaced by `PhotoTools.tools.{key}.tagline` at render */
   tagline: string;
   category: 'Enhance' | 'Background' | 'Creative' | 'Fun';
   icon: React.ReactNode;
@@ -33,6 +37,7 @@ export const PHOTO_TOOL_CATEGORIES = [
 export const PHOTO_TOOLS: PhotoTool[] = [
   {
     id: 'enhance',
+    key: 'enhance',
     title: 'AI Photo Enhancer',
     tagline: 'Deblur, denoise, 4K clarity in one tap',
     category: 'Enhance',
@@ -43,6 +48,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
   },
   {
     id: 'restore',
+    key: 'restore',
     title: 'AI Old Photo Restore',
     tagline: 'Fix scratches, creases and damage',
     category: 'Enhance',
@@ -53,6 +59,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
   },
   {
     id: 'colorize',
+    key: 'colorize',
     title: 'AI Photo Colorizer',
     tagline: 'Black & white → vivid color',
     category: 'Enhance',
@@ -63,6 +70,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
   },
   {
     id: 'eraser',
+    key: 'eraser',
     title: 'AI Magic Eraser',
     tagline: 'Remove objects, people and text',
     category: 'Enhance',
@@ -72,6 +80,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
   },
   {
     id: 'watermark',
+    key: 'watermark',
     title: 'Watermark Remover',
     tagline: 'Clean logos and overlays',
     category: 'Enhance',
@@ -81,6 +90,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
   },
   {
     id: 'bg',
+    key: 'bg',
     title: 'AI Background Remover',
     tagline: 'Precise cutout, hair-level edges',
     category: 'Background',
@@ -91,6 +101,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
   },
   {
     id: 'bg-change',
+    key: 'bg_change',
     title: 'AI Background Changer',
     tagline: 'Studio backdrops in one click',
     category: 'Background',
@@ -100,6 +111,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
   },
   {
     id: 'sky',
+    key: 'sky',
     title: 'AI Sky Replacer',
     tagline: 'Sunset, stars, drama skies',
     category: 'Background',
@@ -109,6 +121,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
   },
   {
     id: 'room',
+    key: 'room',
     title: 'AI Room Design',
     tagline: 'Restyle interiors photorealistically',
     category: 'Background',
@@ -118,6 +131,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
   },
   {
     id: 'avatar',
+    key: 'avatar',
     title: 'AI Avatar Generator',
     tagline: 'Pro studio avatars',
     category: 'Creative',
@@ -128,6 +142,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
   },
   {
     id: 'scene',
+    key: 'scene',
     title: 'AI Scene Generator',
     tagline: 'Cinematic scenes with you in it',
     category: 'Creative',
@@ -137,6 +152,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
   },
   {
     id: 'anime',
+    key: 'anime',
     title: 'AI Anime Generator',
     tagline: 'Photo → anime illustration',
     category: 'Fun',
@@ -146,6 +162,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
   },
   {
     id: 'cartoon',
+    key: 'cartoon',
     title: 'AI Cartoonizer',
     tagline: 'Fun cartoon portraits',
     category: 'Fun',
@@ -155,6 +172,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
   },
   {
     id: 'hairstyle',
+    key: 'hairstyle',
     title: 'AI Hairstyle Changer',
     tagline: 'Try new hair instantly',
     category: 'Fun',
@@ -164,6 +182,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
   },
   {
     id: 'expression',
+    key: 'expression',
     title: 'AI Expression Changer',
     tagline: 'Natural smiles, same you',
     category: 'Fun',
@@ -173,6 +192,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
   },
   {
     id: 'transform',
+    key: 'transform',
     title: 'AI Transform',
     tagline: 'Fashion-shoot restyle',
     category: 'Fun',
@@ -181,3 +201,44 @@ export const PHOTO_TOOLS: PhotoTool[] = [
     cost: 2,
   },
 ];
+
+/** Category translation keys under `PhotoTools.categories`. */
+export const PHOTO_TOOL_CATEGORY_KEYS = {
+  Enhance: 'enhance',
+  Background: 'background',
+  Creative: 'creative',
+  Fun: 'fun',
+} as const;
+
+type PhotoToolTranslator = (key: string) => string;
+
+/**
+ * Resolve a tool's translated title/tagline/category.
+ * Falls back to the English defaults in config when a key is missing.
+ */
+export function getPhotoToolText(
+  tool: Pick<PhotoTool, 'key' | 'title' | 'tagline' | 'category'>,
+  t: PhotoToolTranslator
+): { title: string; tagline: string; category: string } {
+  const title = safeTranslate(t, `tools.${tool.key}.title`, tool.title);
+  const tagline = safeTranslate(t, `tools.${tool.key}.tagline`, tool.tagline);
+  const category = safeTranslate(
+    t,
+    `categories.${PHOTO_TOOL_CATEGORY_KEYS[tool.category]}`,
+    tool.category
+  );
+  return { title, tagline, category };
+}
+
+function safeTranslate(
+  t: PhotoToolTranslator,
+  key: string,
+  fallback: string
+): string {
+  try {
+    const value = t(key);
+    return value === key ? fallback : value;
+  } catch {
+    return fallback;
+  }
+}

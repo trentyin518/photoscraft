@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { websiteConfig } from '@/config/website';
 import { getLocalePathname, useLocalePathname } from '@/i18n/navigation';
+import { LOCALE_COOKIE_NAME } from '@/i18n/routing';
 import { useLocaleStore } from '@/stores/locale-store';
 import { Languages } from 'lucide-react';
 import { type Locale, useLocale, useTranslations } from 'next-intl';
@@ -42,6 +43,12 @@ export default function LocaleSwitcher() {
 
   const setLocale = (nextLocale: Locale) => {
     setCurrentLocale(nextLocale);
+
+    // Persist the choice BEFORE navigating. With `localePrefix: 'as-needed'`
+    // the default locale (en) has no URL prefix, so the middleware resolves
+    // `/` from the NEXT_LOCALE cookie — a stale cookie (e.g. zh) would bounce
+    // straight back to /zh and the switch would look "stuck".
+    document.cookie = `${LOCALE_COOKIE_NAME}=${nextLocale}; path=/; max-age=31536000; SameSite=Lax`;
 
     const nextPathname = getLocalePathname({
       locale: nextLocale,

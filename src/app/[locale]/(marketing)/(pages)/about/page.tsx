@@ -1,5 +1,5 @@
 import Container from '@/components/layout/container';
-import { PHOTO_TOOLS } from '@/config/photo-tools';
+import { PHOTO_TOOLS, getPhotoToolText } from '@/config/photo-tools';
 import { websiteConfig } from '@/config/website';
 import { constructMetadata } from '@/lib/metadata';
 import { MailIcon } from 'lucide-react';
@@ -26,6 +26,7 @@ export async function generateMetadata({
 
 export default async function AboutPage() {
   const t = await getTranslations('AboutPage');
+  const pt = await getTranslations('PhotoTools');
 
   return (
     <Container className="px-4 py-16">
@@ -80,19 +81,22 @@ export default async function AboutPage() {
             {t('toolsTitle')}
           </h2>
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-            {PHOTO_TOOLS.map((tool) => (
-              <a
-                key={tool.id}
-                href={`/editor?tool=${tool.id}`}
-                className="rounded-xl border p-4 transition hover:-translate-y-0.5 hover:shadow-md"
-              >
-                <div className="mb-2 text-primary">{tool.icon}</div>
-                <p className="text-sm font-semibold">{tool.title}</p>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  {tool.tagline}
-                </p>
-              </a>
-            ))}
+            {PHOTO_TOOLS.map((tool) => {
+              const text = getPhotoToolText(tool, pt as unknown as (key: string) => string);
+              return (
+                <a
+                  key={tool.id}
+                  href={`/editor?tool=${tool.id}`}
+                  className="rounded-xl border p-4 transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <div className="mb-2 text-primary">{tool.icon}</div>
+                  <p className="text-sm font-semibold">{text.title}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    {text.tagline}
+                  </p>
+                </a>
+              );
+            })}
           </div>
         </div>
 

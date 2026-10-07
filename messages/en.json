@@ -400,7 +400,9 @@
           "privacyPolicy": "Privacy Policy",
           "termsOfService": "Terms of Service"
         }
-      }
+      },
+      "rights": "© {year} {name}. All Rights Reserved.",
+      "builtWith": "Built with"
     },
     "avatar": {
       "dashboard": "Dashboard",
@@ -910,6 +912,103 @@
       "description": "PhotoCraft lets you make AI SaaS in days, simply and effortlessly",
       "primaryButton": "Get Started",
       "secondaryButton": "See Demo"
+    }
+  },
+  "PhotoTools": {
+    "categories": {
+      "enhance": "Enhance",
+      "background": "Background",
+      "creative": "Creative",
+      "fun": "Fun",
+      "all": "All"
+    },
+    "tools": {
+      "enhance": {
+        "title": "AI Photo Enhancer",
+        "tagline": "Deblur, denoise, 4K clarity in one tap"
+      },
+      "restore": {
+        "title": "AI Old Photo Restore",
+        "tagline": "Fix scratches, creases and damage"
+      },
+      "colorize": {
+        "title": "AI Photo Colorizer",
+        "tagline": "Black & white → vivid color"
+      },
+      "eraser": {
+        "title": "AI Magic Eraser",
+        "tagline": "Remove objects, people and text"
+      },
+      "watermark": {
+        "title": "Watermark Remover",
+        "tagline": "Clean logos and overlays"
+      },
+      "bg": {
+        "title": "AI Background Remover",
+        "tagline": "Precise cutout, hair-level edges"
+      },
+      "bg_change": {
+        "title": "AI Background Changer",
+        "tagline": "Studio backdrops in one click"
+      },
+      "sky": {
+        "title": "AI Sky Replacer",
+        "tagline": "Sunset, stars, drama skies"
+      },
+      "room": {
+        "title": "AI Room Design",
+        "tagline": "Restyle interiors photorealistically"
+      },
+      "avatar": {
+        "title": "AI Avatar Generator",
+        "tagline": "Pro studio avatars"
+      },
+      "scene": {
+        "title": "AI Scene Generator",
+        "tagline": "Cinematic scenes with you in it"
+      },
+      "anime": {
+        "title": "AI Anime Generator",
+        "tagline": "Photo → anime illustration"
+      },
+      "cartoon": {
+        "title": "AI Cartoonizer",
+        "tagline": "Fun cartoon portraits"
+      },
+      "hairstyle": {
+        "title": "AI Hairstyle Changer",
+        "tagline": "Try new hair instantly"
+      },
+      "expression": {
+        "title": "AI Expression Changer",
+        "tagline": "Natural smiles, same you"
+      },
+      "transform": {
+        "title": "AI Transform",
+        "tagline": "Fashion-shoot restyle"
+      }
+    },
+    "hero": {
+      "badge": "16 AI tools · No signup to try · Results in seconds",
+      "titleA": "Every photo fix,",
+      "titleB": "one click away",
+      "subtitle": "Enhance, restore, colorize, erase, cut out backgrounds or turn photos into anime — pick a tool below and upload.",
+      "upload": "Upload a photo",
+      "browse": "Browse tools",
+      "trust": "★ 4.9 · 2M+ photos enhanced",
+      "freePreview": "Free preview · Pay only to download",
+      "steps": "Three steps: pick a tool → upload → download. No learning curve.",
+      "hot": "HOT",
+      "credits": {
+        "one": "credit",
+        "other": "credits"
+      },
+      "allTools": "All tools",
+      "uploadHint": "Drag / click to upload (JPG/PNG/WebP ≤20MB)",
+      "download": "Download result",
+      "before": "Before",
+      "after": "After",
+      "run": "Run"
     }
   }
 }
