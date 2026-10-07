@@ -10,19 +10,18 @@ import { getBaseUrl } from '@/lib/urls';
 type Href = Parameters<typeof getLocalePathname>[0]['href'];
 
 /**
- * static routes for sitemap — PhotoCraft only (SEO: no dead/template pages)
+ * static routes for sitemap — PhotoCraft only (SEO: no dead/template pages,
+ * no auth pages — login/register must not be indexed)
  */
-const staticRoutes = [
-  '/',
-  '/editor',
-  '/pricing',
-  '/about',
-  '/contact',
-  '/privacy',
-  '/terms',
-  '/cookie',
-  '/auth/login',
-  '/auth/register',
+const staticRoutes: { path: string; priority: number; changeFrequency: 'daily' | 'weekly' | 'monthly' }[] = [
+  { path: '/', priority: 1.0, changeFrequency: 'daily' },
+  { path: '/editor', priority: 0.9, changeFrequency: 'weekly' },
+  { path: '/pricing', priority: 0.8, changeFrequency: 'weekly' },
+  { path: '/about', priority: 0.5, changeFrequency: 'monthly' },
+  { path: '/contact', priority: 0.5, changeFrequency: 'monthly' },
+  { path: '/privacy', priority: 0.3, changeFrequency: 'monthly' },
+  { path: '/terms', priority: 0.3, changeFrequency: 'monthly' },
+  { path: '/cookie', priority: 0.3, changeFrequency: 'monthly' },
 ];
 
 /**
@@ -39,9 +38,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   sitemapList.push(
     ...staticRoutes.flatMap((route) => {
       return routing.locales.map((locale) => ({
-        url: getUrl(route, locale),
+        url: getUrl(route.path, locale),
+        lastModified: new Date(),
+        changeFrequency: route.changeFrequency,
+        priority: route.priority,
         alternates: {
-          languages: generateHreflangUrls(route),
+          languages: generateHreflangUrls(route.path),
         },
       }));
     })
