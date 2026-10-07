@@ -23,6 +23,9 @@ import { isE2ETestMode } from './e2e';
  */
 export const auth = betterAuth({
   baseURL: getBaseUrl(),
+  // Required in production: the OAuth callback origin must be trusted,
+  // otherwise sign-in redirects (307) fail origin validation.
+  trustedOrigins: [getBaseUrl()],
   appName: defaultMessages.Metadata.name,
   database: drizzleAdapter(await getDb(), {
     provider: 'pg', // or "mysql", "sqlite"

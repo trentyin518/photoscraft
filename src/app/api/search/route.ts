@@ -1,5 +1,6 @@
 import { docsI18nConfig } from '@/lib/docs/i18n';
 import { source } from '@/lib/source';
+import { createTokenizer as createJapaneseTokenizer } from '@orama/tokenizers/japanese';
 import { createTokenizer } from '@orama/tokenizers/mandarin';
 import { createI18nSearchAPI } from 'fumadocs-core/search/server';
 
@@ -33,6 +34,11 @@ const searchAPI = createI18nSearchAPI('advanced', {
   // Every locale in docsI18nConfig.languages must be mapped to an Orama
   // supported language, otherwise `createI18nSearchAPI('advanced', ...)`
   // throws `LANGUAGE_NOT_SUPPORTED` at build time on Vercel.
+  // Every locale must map to something Orama 3.x accepts:
+  // - plain strings must be in Orama SUPPORTED_LANGUAGES
+  //   (chinese/japanese/korean are NOT — they live in @orama/tokenizers)
+  // - entries with a custom `components.tokenizer` must NOT set `language`
+  //   (Orama throws NO_LANGUAGE_WITH_CUSTOM_TOKENIZER otherwise)
   localeMap: {
     en: 'english',
     de: 'german',
@@ -42,11 +48,11 @@ const searchAPI = createI18nSearchAPI('advanced', {
     pt: 'portuguese',
     nl: 'dutch',
     ru: 'russian',
-    ja: 'japanese',
-    ko: 'korean',
-    // Chinese configuration with Mandarin tokenizer
+    // Korean has no @orama/tokenizers package: fall back to english
+    // so the build passes; CJK quality for ko stays limited.
+    ko: 'english',
+    // Chinese with Mandarin tokenizer (no `language` key!)
     zh: {
-      language: 'chinese',
       components: {
         tokenizer: createTokenizer(),
       },
@@ -55,6 +61,12 @@ const searchAPI = createI18nSearchAPI('advanced', {
         threshold: 0,
         // Lower tolerance for better precision
         tolerance: 0,
+      },
+    },
+    // Japanese with Japanese tokenizer (no `language` key!)
+    ja: {
+      components: {
+        tokenizer: createJapaneseTokenizer(),
       },
     },
   },
