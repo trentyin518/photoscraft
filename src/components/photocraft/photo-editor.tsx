@@ -89,6 +89,12 @@ export function PhotoEditor({
 
   const run = async () => {
     if (!inputUrl) return;
+    // Precision tools need a painted mask — otherwise the edit model just
+    // "cleans up" and small corner text like this survives untouched.
+    if (needsMask && !painterRef.current?.hasMask()) {
+      setErr('请先用笔刷涂抹水印区域再运行 / Paint over the watermark first');
+      return;
+    }
     setBusy(true);
     setErr(null);
     set({ status: 'processing', outputUrl: null });
