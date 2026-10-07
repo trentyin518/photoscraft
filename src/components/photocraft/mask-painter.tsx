@@ -27,9 +27,12 @@ export const MaskPainter = forwardRef<MaskPainterHandle, { imageUrl: string }>(
     const [painting, setPainting] = useState(false);
     const [brush, setBrush] = useState(40);
     const [strokes, setStrokes] = useState(0);
+    const [imgLoaded, setImgLoaded] = useState(false);
 
-    // size canvas to displayed image
+    // size canvas to displayed image — only after the image has loaded,
+    // otherwise getBoundingClientRect is 0 and the exported mask is blank
     useEffect(() => {
+      if (!imgLoaded) return;
       const sync = () => {
         const img = imgRef.current;
         const cv = canvasRef.current;
@@ -41,7 +44,7 @@ export const MaskPainter = forwardRef<MaskPainterHandle, { imageUrl: string }>(
       sync();
       window.addEventListener('resize', sync);
       return () => window.removeEventListener('resize', sync);
-    }, [imageUrl]);
+    }, [imageUrl, imgLoaded]);
 
     const pos = (e: React.PointerEvent) => {
       const cv = canvasRef.current!;
@@ -108,6 +111,16 @@ export const MaskPainter = forwardRef<MaskPainterHandle, { imageUrl: string }>(
         ctx.fillStyle = '#000';
         ctx.fillRect(0, 0, out.width, out.height);
         ctx.drawImage(cv, 0, 0, out.width, out.height);
+        // guard: reject blank masks (e.g. canvas was 0-size when painted)
+        const px = ctx.getImageData(0, 0, out.width, out.height).data;
+        let lit = 0;
+        for (let i = 0; i < px.length; i += 4) {
+          if (px[i] > 64 || px[i + 1] > 64 || px[i + 2] > 64) {
+            lit++;
+            if (lit > 100) break;
+          }
+        }
+        if (lit <= 100) return null;
         return new Promise<Blob | null>((resolve) =>
           out.toBlob((b) => resolve(b), 'image/png')
         );
@@ -122,6 +135,7 @@ export const MaskPainter = forwardRef<MaskPainterHandle, { imageUrl: string }>(
             ref={imgRef}
             src={imageUrl}
             alt="paint over the watermark"
+            onLoad={() => setImgLoaded(true)}
             className="block w-full touch-none select-none"
             draggable={false}
           />

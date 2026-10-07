@@ -103,22 +103,22 @@ export function PhotoEditor({
       // watermark / eraser: upload user-painted mask for precise lama inpaint
       if (needsMask && painterRef.current?.hasMask()) {
         const blob = await painterRef.current.exportMask();
-        if (blob) {
-          const fd = new FormData();
-          fd.append(
-            'file',
-            new File([blob], 'mask.png', { type: 'image/png' })
+        if (!blob) {
+          throw new Error(
+            '涂抹区域为空，请重新涂抹水印后再运行 / Painted area is empty, please repaint'
           );
-          fd.append('folder', 'photocraft/masks');
-          const up = await fetch('/api/storage/upload', {
-            method: 'POST',
-            body: fd,
-          });
-          if (!up.ok)
-            throw new Error('Mask upload failed — please sign in and retry');
-          const mj = (await up.json()) as { url: string };
-          runParams.maskUrl = mj.url;
         }
+        const fd = new FormData();
+        fd.append('file', new File([blob], 'mask.png', { type: 'image/png' }));
+        fd.append('folder', 'photocraft/masks');
+        const up = await fetch('/api/storage/upload', {
+          method: 'POST',
+          body: fd,
+        });
+        if (!up.ok)
+          throw new Error('Mask upload failed — please sign in and retry');
+        const mj = (await up.json()) as { url: string };
+        runParams.maskUrl = mj.url;
       }
       const runAction = createPhotoJob as unknown as (input: {
         tool: typeof tool;
