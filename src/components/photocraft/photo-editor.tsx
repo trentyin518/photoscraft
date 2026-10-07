@@ -1,9 +1,10 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeftIcon } from 'lucide-react';
 import { usePhotoEditorStore } from '@/stores/photo-editor-store';
 import { createPhotoJob } from '@/actions/create-photo-job';
+import { MaskPainter, type MaskPainterHandle } from './mask-painter';
 import { getCreditBalanceAction } from '@/actions/get-credit-balance';
 import { PHOTO_TOOLS, getPhotoToolText } from '@/config/photo-tools';
 import { useTranslations } from 'next-intl';
@@ -42,6 +43,8 @@ export function PhotoEditor({
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
   const [balance, setBalance] = useState<number | null>(null);
+  const painterRef = useRef<MaskPainterHandle>(null);
+  const needsMask = tool === 'watermark' || tool === 'eraser';
 
   const refreshBalance = async () => {
     try {
@@ -61,7 +64,8 @@ export function PhotoEditor({
   useEffect(() => {
     set({ tool: initialTool });
   }, [initialTool, set]);
-  const current = PHOTO_TOOLS.find((item) => item.id === tool) ?? PHOTO_TOOLS[0];
+  const current =
+    PHOTO_TOOLS.find((item) => item.id === tool) ?? PHOTO_TOOLS[0];
   const currentText = getPhotoToolText(current, tr);
 
   const onFile = async (f: File) => {
@@ -89,12 +93,33 @@ export function PhotoEditor({
     setErr(null);
     set({ status: 'processing', outputUrl: null });
     try {
+      const runParams: Record<string, unknown> = { ...params };
+      // watermark / eraser: upload user-painted mask for precise lama inpaint
+      if (needsMask && painterRef.current?.hasMask()) {
+        const blob = await painterRef.current.exportMask();
+        if (blob) {
+          const fd = new FormData();
+          fd.append(
+            'file',
+            new File([blob], 'mask.png', { type: 'image/png' })
+          );
+          fd.append('folder', 'photocraft/masks');
+          const up = await fetch('/api/storage/upload', {
+            method: 'POST',
+            body: fd,
+          });
+          if (!up.ok)
+            throw new Error('Mask upload failed — please sign in and retry');
+          const mj = (await up.json()) as { url: string };
+          runParams.maskUrl = mj.url;
+        }
+      }
       const runAction = createPhotoJob as unknown as (input: {
         tool: typeof tool;
         inputUrl: string;
         params: Record<string, unknown>;
       }) => Promise<{ data?: { jobId: string } }>;
-      const r = await runAction({ tool, inputUrl, params });
+      const r = await runAction({ tool, inputUrl, params: runParams });
       const jobId = r?.data?.jobId;
       if (!jobId) throw new Error('Failed to create job');
       set({ jobId });
@@ -148,24 +173,34 @@ export function PhotoEditor({
         <div className="rounded-xl border p-4 min-h-105 flex flex-col gap-4">
           <div>
             <h1 className="text-xl font-bold">{currentText.title}</h1>
-            <p className="text-sm text-muted-foreground">{currentText.tagline}</p>
+            <p className="text-sm text-muted-foreground">
+              {currentText.tagline}
+            </p>
           </div>
-          <label className="flex h-56 cursor-pointer items-center justify-center rounded-lg border-dashed border-2 text-sm text-muted-foreground overflow-hidden">
-            {inputUrl ? (
-              <img src={inputUrl} alt="" className="h-full object-contain" />
-            ) : (
-              t('hero.uploadHint')
-            )}
-            <input
-              type="file"
-              className="hidden"
-              accept="image/*"
-              onChange={(e) => {
-                const f = e.target.files?.[0];
-                if (f) void onFile(f);
-              }}
+          {needsMask && inputUrl ? (
+            <MaskPainter
+              key={`${tool}-${inputUrl}`}
+              ref={painterRef}
+              imageUrl={inputUrl}
             />
-          </label>
+          ) : (
+            <label className="flex h-56 cursor-pointer items-center justify-center rounded-lg border-dashed border-2 text-sm text-muted-foreground overflow-hidden">
+              {inputUrl ? (
+                <img src={inputUrl} alt="" className="h-full object-contain" />
+              ) : (
+                t('hero.uploadHint')
+              )}
+              <input
+                type="file"
+                className="hidden"
+                accept="image/*"
+                onChange={(e) => {
+                  const f = e.target.files?.[0];
+                  if (f) void onFile(f);
+                }}
+              />
+            </label>
+          )}
           {inputUrl && outputUrl && (
             <div className="grid grid-cols-2 gap-2">
               <div>
@@ -219,7 +254,8 @@ export function PhotoEditor({
           )}
           {balance !== null && (
             <p className="text-sm text-muted-foreground">
-              {t('editor.balance')}: <span className="font-semibold text-foreground">{balance}</span>
+              {t('editor.balance')}:{' '}
+              <span className="font-semibold text-foreground">{balance}</span>
               {balance < current.cost && (
                 <span className="ml-2 text-amber-600">
                   {t('editor.insufficient')}

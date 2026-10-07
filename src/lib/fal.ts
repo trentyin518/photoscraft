@@ -59,6 +59,20 @@ function specForTool(
           input: (imageUrl) => ({ image_url: imageUrl }),
         },
       };
+    case 'watermark':
+    case 'eraser':
+      // User-painted mask => precise lama inpaint (mask_image_url).
+      // No mask => edit-model cleanup pass (may leave tiny corner text).
+      if (typeof params.maskUrl === 'string' && params.maskUrl.length > 0) {
+        return {
+          model: 'fal-ai/lama',
+          input: (imageUrl) => ({
+            image_url: imageUrl,
+            mask_image_url: params.maskUrl as string,
+          }),
+        };
+      }
+      return { model: EDIT_MODEL, input: editInput(tool, params) };
     default:
       return { model: EDIT_MODEL, input: editInput(tool, params) };
   }
