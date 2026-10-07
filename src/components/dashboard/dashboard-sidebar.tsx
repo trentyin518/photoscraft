@@ -50,7 +50,7 @@ export function DashboardSidebar({ user, ...props }: DashboardSidebarProps) {
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
               <LocaleLink href={Routes.Root}>
-                <Logo className="size-5" />
+                <Logo className="[&_svg]:size-7" />
               </LocaleLink>
             </SidebarMenuButton>
           </SidebarMenuItem>

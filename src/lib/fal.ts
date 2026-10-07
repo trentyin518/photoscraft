@@ -101,7 +101,7 @@ function editInput(tool: string, params: ToolParams) {
     (() => 'Enhance this photo with professional quality.');
   return (imageUrl: string) => ({
     prompt: promptFn(params),
-    image_url: imageUrl,
+    image_urls: [imageUrl],
     num_images: 1,
     output_format: 'png',
   });
@@ -146,28 +146,46 @@ async function submitAndWait(
   if (!sub.ok) {
     throw new Error(`FAL submit failed (${model}): ${await sub.text()}`);
   }
-  const { request_id } = (await sub.json()) as { request_id: string };
+  // NOTE: fal may canonicalize the endpoint in the submit response
+  // (e.g. nano-banana/edit answers on fal-ai/nano-banana), so always
+  // prefer the URLs from the submit response over the constructed ones.
+  const subData = (await sub.json()) as {
+    request_id: string;
+    response_url?: string;
+    status_url?: string;
+  };
+  const request_id = subData.request_id;
+  const statusUrl =
+    subData.status_url ?? `${FAL_HOST}/${model}/requests/${request_id}/status`;
+  const resultUrl =
+    subData.response_url ?? `${FAL_HOST}/${model}/requests/${request_id}`;
 
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < 60; i++) {
     await sleep(3000);
-    const st = await fetch(
-      `${FAL_HOST}/${model}/requests/${request_id}/status`,
-      {
-        headers: headers(),
-      }
-    );
+    const st = await fetch(statusUrl, {
+      headers: headers(),
+    });
     if (!st.ok) {
       continue;
     }
-    const s = (await st.json()) as { status: string };
+    const s = (await st.json()) as {
+      status: string;
+      error?: string;
+      error_type?: string;
+    };
     if (s.status === 'COMPLETED') {
+      if (s.error) {
+        throw new Error(
+          `FAL job failed (${model}): ${s.error} [${s.error_type ?? 'unknown'}]`
+        );
+      }
       break;
     }
     if (s.status === 'FAILED') {
       throw new Error(`FAL job failed (${model})`);
     }
   }
-  const res = await fetch(`${FAL_HOST}/${model}/requests/${request_id}`, {
+  const res = await fetch(resultUrl, {
     headers: headers(),
   });
   if (!res.ok) {

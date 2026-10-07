@@ -2,6 +2,7 @@ import 'dotenv/config';
 import { runFalEdit } from '../src/lib/fal';
 
 async function main() {
+  const only = process.argv[2];
   const cases = [
     {
       tool: 'enhance',
@@ -19,6 +20,9 @@ async function main() {
   ];
 
   for (const c of cases) {
+    if (only && c.tool !== only) {
+      continue;
+    }
     const t0 = Date.now();
     try {
       const url = await runFalEdit({
