@@ -1,5 +1,8 @@
 import { websiteConfig } from '@/config/website';
 import { getDb } from '@/db/index';
+import { account } from '@/db/auth.schema';
+import { creditBalance } from '@/db/photocraft.schema';
+import { eq } from 'drizzle-orm';
 import { defaultMessages } from '@/i18n/messages';
 import { LOCALE_COOKIE_NAME, routing } from '@/i18n/routing';
 import { sendEmail } from '@/mail';
@@ -176,6 +179,27 @@ export function getLocaleFromRequest(request?: Request): Locale {
  * @param user - The user to create
  */
 async function onCreateUser(user: User) {
+  // Trial credits: only OAuth (google/github) signups get free credits.
+  // Credential (email) signups get 0 to prevent farming throwaway accounts.
+  try {
+    const db = await getDb();
+    const accounts = await db
+      .select({ providerId: account.providerId })
+      .from(account)
+      .where(eq(account.userId, user.id));
+    const isOAuth = accounts.some((a) =>
+      ['google', 'github'].includes(a.providerId)
+    );
+    await db
+      .insert(creditBalance)
+      .values({
+        userId: user.id,
+        balance: isOAuth ? 5 : 0,
+      })
+      .onConflictDoNothing();
+  } catch (error) {
+    console.error(`Failed to init credits for user ${user.id}:`, error);
+  }
   // Auto subscribe user to newsletter after sign up if enabled in website config
   // Add a delay to avoid hitting Resend's 1 email per second limit
   if (

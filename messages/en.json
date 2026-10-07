@@ -638,6 +638,23 @@
       "title": "Upgrade",
       "description": "Upgrade to Pro to access all features",
       "button": "Upgrade"
+    },
+    "photos": {
+      "subtitle": "All your AI creations in one place",
+      "emptyTitle": "No photos yet",
+      "emptyDesc": "Pick a tool, upload a photo, and your creations will show up here.",
+      "cta": "Create your first photo",
+      "browseTools": "Browse tools",
+      "download": "Download",
+      "openEditor": "Open in editor",
+      "status": {
+        "pending": "Queued",
+        "processing": "Processing",
+        "done": "Done",
+        "failed": "Failed"
+      },
+      "creditsUsed": "{count} credits",
+      "createdAt": "{date}"
     }
   },
   "Mail": {
@@ -809,7 +826,7 @@
         },
         "item-5": {
           "question": "Can't find what you're looking for?",
-          "answer": "Please contact our customer support team at support@photocraft.top"
+          "answer": "Please contact our customer support team at support@photoscraft.top"
         }
       }
     },
@@ -1008,6 +1025,12 @@
       "download": "Download result",
       "before": "Before",
       "after": "After",
+      "run": "Run"
+    },
+    "editor": {
+      "balance": "Credits",
+      "insufficient": "Insufficient credits",
+      "topup": "Top up",
       "run": "Run"
     }
   }

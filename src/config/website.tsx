@@ -109,8 +109,8 @@ export const websiteConfig: WebsiteConfig = {
   mail: {
     enable: true,
     provider: 'resend',
-    fromEmail: 'PhotoCraft <hello@photocraft.top>',
-    supportEmail: 'PhotoCraft <support@photocraft.top>',
+    fromEmail: 'PhotoCraft <hello@photoscraft.top>',
+    supportEmail: 'PhotoCraft <support@photoscraft.top>',
   },
   newsletter: {
     enable: false,

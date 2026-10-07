@@ -1,23 +1,47 @@
-import { ChartAreaInteractive } from '@/components/dashboard/chart-area-interactive';
 import { DashboardHeader } from '@/components/dashboard/dashboard-header';
-import { DataTable } from '@/components/dashboard/data-table';
-import { SectionCards } from '@/components/dashboard/section-cards';
-import { useTranslations } from 'next-intl';
-
-import data from './data.json';
+import { MyPhotosGrid } from '@/components/dashboard/my-photos-grid';
+import { MyPhotosEmpty } from '@/components/dashboard/my-photos-empty';
+import { getDb } from '@/db';
+import { photoJob } from '@/db/photocraft.schema';
+import { getSession } from '@/lib/server';
+import { Routes } from '@/routes';
+import { desc, eq } from 'drizzle-orm';
+import { getTranslations } from 'next-intl/server';
+import { redirect } from 'next/navigation';
 
 /**
- * Dashboard page
+ * My Photos — the user's own AI creations.
  *
- * NOTICE: This is a demo page for the dashboard, no real data is used,
- * we will show real data in the future
+ * Replaces the template demo dashboard (fake charts/tables).
+ * Admin-only views live under /admin/* and are role-guarded there.
  */
-export default function DashboardPage() {
-  const t = useTranslations();
+export default async function DashboardPage() {
+  const session = await getSession();
+  if (!session?.user) {
+    redirect(Routes.Login);
+  }
+
+  const t = await getTranslations('Dashboard');
+
+  const db = await getDb();
+  const jobs = await db
+    .select({
+      id: photoJob.id,
+      tool: photoJob.tool,
+      inputUrl: photoJob.inputUrl,
+      outputUrl: photoJob.outputUrl,
+      status: photoJob.status,
+      costCredits: photoJob.costCredits,
+      createdAt: photoJob.createdAt,
+    })
+    .from(photoJob)
+    .where(eq(photoJob.userId, session.user.id))
+    .orderBy(desc(photoJob.createdAt))
+    .limit(60);
 
   const breadcrumbs = [
     {
-      label: t('Dashboard.dashboard.title'),
+      label: t('dashboard.title'),
       isCurrentPage: true,
     },
   ];
@@ -28,12 +52,21 @@ export default function DashboardPage() {
 
       <div className="flex flex-1 flex-col">
         <div className="@container/main flex flex-1 flex-col gap-2">
-          <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
-            <SectionCards />
-            <div className="px-4 lg:px-6">
-              <ChartAreaInteractive />
+          <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6 px-4 lg:px-6">
+            <div>
+              <h1 className="text-2xl font-bold tracking-tight">
+                {t('dashboard.title')}
+              </h1>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {t('photos.subtitle')}
+              </p>
             </div>
-            <DataTable data={data} />
+
+            {jobs.length === 0 ? (
+              <MyPhotosEmpty />
+            ) : (
+              <MyPhotosGrid jobs={jobs} />
+            )}
           </div>
         </div>
       </div>

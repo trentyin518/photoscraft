@@ -412,7 +412,7 @@
   },
   "Dashboard": {
     "dashboard": {
-      "title": "仪表盘"
+      "title": "我的照片"
     },
     "editor": {
       "title": "编辑器"
@@ -638,6 +638,23 @@
       "title": "升级",
       "description": "升级到Pro以获取所有功能",
       "button": "升级"
+    },
+    "photos": {
+      "subtitle": "所有 AI 作品都在这里",
+      "emptyTitle": "还没有照片",
+      "emptyDesc": "选个工具、上传照片，你的作品就会出现在这里。",
+      "cta": "去生成第一张照片",
+      "browseTools": "浏览工具",
+      "download": "下载",
+      "openEditor": "在编辑器中打开",
+      "status": {
+        "pending": "排队中",
+        "processing": "生成中",
+        "done": "已完成",
+        "failed": "失败"
+      },
+      "creditsUsed": "{count} 积分",
+      "createdAt": "{date}"
     }
   },
   "Mail": {
@@ -809,7 +826,7 @@
         },
         "item-5": {
           "question": "找不到您想问的问题？",
-          "answer": "请联系我们的客户支持团队，邮箱地址：support@photocraft.top"
+          "answer": "请联系我们的客户支持团队，邮箱地址：support@photoscraft.top"
         }
       }
     },
@@ -1008,6 +1025,12 @@
       "download": "下载结果",
       "before": "原图",
       "after": "效果",
+      "run": "运行"
+    },
+    "editor": {
+      "balance": "积分余额",
+      "insufficient": "积分不足",
+      "topup": "去充值",
       "run": "运行"
     }
   }

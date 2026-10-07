@@ -35,6 +35,6 @@ export default function ForgotPassword({
 ForgotPassword.PreviewProps = {
   locale: routing.defaultLocale,
   messages: defaultMessages,
-  url: 'https://photocraft.top',
+  url: 'https://photoscraft.top',
   name: 'username',
 };

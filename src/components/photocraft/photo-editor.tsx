@@ -4,10 +4,12 @@ import Link from 'next/link';
 import { ArrowLeftIcon } from 'lucide-react';
 import { usePhotoEditorStore } from '@/stores/photo-editor-store';
 import { createPhotoJob } from '@/actions/create-photo-job';
+import { getCreditBalanceAction } from '@/actions/get-credit-balance';
 import { PHOTO_TOOLS, getPhotoToolText } from '@/config/photo-tools';
 import { useTranslations } from 'next-intl';
 import type { PhotoToolType } from '@/db/photocraft.schema';
 import { Button } from '@/components/ui/button';
+import { Routes } from '@/routes';
 import { Slider } from '@/components/ui/slider';
 import {
   Select,
@@ -39,6 +41,22 @@ export function PhotoEditor({
   const tr = t as unknown as (key: string) => string;
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
+  const [balance, setBalance] = useState<number | null>(null);
+
+  const refreshBalance = async () => {
+    try {
+      const r = (await getCreditBalanceAction({})) as unknown as {
+        data?: { balance: number };
+      };
+      if (typeof r?.data?.balance === 'number') setBalance(r.data.balance);
+    } catch {
+      // balance display is best-effort; job creation still validates server-side
+    }
+  };
+
+  useEffect(() => {
+    void refreshBalance();
+  }, []);
 
   useEffect(() => {
     set({ tool: initialTool });
@@ -84,9 +102,15 @@ export function PhotoEditor({
       set({ outputUrl: url, status: 'done' });
     } catch (e) {
       set({ status: 'failed' });
-      setErr(e instanceof Error ? e.message : 'Processing failed');
+      const message = e instanceof Error ? e.message : 'Processing failed';
+      setErr(
+        message.includes('INSUFFICIENT_CREDITS')
+          ? `${t('editor.insufficient')} — ${t('editor.topup')}`
+          : message
+      );
     } finally {
       setBusy(false);
+      void refreshBalance();
     }
   };
 
@@ -193,9 +217,26 @@ export function PhotoEditor({
               </div>
             </div>
           )}
-          <Button onClick={run} disabled={!inputUrl || busy}>
-            Run {currentText.title} ({current.cost} {t('hero.credits.other')})
-          </Button>
+          {balance !== null && (
+            <p className="text-sm text-muted-foreground">
+              {t('editor.balance')}: <span className="font-semibold text-foreground">{balance}</span>
+              {balance < current.cost && (
+                <span className="ml-2 text-amber-600">
+                  {t('editor.insufficient')}
+                </span>
+              )}
+            </p>
+          )}
+          {balance !== null && balance < current.cost ? (
+            <Button asChild>
+              <Link href={Routes.Pricing}>{t('editor.topup')}</Link>
+            </Button>
+          ) : (
+            <Button onClick={run} disabled={!inputUrl || busy}>
+              {t('editor.run')} {currentText.title} ({current.cost}{' '}
+              {t('hero.credits.other')})
+            </Button>
+          )}
           <Button
             variant="outline"
             disabled={!outputUrl}
