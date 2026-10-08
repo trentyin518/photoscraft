@@ -1,915 +1,769 @@
 {
   "Metadata": {
     "name": "PhotoCraft",
-    "title": "PhotoCraft - AI Photo Enhancer, Restore Old Photos, Remove Background & Watermark",
-    "description": "PhotoCraft is an AI photo editor: enhance blurry photos, restore and colorize old photos, remove watermarks and backgrounds in seconds."
+    "title": "PhotoCraft - AI写真高画質化、古い写真の修復、背景・透かし除去",
+    "description": "PhotoCraftはAI写真エディターです。ぼやけた写真の高画質化、古い写真の修復・カラー化、透かしや背景の除去が数秒でできます。"
   },
   "Common": {
-    "login": "Log in",
-    "logout": "Log out",
-    "signUp": "Sign up",
-    "language": "Switch language",
+    "login": "ログイン",
+    "logout": "ログアウト",
+    "signUp": "新規登録",
+    "language": "言語を切り替え",
     "mode": {
-      "label": "Toggle mode",
-      "light": "Light",
-      "dark": "Dark",
-      "system": "System"
+      "label": "モード切替",
+      "light": "ライト",
+      "dark": "ダーク",
+      "system": "システム"
     },
-    "copy": "Copy",
-    "saving": "Saving...",
-    "save": "Save",
-    "loading": "Loading...",
-    "cancel": "Cancel",
-    "logoutFailed": "Failed to log out",
+    "copy": "コピー",
+    "saving": "保存中...",
+    "save": "保存",
+    "loading": "読み込み中...",
+    "cancel": "キャンセル",
+    "logoutFailed": "ログアウトに失敗しました",
     "table": {
-      "totalRecords": "Total {count} records",
-      "noResults": "No results",
-      "loading": "Loading...",
-      "columns": "Columns",
-      "rowsPerPage": "Rows per page",
-      "page": "Page",
-      "firstPage": "First Page",
-      "lastPage": "Last Page",
-      "nextPage": "Next Page",
-      "previousPage": "Previous Page",
-      "ascending": "Asc",
-      "descending": "Desc",
-      "resetSorting": "Reset",
-      "hideColumn": "Hide",
-      "viewOptions": "View",
-      "toggleColumns": "Toggle columns",
-      "searchColumns": "Search columns...",
-      "noColumns": "No columns found.",
-      "clearFilters": "Clear filters"
+      "totalRecords": "全{count}件",
+      "noResults": "結果がありません",
+      "loading": "読み込み中...",
+      "columns": "列",
+      "rowsPerPage": "ページあたりの行数",
+      "page": "ページ",
+      "firstPage": "最初のページ",
+      "lastPage": "最後のページ",
+      "nextPage": "次のページ",
+      "previousPage": "前のページ",
+      "ascending": "昇順",
+      "descending": "降順",
+      "resetSorting": "リセット",
+      "hideColumn": "非表示",
+      "viewOptions": "表示",
+      "toggleColumns": "列の切り替え",
+      "searchColumns": "列を検索...",
+      "noColumns": "列が見つかりません。",
+      "clearFilters": "フィルターをクリア"
     }
   },
   "PricingPage": {
-    "title": "Pricing",
-    "description": "Choose the plan that works best for you",
-    "subtitle": "Choose the plan that works best for you",
-    "monthly": "Monthly",
-    "yearly": "Yearly",
+    "title": "料金",
+    "description": "あなたに最適なプランを選ぼう",
+    "subtitle": "あなたに最適なプランを選ぼう",
+    "monthly": "月額",
+    "yearly": "年額",
     "PricingCard": {
       "freePrice": "$0",
-      "perMonth": "/month",
-      "perYear": "/year",
-      "popular": "Popular",
-      "currentPlan": "Current Plan",
-      "yourCurrentPlan": "Your Current Plan",
-      "getStartedForFree": "Get Started For Free",
-      "getLifetimeAccess": "Get Lifetime Access",
-      "getStarted": "Get Started",
-      "notAvailable": "Not Available",
-      "daysTrial": "{days}-day free trial"
+      "perMonth": "/月",
+      "perYear": "/年",
+      "popular": "人気",
+      "currentPlan": "現在のプラン",
+      "yourCurrentPlan": "ご利用中のプラン",
+      "getStartedForFree": "無料で始める",
+      "getLifetimeAccess": "買い切りプランを購入",
+      "getStarted": "始める",
+      "notAvailable": "利用不可",
+      "daysTrial": "{days}日間無料トライアル"
     },
     "CheckoutButton": {
-      "loading": "Loading...",
-      "checkoutFailed": "Failed to open checkout page"
+      "loading": "読み込み中...",
+      "checkoutFailed": "決済ページを開けませんでした"
     }
   },
   "PricePlans": {
     "free": {
-      "name": "Free",
-      "description": "Basic features for personal use",
+      "name": "無料",
+      "description": "個人利用向けの基本機能",
       "features": {
-        "feature-1": "Up to 3 projects",
-        "feature-2": "1 GB storage",
-        "feature-3": "Basic analytics",
-        "feature-4": "Community support"
+        "feature-1": "最大3プロジェクト",
+        "feature-2": "1GBストレージ",
+        "feature-3": "基本分析",
+        "feature-4": "コミュニティサポート"
       },
       "limits": {
-        "limit-1": "Custom domains",
-        "limit-2": "Custom branding",
-        "limit-3": "Lifetime updates"
+        "limit-1": "カスタムドメイン",
+        "limit-2": "カスタムブランディング",
+        "limit-3": "永久アップデート"
       }
     },
     "pro": {
       "name": "Pro",
-      "description": "Advanced features for professionals",
+      "description": "プロ向けの高度な機能",
       "features": {
-        "feature-1": "Unlimited projects",
-        "feature-2": "10 GB storage",
-        "feature-3": "Advanced analytics",
-        "feature-4": "Priority support",
-        "feature-5": "Custom domains"
+        "feature-1": "無制限プロジェクト",
+        "feature-2": "10GBストレージ",
+        "feature-3": "高度な分析",
+        "feature-4": "優先サポート",
+        "feature-5": "カスタムドメイン"
       },
       "limits": {
-        "limit-1": "Custom branding",
-        "limit-2": "Lifetime updates"
+        "limit-1": "カスタムブランディング",
+        "limit-2": "永久アップデート"
       }
     },
     "lifetime": {
-      "name": "Lifetime",
-      "description": "Premium features with one-time payment",
+      "name": "買い切り",
+      "description": "一度の支払いで使えるプレミアム機能",
       "features": {
-        "feature-1": "All Pro features",
-        "feature-2": "100 GB storage",
-        "feature-3": "Dedicated support",
-        "feature-4": "Enterprise-grade security",
-        "feature-5": "Advanced integrations",
-        "feature-6": "Custom branding",
-        "feature-7": "Lifetime updates"
+        "feature-1": "Proの全機能",
+        "feature-2": "100GBストレージ",
+        "feature-3": "専任サポート",
+        "feature-4": "エンタープライズ級セキュリティ",
+        "feature-5": "高度な連携",
+        "feature-6": "カスタムブランディング",
+        "feature-7": "永久アップデート"
       }
     }
   },
   "NotFoundPage": {
     "title": "404",
-    "message": "Sorry, the page you are looking for does not exist.",
-    "backToHome": "Back to home"
+    "message": "お探しのページは存在しません。",
+    "backToHome": "ホームに戻る"
   },
   "ErrorPage": {
-    "title": "Oops! Something went wrong!",
-    "tryAgain": "Try again",
-    "backToHome": "Back to home"
+    "title": "おっと!問題が発生しました!",
+    "tryAgain": "もう一度試す",
+    "backToHome": "ホームに戻る"
   },
   "AboutPage": {
-    "title": "About",
-    "description": "PhotoCraft is an AI photo editor with 16 one-click tools: enhance, restore, colorize, erase, background removal and more.",
-    "heading": "Give every photo a fresh, vibrant look",
-    "mission": "PhotoCraft is an AI-driven photo editor for fast, precise restoration and enhancement. Restore old photos, sharpen blurry images, remove backgrounds and watermarks — no editing skills needed, results in seconds.",
+    "title": "私たちについて",
+    "description": "PhotoCraftはワンクリック16ツールのAI写真エディターです。高画質化、修復、カラー化、消去、背景除去など。",
+    "heading": "すべての写真を鮮やかに蘇らせよう",
+    "mission": "PhotoCraftは高速・高精度な修復と高画質化のためのAI写真エディターです。古い写真の修復、ぼやけた画像のシャープ化、背景や透かしの除去が編集スキル不要で数秒でできます。",
     "stats": {
-      "tools": "AI tools",
-      "speed": "avg. processing",
-      "rating": "user rating"
+      "tools": "AIツール",
+      "speed": "平均処理時間",
+      "rating": "ユーザー評価"
     },
-    "toolsTitle": "What PhotoCraft can do",
-    "storyTitle": "Our story",
-    "story1": "PhotoCraft started from a simple frustration: precious old photos fading away, and pro repair costing time and money. We packed professional restoration, enhancement and creative effects into one-click AI tools anyone can use.",
-    "story2": "Today PhotoCraft offers 16 AI tools — from photo enhancement and old-photo colorization to background removal, magic erasing, sky replacement and anime generation. Upload a photo, pick a tool, download the result. That is the whole learning curve."
+    "toolsTitle": "PhotoCraftでできること",
+    "storyTitle": "私たちのストーリー",
+    "story1": "PhotoCraftはシンプルな悩みから生まれました。大切な古い写真は色あせていくのに、プロの修復は時間もお金もかかる。プロ級の修復・高画質化・クリエイティブ効果を、誰でも使えるワンクリックAIツールに詰め込みました。",
+    "story2": "現在PhotoCraftは16のAIツールを提供しています。写真の高画質化や古い写真のカラー化から、背景除去、マジック消去、空の置き換え、アニメ生成まで。写真をアップロードしてツールを選び、結果をダウンロードするだけ。それが学習のすべてです。"
   },
   "ChangelogPage": {
-    "title": "Changelog",
-    "description": "Stay up to date with the latest changes in our product",
-    "subtitle": "Stay up to date with the latest changes in our product"
+    "title": "更新履歴",
+    "description": "製品の最新変更をチェック",
+    "subtitle": "製品の最新変更をチェック"
   },
   "AiPage": {
-    "title": "AI Playground",
-    "description": "Built with Vercel AI SDK. Switch between DeepSeek, and OpenAI GPT models."
+    "title": "AIプレイグラウンド",
+    "description": "Vercel AI SDK製。DeepSeekとOpenAI GPTモデルを切り替えられます。"
   },
   "RoadmapPage": {
-    "title": "Roadmap",
-    "description": "Explore our future plans and upcoming features",
-    "subtitle": "Explore our future plans and upcoming features"
+    "title": "ロードマップ",
+    "description": "今後の計画と新機能を紹介",
+    "subtitle": "今後の計画と新機能を紹介"
   },
   "ContactPage": {
-    "title": "Contact",
-    "description": "Questions, feedback or business inquiries — send us a message and we will reply within 1-2 business days.",
-    "subtitle": "Questions, feedback or business inquiries? We reply within 1-2 business days.",
-    "directHint": "Prefer email? Reach us directly at",
+    "title": "お問い合わせ",
+    "description": "ご質問・ご意見・ビジネス相談はメッセージでどうぞ。1〜2営業日以内に返信します。",
+    "subtitle": "ご質問・ご意見・ビジネス相談は?1〜2営業日以内に返信します。",
+    "directHint": "メールがお好みですか?こちらまで直接どうぞ:",
     "form": {
-      "title": "Contact Us",
-      "description": "If you have any questions or feedback, please reach out to our team",
-      "name": "Name",
-      "email": "Email",
-      "message": "Message",
-      "submit": "Submit",
-      "submitting": "Submitting...",
-      "success": "Message sent successfully",
-      "fail": "Failed to send message",
-      "nameMinLength": "Name must be at least 3 characters",
-      "nameMaxLength": "Name must not exceed 30 characters",
-      "emailValidation": "Please enter a valid email address",
-      "messageMinLength": "Message must be at least 10 characters",
-      "messageMaxLength": "Message must not exceed 500 characters"
+      "title": "お問い合わせ",
+      "description": "ご質問やご意見があればチームまでご連絡ください",
+      "name": "名前",
+      "email": "メール",
+      "message": "メッセージ",
+      "submit": "送信",
+      "submitting": "送信中...",
+      "success": "メッセージを送信しました",
+      "fail": "メッセージの送信に失敗しました",
+      "nameMinLength": "名前は3文字以上で入力してください",
+      "nameMaxLength": "名前は30文字以内で入力してください",
+      "emailValidation": "有効なメールアドレスを入力してください",
+      "messageMinLength": "メッセージは10文字以上で入力してください",
+      "messageMaxLength": "メッセージは500文字以内で入力してください"
     }
   },
   "WaitlistPage": {
-    "title": "Waitlist",
-    "description": "Join our waitlist for the launch of our product",
-    "subtitle": "Join our waitlist for the launch of our product",
+    "title": "ウェイティングリスト",
+    "description": "製品リリースのウェイティングリストに参加しよう",
+    "subtitle": "製品リリースのウェイティングリストに参加しよう",
     "form": {
-      "title": "Join Our Waitlist",
-      "description": "We will notify you when we launch our product",
-      "email": "Email",
-      "subscribe": "Subscribe",
-      "subscribing": "Subscribing...",
-      "success": "Subscribed successfully",
-      "fail": "Failed to subscribe",
-      "emailValidation": "Please enter a valid email address"
+      "title": "ウェイティングリストに参加",
+      "description": "リリース時に通知します",
+      "email": "メール",
+      "subscribe": "登録",
+      "subscribing": "登録中...",
+      "success": "登録しました",
+      "fail": "登録に失敗しました",
+      "emailValidation": "有効なメールアドレスを入力してください"
     }
   },
   "Newsletter": {
-    "title": "Newsletter",
-    "subtitle": "Join the community",
-    "description": "Subscribe to our newsletter for the latest news and updates",
+    "title": "ニュースレター",
+    "subtitle": "コミュニティに参加しよう",
+    "description": "最新ニュースや更新情報を受け取るには登録してください",
     "form": {
-      "email": "Email",
-      "subscribe": "Subscribe",
-      "subscribing": "Subscribing...",
-      "success": "Subscribed successfully",
-      "fail": "Failed to subscribe",
-      "emailValidation": "Please enter a valid email address"
+      "email": "メール",
+      "subscribe": "登録",
+      "subscribing": "登録中...",
+      "success": "登録しました",
+      "fail": "登録に失敗しました",
+      "emailValidation": "有効なメールアドレスを入力してください"
     }
   },
   "AuthPage": {
     "login": {
-      "title": "Login",
-      "welcomeBack": "Welcome back",
-      "email": "Email",
-      "password": "Password",
-      "signIn": "Sign In",
-      "signUpHint": "Don't have an account? Sign up",
-      "forgotPassword": "Forgot Password?",
-      "signInWithGoogle": "Sign In with Google",
-      "signInWithGitHub": "Sign In with GitHub",
-      "showPassword": "Show password",
-      "hidePassword": "Hide password",
-      "or": "Or continue with",
-      "emailRequired": "Please enter your email",
-      "passwordRequired": "Please enter your password",
-      "captchaInvalid": "Captcha verification failed",
-      "captchaError": "Captcha verification error"
+      "title": "ログイン",
+      "welcomeBack": "おかえりなさい",
+      "email": "メール",
+      "password": "パスワード",
+      "signIn": "ログイン",
+      "signUpHint": "アカウントをお持ちでない方は登録へ",
+      "forgotPassword": "パスワードをお忘れですか?",
+      "signInWithGoogle": "Googleでログイン",
+      "signInWithGitHub": "GitHubでログイン",
+      "showPassword": "パスワードを表示",
+      "hidePassword": "パスワードを非表示",
+      "or": "または次で続ける",
+      "emailRequired": "メールを入力してください",
+      "passwordRequired": "パスワードを入力してください",
+      "captchaInvalid": "キャプチャ認証に失敗しました",
+      "captchaError": "キャプチャ認証エラー"
     },
     "register": {
-      "title": "Register",
-      "createAccount": "Create an account",
-      "name": "Name",
-      "email": "Email",
-      "password": "Password",
-      "signUp": "Sign Up",
-      "signInHint": "Already have an account? Sign in",
-      "checkEmail": "Please check your email inbox",
-      "showPassword": "Show password",
-      "hidePassword": "Hide password",
-      "nameRequired": "Please enter your name",
-      "emailRequired": "Please enter your email",
-      "passwordRequired": "Please enter your password",
-      "captchaInvalid": "Captcha verification failed",
-      "captchaError": "Captcha verification error"
+      "title": "新規登録",
+      "createAccount": "アカウントを作成",
+      "name": "名前",
+      "email": "メール",
+      "password": "パスワード",
+      "signUp": "登録する",
+      "signInHint": "すでにアカウントをお持ちの方はログインへ",
+      "checkEmail": "受信トレイを確認してください",
+      "showPassword": "パスワードを表示",
+      "hidePassword": "パスワードを非表示",
+      "nameRequired": "名前を入力してください",
+      "emailRequired": "メールを入力してください",
+      "passwordRequired": "パスワードを入力してください",
+      "captchaInvalid": "キャプチャ認証に失敗しました",
+      "captchaError": "キャプチャ認証エラー"
     },
     "forgotPassword": {
-      "title": "Forgot Password",
-      "email": "Email",
-      "send": "Send reset link",
-      "backToLogin": "Back to login",
-      "checkEmail": "Please check your email inbox",
-      "emailRequired": "Please enter your email"
+      "title": "パスワードを忘れた方",
+      "email": "メール",
+      "send": "リセットリンクを送信",
+      "backToLogin": "ログインに戻る",
+      "checkEmail": "受信トレイを確認してください",
+      "emailRequired": "メールを入力してください"
     },
     "resetPassword": {
-      "title": "Reset Password",
-      "password": "Password",
-      "reset": "Reset password",
-      "backToLogin": "Back to login",
-      "showPassword": "Show password",
-      "hidePassword": "Hide password",
-      "minLength": "Password must be at least 8 characters"
+      "title": "パスワードのリセット",
+      "password": "パスワード",
+      "reset": "パスワードをリセット",
+      "backToLogin": "ログインに戻る",
+      "showPassword": "パスワードを表示",
+      "hidePassword": "パスワードを非表示",
+      "minLength": "パスワードは8文字以上で入力してください"
     },
     "error": {
-      "title": "Oops! Something went wrong!",
-      "tryAgain": "Please try again.",
-      "backToLogin": "Back to login",
-      "checkEmail": "Please check your email inbox",
+      "title": "おっと!問題が発生しました!",
+      "tryAgain": "もう一度お試しください。",
+      "backToLogin": "ログインに戻る",
+      "checkEmail": "受信トレイを確認してください",
       "codes": {
-        "verification_token_expired": "This verification link has expired. Please request a new one.",
-        "verification_failed": "Invalid verification token. Please request a new verification email.",
-        "email_not_verified": "Please sign in again to receive a new verification email."
+        "verification_token_expired": "この認証リンクは期限切れです。新しいリンクをリクエストしてください。",
+        "verification_failed": "認証トークンが無効です。確認メールを再リクエストしてください。",
+        "email_not_verified": "確認メール再送のため、もう一度ログインしてください。"
       }
     },
     "common": {
-      "termsOfService": "Terms of Service",
-      "privacyPolicy": "Privacy Policy",
-      "byClickingContinue": "By clicking continue, you agree to our ",
-      "and": " and "
+      "termsOfService": "利用規約",
+      "privacyPolicy": "プライバシーポリシー",
+      "byClickingContinue": "続行をクリックすると、当社の",
+      "and": "および"
     }
   },
   "BlogPage": {
-    "title": "Blog",
-    "description": "Latest news and updates from our team",
-    "subtitle": "Latest news and updates from our team",
-    "author": "Author",
-    "categories": "Categories",
-    "tableOfContents": "Table of Contents",
-    "readTime": "{minutes} min read",
-    "all": "All",
-    "noPostsFound": "No posts found",
-    "allPosts": "All Posts",
-    "morePosts": "More Posts"
+    "title": "ブログ",
+    "description": "チームからの最新ニュースと更新情報",
+    "subtitle": "チームからの最新ニュースと更新情報",
+    "author": "著者",
+    "categories": "カテゴリー",
+    "tableOfContents": "目次",
+    "readTime": "読了時間 {minutes}分",
+    "all": "すべて",
+    "noPostsFound": "記事が見つかりません",
+    "allPosts": "すべての記事",
+    "morePosts": "もっと見る"
   },
   "DocsPage": {
-    "toc": "Table of Contents",
-    "search": "Search docs",
-    "lastUpdate": "Last updated on",
-    "searchNoResult": "No results",
-    "previousPage": "Previous",
-    "nextPage": "Next",
-    "chooseLanguage": "Select language",
-    "title": "PhotoCraft Docs",
-    "homepage": "Homepage",
+    "toc": "目次",
+    "search": "ドキュメントを検索",
+    "lastUpdate": "最終更新",
+    "searchNoResult": "結果がありません",
+    "previousPage": "前へ",
+    "nextPage": "次へ",
+    "chooseLanguage": "言語を選択",
+    "title": "PhotoCraftドキュメント",
+    "homepage": "ホーム",
     "PageActions": {
-      "copyMarkdown": "Copy Markdown",
-      "open": "Open",
-      "openInChatGPT": "Open in ChatGPT",
-      "openInClaude": "Open in Claude",
-      "queryHint": "Read {url}, I want to ask questions about it."
+      "copyMarkdown": "Markdownをコピー",
+      "open": "開く",
+      "openInChatGPT": "ChatGPTで開く",
+      "openInClaude": "Claudeで開く",
+      "queryHint": "{url}を読んで、これについて質問したいです。"
     }
   },
   "Marketing": {
     "navbar": {
-      "editor": {
-        "title": "Editor"
-      },
-      "features": {
-        "title": "Features"
-      },
-      "pricing": {
-        "title": "Pricing"
-      },
-      "blog": {
-        "title": "Blog"
-      },
-      "docs": {
-        "title": "Docs"
-      },
+      "editor": { "title": "エディター" },
+      "features": { "title": "機能" },
+      "pricing": { "title": "料金" },
+      "blog": { "title": "ブログ" },
+      "docs": { "title": "ドキュメント" },
       "pages": {
-        "title": "Pages",
+        "title": "ページ",
         "items": {
           "about": {
-            "title": "About",
-            "description": "Learn more about our company, mission, and values"
+            "title": "私たちについて",
+            "description": "会社・ミッション・価値観について詳しく見る"
           },
           "contact": {
-            "title": "Contact",
-            "description": "Get in touch with our team for support or inquiries"
+            "title": "お問い合わせ",
+            "description": "サポートやお問い合わせはチームまで"
           },
           "waitlist": {
-            "title": "Waitlist",
-            "description": "Join our waitlist for latest news and updates"
+            "title": "ウェイティングリスト",
+            "description": "最新ニュースや更新情報のウェイティングリストに参加"
           },
           "changelog": {
-            "title": "Changelog",
-            "description": "See the latest updates to our products"
+            "title": "更新履歴",
+            "description": "製品の最新アップデートを見る"
           },
           "ai": {
-            "title": "AI Playground",
-            "description": "Try AI features with DeepSeek, and OpenAI GPT models"
+            "title": "AIプレイグラウンド",
+            "description": "DeepSeekやOpenAI GPTモデルのAI機能を試す"
           },
           "roadmap": {
-            "title": "Roadmap",
-            "description": "Explore our future plans and upcoming features"
+            "title": "ロードマップ",
+            "description": "今後の計画と新機能を紹介"
           },
           "cookiePolicy": {
-            "title": "Cookie Policy",
-            "description": "How we use the cookies on our website"
+            "title": "Cookieポリシー",
+            "description": "当サイトでのCookieの利用について"
           },
           "privacyPolicy": {
-            "title": "Privacy Policy",
-            "description": "How we protect and handle your data"
+            "title": "プライバシーポリシー",
+            "description": "データの保護と取り扱いについて"
           },
           "termsOfService": {
-            "title": "Terms of Service",
-            "description": "The legal agreements between us"
+            "title": "利用規約",
+            "description": "お客様との間の法的合意"
           }
         }
       },
-      "home": {
-        "title": "Home"
-      }
+      "home": { "title": "ホーム" }
     },
     "footer": {
-      "tagline": "Give your photos a fresh, vibrant look with AI",
+      "tagline": "AIで写真を鮮やかに蘇らせよう",
       "product": {
-        "title": "Product",
+        "title": "製品",
         "items": {
-          "editor": "Editor",
-          "features": "Features",
-          "pricing": "Pricing",
-          "faq": "FAQ"
+          "editor": "エディター",
+          "features": "機能",
+          "pricing": "料金",
+          "faq": "よくある質問"
         }
       },
       "resources": {
-        "title": "Resources",
+        "title": "リソース",
         "items": {
-          "blog": "Blog",
-          "docs": "Documentation",
-          "changelog": "Changelog",
-          "roadmap": "Roadmap"
+          "blog": "ブログ",
+          "docs": "ドキュメント",
+          "changelog": "更新履歴",
+          "roadmap": "ロードマップ"
         }
       },
       "company": {
-        "title": "Company",
+        "title": "会社",
         "items": {
-          "about": "About",
-          "contact": "Contact",
-          "waitlist": "Waitlist"
+          "about": "私たちについて",
+          "contact": "お問い合わせ",
+          "waitlist": "ウェイティングリスト"
         }
       },
       "legal": {
-        "title": "Legal",
+        "title": "法務",
         "items": {
-          "cookiePolicy": "Cookie Policy",
-          "privacyPolicy": "Privacy Policy",
-          "termsOfService": "Terms of Service"
+          "cookiePolicy": "Cookieポリシー",
+          "privacyPolicy": "プライバシーポリシー",
+          "termsOfService": "利用規約"
         }
-      }
+      },
+      "rights": "© {year} {name}. All Rights Reserved.",
+      "builtWith": "開発:"
     },
     "avatar": {
-      "dashboard": "Dashboard",
-      "billing": "Billing",
-      "settings": "Settings"
+      "dashboard": "ダッシュボード",
+      "billing": "お支払い",
+      "settings": "設定"
     }
   },
   "Dashboard": {
-    "dashboard": {
-      "title": "My Photos"
-    },
-    "editor": {
-      "title": "Editor"
-    },
-    "admin": {
-      "title": "Admin",
-      "users": {
-        "title": "Users",
-        "fakeData": "Note: Faked data for demonstration, some features are disabled",
-        "error": "Failed to get users",
-        "search": "Search users...",
-        "noResults": "No users found",
-        "columns": {
-          "columns": "Columns",
-          "name": "Name",
-          "email": "Email",
-          "role": "Role",
-          "createdAt": "Created At",
-          "customerId": "Customer ID",
-          "status": "Status",
-          "banReason": "Ban Reason",
-          "banExpires": "Ban Expires"
-        },
-        "admin": "Admin",
-        "user": "User",
-        "email": {
-          "verified": "Email Verified",
-          "unverified": "Email Unverified"
-        },
-        "emailCopied": "Email copied to clipboard",
-        "banned": "Banned",
-        "active": "Active",
-        "inactive": "Inactive",
-        "clearSearch": "Clear search",
-        "joined": "Joined at",
-        "updated": "Updated at",
-        "ban": {
-          "reason": "Ban Reason",
-          "reasonPlaceholder": "Enter the reason for banning this user",
-          "defaultReason": "Spamming",
-          "never": "Never",
-          "expires": "Ban Expires",
-          "selectDate": "Select Date",
-          "button": "Ban User",
-          "success": "User has been banned",
-          "error": "Failed to ban user"
-        },
-        "unban": {
-          "button": "Unban User",
-          "success": "User has been unbanned",
-          "error": "Failed to unban user"
-        },
-        "close": "Close"
-      }
-    },
+    "dashboard": { "title": "マイフォト" },
+    "editor": { "title": "エディター" },
     "settings": {
-      "title": "Settings",
+      "title": "設定",
       "profile": {
-        "title": "Profile",
-        "description": "Manage your account information",
+        "title": "プロフィール",
+        "description": "アカウント情報を管理",
         "avatar": {
-          "title": "Avatar",
-          "description": "Click upload button to upload a custom one",
-          "recommendation": "An avatar is optional but strongly recommended",
-          "uploading": "Uploading...",
-          "uploadAvatar": "Upload Avatar",
-          "success": "Avatar updated successfully",
-          "fail": "Failed to update avatar"
+          "title": "アバター",
+          "description": "アップロードボタンでカスタム画像をアップロード",
+          "recommendation": "アバターは任意ですが強く推奨します",
+          "uploading": "アップロード中...",
+          "uploadAvatar": "アバターをアップロード",
+          "success": "アバターを更新しました",
+          "fail": "アバターの更新に失敗しました"
         },
         "name": {
-          "title": "Name",
-          "description": "Please enter your display name",
-          "placeholder": "Enter your name",
-          "minLength": "Please use 3 characters at minimum",
-          "maxLength": "Please use 30 characters at maximum",
-          "hint": "Please use 3-30 characters for your name",
-          "success": "Name updated successfully",
-          "fail": "Failed to update name",
-          "saving": "Saving...",
-          "save": "Save"
+          "title": "名前",
+          "description": "表示名を入力してください",
+          "placeholder": "名前を入力",
+          "minLength": "3文字以上で入力してください",
+          "maxLength": "30文字以内で入力してください",
+          "hint": "名前は3〜30文字で入力してください",
+          "success": "名前を更新しました",
+          "fail": "名前の更新に失敗しました",
+          "saving": "保存中...",
+          "save": "保存"
         }
       },
       "billing": {
-        "title": "Billing",
-        "description": "Manage your subscription and billing details",
+        "title": "お支払い",
+        "description": "サブスクと請求情報を管理",
         "status": {
-          "active": "Active",
-          "trial": "Trial",
-          "free": "Free",
-          "lifetime": "Lifetime"
+          "active": "有効",
+          "trial": "トライアル",
+          "free": "無料",
+          "lifetime": "買い切り"
         },
         "interval": {
-          "month": "month",
-          "year": "year",
-          "oneTime": "one-time"
+          "month": "月",
+          "year": "年",
+          "oneTime": "一回払い"
         },
         "currentPlan": {
-          "title": "Current Plan",
-          "description": "Your current plan details",
-          "noPlan": "You have no active plan"
+          "title": "現在のプラン",
+          "description": "現在のプランの詳細",
+          "noPlan": "有効なプランがありません"
         },
         "CustomerPortalButton": {
-          "loading": "Loading...",
-          "createCustomerPortalFailed": "Failed to open Stripe customer portal"
+          "loading": "読み込み中...",
+          "createCustomerPortalFailed": "Stripeカスタマーポータルを開けませんでした"
         },
-        "price": "Price:",
-        "periodStartDate": "Period start date:",
-        "periodEndDate": "Period end date:",
-        "trialEnds": "Trial ends:",
-        "freePlanMessage": "You are currently on the free plan with limited features",
-        "lifetimeMessage": "You have lifetime access to all premium features",
-        "manageSubscription": "Manage Subscription and Billing",
-        "manageBilling": "Manage Billing",
-        "upgradePlan": "Upgrade Plan",
-        "retry": "Retry",
-        "errorMessage": "Failed to get data",
-        "paymentSuccess": "Payment success"
-      },
-      "payment": {
-        "processing": {
-          "title": "Processing Payment",
-          "description": "Please wait while we confirm your payment..."
-        },
-        "success": {
-          "title": "Payment Success",
-          "description": "Redirecting automatically..."
-        },
-        "failed": {
-          "title": "Payment Failed",
-          "description": "There was an issue processing your payment."
-        },
-        "timeout": {
-          "title": "Processing Timeout",
-          "description": "Payment processing is taking longer than expected."
-        },
-        "retry": "Retry"
+        "price": "価格:",
+        "periodStartDate": "期間開始日:",
+        "periodEndDate": "期間終了日:",
+        "trialEnds": "トライアル終了:",
+        "freePlanMessage": "現在は機能限定の無料プランです",
+        "lifetimeMessage": "全プレミアム機能への永久アクセス権をお持ちです",
+        "manageSubscription": "サブスクと請求を管理",
+        "manageBilling": "請求を管理",
+        "upgradePlan": "プランをアップグレード",
+        "retry": "再試行",
+        "errorMessage": "データの取得に失敗しました",
+        "paymentSuccess": "お支払いが完了しました"
       },
       "notification": {
-        "title": "Notification",
-        "description": "Manage your notification preferences",
+        "title": "通知",
+        "description": "通知設定を管理",
         "newsletter": {
-          "title": "Newsletter Subscription",
-          "description": "Manage your newsletter subscription preferences",
-          "label": "Subscribe to newsletter",
-          "hint": "You can change your subscription preferences at any time",
-          "emailRequired": "Email is required to subscribe to the newsletter",
-          "subscribeSuccess": "Successfully subscribed to the newsletter",
-          "subscribeFail": "Failed to subscribe to the newsletter",
-          "unsubscribeSuccess": "Successfully unsubscribed from the newsletter",
-          "unsubscribeFail": "Failed to unsubscribe from the newsletter",
-          "error": "An error occurred while updating your subscription"
+          "title": "ニュースレター購読",
+          "description": "ニュースレターの購読設定を管理",
+          "label": "ニュースレターを購読する",
+          "hint": "購読設定はいつでも変更できます",
+          "emailRequired": "購読にはメールが必要です",
+          "subscribeSuccess": "ニュースレターを購読しました",
+          "subscribeFail": "ニュースレターの購読に失敗しました",
+          "unsubscribeSuccess": "ニュースレターを解除しました",
+          "unsubscribeFail": "ニュースレターの解除に失敗しました",
+          "error": "購読の更新中にエラーが発生しました"
         }
       },
       "security": {
-        "title": "Security",
-        "description": "Manage your security settings",
+        "title": "セキュリティ",
+        "description": "セキュリティ設定を管理",
         "updatePassword": {
-          "title": "Change Password",
-          "description": "Enter your current password and a new password",
-          "currentPassword": "Current Password",
-          "currentRequired": "Current password is required",
-          "newPassword": "New Password",
-          "newMinLength": "Password must be at least 8 characters",
-          "hint": "Please use at least 8 characters for password",
-          "showPassword": "Show password",
-          "hidePassword": "Hide password",
-          "success": "Password updated successfully",
-          "fail": "Failed to update password",
-          "saving": "Saving...",
-          "save": "Save"
+          "title": "パスワードの変更",
+          "description": "現在のパスワードと新しいパスワードを入力",
+          "currentPassword": "現在のパスワード",
+          "currentRequired": "現在のパスワードが必要です",
+          "newPassword": "新しいパスワード",
+          "newMinLength": "パスワードは8文字以上で入力してください",
+          "hint": "パスワードは8文字以上で入力してください",
+          "showPassword": "パスワードを表示",
+          "hidePassword": "パスワードを非表示",
+          "success": "パスワードを更新しました",
+          "fail": "パスワードの更新に失敗しました",
+          "saving": "保存中...",
+          "save": "保存"
         },
         "resetPassword": {
-          "title": "Reset Password",
-          "description": "Reset password to enable email login",
-          "info": "Resetting your password will allow you to sign in using your email and password in addition to your social login methods. You will receive an email with instructions to reset your password",
-          "button": "Reset Password"
+          "title": "パスワードのリセット",
+          "description": "パスワードをリセットしてメールログインを有効化",
+          "info": "パスワードをリセットすると、ソーシャルログインに加えてメールとパスワードでもログインできます。リセット手順のメールが届きます",
+          "button": "パスワードをリセット"
         },
         "deleteAccount": {
-          "title": "Delete Account",
-          "description": "Permanently remove your account and all of its contents",
-          "warning": "This action is not reversible, so please continue with caution",
-          "button": "Delete Account",
-          "confirmTitle": "Delete Account",
-          "confirmDescription": "Are you sure you want to delete your account? This action cannot be undone.",
-          "confirm": "Delete",
-          "cancel": "Cancel",
-          "deleting": "Deleting...",
-          "success": "Account deleted successfully",
-          "fail": "Failed to delete account"
+          "title": "アカウントの削除",
+          "description": "アカウントとすべてのコンテンツを完全に削除",
+          "warning": "この操作は取り消せません。慎重に進めてください",
+          "button": "アカウントを削除",
+          "confirmTitle": "アカウントの削除",
+          "confirmDescription": "本当にアカウントを削除しますか?この操作は取り消せません。",
+          "confirm": "削除",
+          "cancel": "キャンセル",
+          "deleting": "削除中...",
+          "success": "アカウントを削除しました",
+          "fail": "アカウントの削除に失敗しました"
         }
       },
       "apiKeys": {
-        "title": "API Keys",
-        "description": "Manage your API keys for authentication",
-        "createButton": "Create API Key",
-        "createDialogTitle": "Create New API Key",
-        "createDialogDescription": "Give your API key a name to identify it later",
-        "keyNameLabel": "Key Name",
-        "keyNamePlaceholder": "Please enter a name for your API key",
-        "cancel": "Cancel",
-        "create": "Create",
-        "creating": "Creating...",
-        "noResults": "No API keys found",
-        "createSuccess": "API key created successfully",
-        "createError": "Failed to create API key",
-        "deleteSuccess": "API key deleted successfully",
-        "deleteError": "Failed to delete API key",
-        "never": "Never",
-        "delete": "Delete",
-        "done": "Done",
-        "newKeyDialogTitle": "Your New API Key",
-        "newKeyDialogDescription": "Please copy and save this key now. You won't be able to see it again!",
+        "title": "APIキー",
+        "description": "認証用APIキーを管理",
+        "createButton": "APIキーを作成",
+        "createDialogTitle": "新しいAPIキー",
+        "createDialogDescription": "後で識別できるよう名前を付けてください",
+        "keyNameLabel": "キー名",
+        "keyNamePlaceholder": "APIキーの名前を入力してください",
+        "cancel": "キャンセル",
+        "create": "作成",
+        "creating": "作成中...",
+        "noResults": "APIキーが見つかりません",
+        "createSuccess": "APIキーを作成しました",
+        "createError": "APIキーの作成に失敗しました",
+        "deleteSuccess": "APIキーを削除しました",
+        "deleteError": "APIキーの削除に失敗しました",
+        "never": "なし",
+        "delete": "削除",
+        "done": "完了",
+        "newKeyDialogTitle": "新しいAPIキー",
+        "newKeyDialogDescription": "今コピーして保存してください。二度と表示できません!",
         "columns": {
-          "name": "Name",
-          "key": "Key",
-          "createdAt": "Created At",
-          "expiresAt": "Expires At",
-          "actions": "Actions"
+          "name": "名前",
+          "key": "キー",
+          "createdAt": "作成日",
+          "expiresAt": "有効期限",
+          "actions": "操作"
         }
       }
     },
     "upgrade": {
-      "title": "Upgrade",
-      "description": "Upgrade to Pro to access all features",
-      "button": "Upgrade"
+      "title": "アップグレード",
+      "description": "Proにアップグレードして全機能を利用",
+      "button": "アップグレード"
+    },
+    "photos": {
+      "subtitle": "AI作品をすべて一か所に",
+      "emptyTitle": "まだ写真がありません",
+      "emptyDesc": "ツールを選んで写真をアップロードすると、作品がここに表示されます。",
+      "cta": "最初の写真を作成",
+      "browseTools": "ツールを見る",
+      "download": "ダウンロード",
+      "openEditor": "エディターで開く",
+      "status": {
+        "pending": "待機中",
+        "processing": "処理中",
+        "done": "完了",
+        "failed": "失敗"
+      },
+      "creditsUsed": "{count}クレジット",
+      "createdAt": "{date}"
     }
   },
   "Mail": {
     "common": {
-      "team": "{name} Team",
+      "team": "{name}チーム",
       "copyright": "©️ {year} All Rights Reserved."
     },
     "verifyEmail": {
-      "title": "Hi, {name}.",
-      "body": "Please click the link below to verify your email address.",
-      "confirmEmail": "Confirm email",
-      "subject": "Verify your email"
+      "title": "こんにちは、{name}様。",
+      "body": "以下のリンクをクリックしてメールアドレスを確認してください。",
+      "confirmEmail": "メールを確認",
+      "subject": "メールを確認してください"
     },
     "forgotPassword": {
-      "title": "Hi, {name}.",
-      "body": "Please click the link below to reset your password.",
-      "resetPassword": "Reset password",
-      "subject": "Reset your password"
+      "title": "こんにちは、{name}様。",
+      "body": "以下のリンクをクリックしてパスワードをリセットしてください。",
+      "resetPassword": "パスワードをリセット",
+      "subject": "パスワードのリセット"
     },
     "subscribeNewsletter": {
-      "body": "Thank you for subscribing to the newsletter. We will keep you updated with the latest news and updates.",
-      "subject": "Thanks for subscribing"
+      "body": "ニュースレターのご購読ありがとうございます。最新ニュースや更新情報をお届けします。",
+      "subject": "ご購読ありがとうございます"
     },
     "contactMessage": {
-      "name": "Name: {name}",
-      "email": "Email: {email}",
-      "message": "Message: {message}",
-      "subject": "Contact Message from Website"
+      "name": "名前: {name}",
+      "email": "メール: {email}",
+      "message": "メッセージ: {message}",
+      "subject": "サイトからのお問い合わせ"
     }
   },
   "HomePage": {
     "title": "PhotoCraft",
-    "description": "Make AI SaaS in days, simply and effortlessly",
+    "description": "数日でAI SaaSを作ろう、シンプルに手軽に",
     "hero": {
-      "title": "Make AI SaaS in days, simply and effortlessly",
-      "description": "The is a demo website built with PhotoCraft, a Next.js SaaS boilerplate to help you build your AI SaaS faster and better.",
-      "introduction": "Introducing PhotoCraft Boilerplate",
-      "primary": "Get Started",
-      "secondary": "See Demo"
+      "title": "数日でAI SaaSを作ろう、シンプルに手軽に",
+      "description": "AI SaaSをより速く・より良く作るためのNext.js SaaSボイラープレートPhotoCraftで構築されたデモサイトです。",
+      "introduction": "PhotoCraftボイラープレートの紹介",
+      "primary": "始める",
+      "secondary": "デモを見る"
     },
-    "logocloud": {
-      "title": "Your favorite companies are our partners"
-    },
+    "logocloud": { "title": "お気に入りの企業が私たちのパートナーです" },
     "integration": {
-      "title": "Integrations",
-      "subtitle": "Integrate with your favorite tools",
-      "description": "Connect seamlessly with popular platforms and services to enhance your workflow.",
-      "learnMore": "Learn More",
+      "title": "連携",
+      "subtitle": "お気に入りのツールと連携",
+      "description": "人気のプラットフォームやサービスとシームレスに連携できます。",
+      "learnMore": "詳しく見る",
       "items": {
-        "item-1": {
-          "title": "Google Gemini",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-2": {
-          "title": "Replit",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-3": {
-          "title": "MagicUI",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-4": {
-          "title": "VSCodium",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-5": {
-          "title": "MediaWiki",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-6": {
-          "title": "Google PaLM",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        }
+        "item-1": { "title": "Google Gemini", "description": "GoogleのAIモデルをワークフローにシームレスに統合。" },
+        "item-2": { "title": "Replit", "description": "Replitをワークフローにシームレスに統合。" },
+        "item-3": { "title": "MagicUI", "description": "MagicUIをワークフローにシームレスに統合。" },
+        "item-4": { "title": "VSCodium", "description": "VSCodiumをワークフローにシームレスに統合。" },
+        "item-5": { "title": "MediaWiki", "description": "MediaWikiをワークフローにシームレスに統合。" },
+        "item-6": { "title": "Google PaLM", "description": "Google PaLMをワークフローにシームレスに統合。" }
       }
     },
     "integration2": {
-      "title": "Integrate with your favorite tools",
-      "description": "Connect seamlessly with popular platforms and services to enhance your workflow.",
-      "primaryButton": "Get Started",
-      "secondaryButton": "See Demo"
+      "title": "お気に入りのツールと連携",
+      "description": "人気のプラットフォームやサービスとシームレスに連携できます。",
+      "primaryButton": "始める",
+      "secondaryButton": "デモを見る"
     },
     "features": {
-      "title": "Features",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
+      "title": "機能",
+      "subtitle": "製品の機能",
+      "description": "製品の説明をここに書いてください",
       "items": {
-        "item-1": {
-          "title": "Product Feature One",
-          "description": "Please write the detailed description of feature one here, make it as detailed as possible, make it more attractive to users"
-        },
-        "item-2": {
-          "title": "Product Feature Two",
-          "description": "Please write the detailed description of feature two here, make it as detailed as possible, make it more attractive to users"
-        },
-        "item-3": {
-          "title": "Product Feature Three",
-          "description": "Please write the detailed description of feature three here, make it as detailed as possible, make it more attractive to users"
-        },
-        "item-4": {
-          "title": "Product Feature Four",
-          "description": "Please write the detailed description of feature four here, make it as detailed as possible, make it more attractive to users"
-        }
+        "item-1": { "title": "製品機能1", "description": "機能1の詳細な説明をここに書いてください。できるだけ詳しく、ユーザーにとって魅力的に" },
+        "item-2": { "title": "製品機能2", "description": "機能2の詳細な説明をここに書いてください。できるだけ詳しく、ユーザーにとって魅力的に" },
+        "item-3": { "title": "製品機能3", "description": "機能3の詳細な説明をここに書いてください。できるだけ詳しく、ユーザーにとって魅力的に" },
+        "item-4": { "title": "製品機能4", "description": "機能4の詳細な説明をここに書いてください。できるだけ詳しく、ユーザーにとって魅力的に" }
       }
     },
     "features2": {
-      "title": "Features2",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
-      "feature-1": "Product Feature One",
-      "feature-2": "Product Feature Two",
-      "feature-3": "Product Feature Three",
-      "feature-4": "Product Feature Four"
+      "title": "機能2",
+      "subtitle": "製品の機能",
+      "description": "製品の説明をここに書いてください",
+      "feature-1": "製品機能1",
+      "feature-2": "製品機能2",
+      "feature-3": "製品機能3",
+      "feature-4": "製品機能4"
     },
     "features3": {
-      "title": "Features3",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
+      "title": "機能3",
+      "subtitle": "製品の機能",
+      "description": "製品の説明をここに書いてください",
       "items": {
-        "item-1": {
-          "title": "Product Feature One",
-          "description": "Please write the detailed description of feature one here"
-        },
-        "item-2": {
-          "title": "Product Feature Two",
-          "description": "Please write the detailed description of feature two here"
-        },
-        "item-3": {
-          "title": "Product Feature Three",
-          "description": "Please write the detailed description of feature three here"
-        },
-        "item-4": {
-          "title": "Product Feature Four",
-          "description": "Please write the detailed description of feature four here"
-        },
-        "item-5": {
-          "title": "Product Feature Five",
-          "description": "Please write the detailed description of feature five here"
-        },
-        "item-6": {
-          "title": "Product Feature Six",
-          "description": "Please write the detailed description of feature six here"
-        }
+        "item-1": { "title": "製品機能1", "description": "機能1の詳細な説明をここに書いてください" },
+        "item-2": { "title": "製品機能2", "description": "機能2の詳細な説明をここに書いてください" },
+        "item-3": { "title": "製品機能3", "description": "機能3の詳細な説明をここに書いてください" },
+        "item-4": { "title": "製品機能4", "description": "機能4の詳細な説明をここに書いてください" },
+        "item-5": { "title": "製品機能5", "description": "機能5の詳細な説明をここに書いてください" },
+        "item-6": { "title": "製品機能6", "description": "機能6の詳細な説明をここに書いてください" }
       }
     },
     "pricing": {
-      "title": "Pricing",
-      "subtitle": "Pricing",
-      "description": "Choose the plan that works best for you"
+      "title": "料金",
+      "subtitle": "料金",
+      "description": "あなたに最適なプランを選ぼう"
     },
     "faqs": {
-      "title": "FAQ",
-      "subtitle": "Frequently Asked Questions",
+      "title": "よくある質問",
+      "subtitle": "よくある質問",
       "items": {
-        "item-1": {
-          "question": "Do you offer a free trial?",
-          "answer": "Yes, we offer a 7-day free trial."
-        },
-        "item-2": {
-          "question": "How do I cancel my subscription?",
-          "answer": "You can cancel your subscription by visiting the billing page."
-        },
-        "item-3": {
-          "question": "Can I change my plan?",
-          "answer": "Yes, you can change your plan at any time by visiting the billing page."
-        },
-        "item-4": {
-          "question": "What is the refund policy?",
-          "answer": "We offer a 30-day money-back guarantee if you are not happy with our product."
-        },
-        "item-5": {
-          "question": "Can't find what you're looking for?",
-          "answer": "Please contact our customer support team at support@photoscraft.top"
-        }
+        "item-1": { "question": "無料トライアルはありますか?", "answer": "はい、7日間の無料トライアルがあります。" },
+        "item-2": { "question": "サブスクを解約するには?", "answer": "請求ページから解約できます。" },
+        "item-3": { "question": "プランを変更できますか?", "answer": "はい、請求ページからいつでも変更できます。" },
+        "item-4": { "question": "返金ポリシーは?", "answer": "製品にご満足いただけない場合、30日間の返金保証があります。" },
+        "item-5": { "question": "探しているものが見つかりませんか?", "answer": "カスタマーサポートまでご連絡ください:support@photoscraft.top" }
       }
     },
     "testimonials": {
-      "title": "Testimonials",
-      "subtitle": "What our customers are saying",
+      "title": "お客様の声",
+      "subtitle": "お客様からの評価",
       "items": {
-        "item-1": {
-          "name": "Jonathan Yombo",
-          "role": "Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/1.jpg",
-          "quote": "PhotoCraft is really extraordinary and very practical, no need to break your head. A real gold mine."
-        },
-        "item-2": {
-          "name": "Yves Kalume",
-          "role": "GDE - Android",
-          "image": "https://randomuser.me/api/portraits/men/6.jpg",
-          "quote": "With no experience in webdesign I just redesigned my entire website in a few minutes with tailwindcss thanks to PhotoCraft."
-        },
-        "item-3": {
-          "name": "Yucel Faruksahan",
-          "role": "Tailkits Creator",
-          "image": "https://randomuser.me/api/portraits/men/7.jpg",
-          "quote": "Great work on PhotoCraft template. This is one of the best personal website that I have seen so far :)"
-        },
-        "item-4": {
-          "name": "Anonymous author",
-          "role": "Product Manager",
-          "image": "https://randomuser.me/api/portraits/men/8.jpg",
-          "quote": "I downloaded the one of PhotoCraft template which is very clear to understand at the start and you could modify the codes/blocks to fit perfectly on your purpose of the page."
-        },
-        "item-5": {
-          "name": "Shekinah Tshiokufila",
-          "role": "Senior Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/4.jpg",
-          "quote": "PhotoCraft is redefining the standard of web design, with these blocks it provides an easy and efficient way for those who love beauty but may lack the time to implement it."
-        },
-        "item-6": {
-          "name": "Oketa Fred",
-          "role": "Fullstack Developer",
-          "image": "https://randomuser.me/api/portraits/men/2.jpg",
-          "quote": "I absolutely love PhotoCraft! The component blocks are beautifully designed and easy to use, which makes creating a great-looking website a breeze."
-        },
-        "item-7": {
-          "name": "Zeki",
-          "role": "Founder of ChatExtend",
-          "image": "https://randomuser.me/api/portraits/men/5.jpg",
-          "quote": "PhotoCraft is the perfect fusion of simplicity and versatility, enabling us to create UIs that are as stunning as they are user-friendly."
-        },
-        "item-8": {
-          "name": "Joseph Kitheka",
-          "role": "Fullstack Developer",
-          "image": "https://randomuser.me/api/portraits/men/9.jpg",
-          "quote": "PhotoCraft has transformed the way I develop web applications. Their extensive collection of UI components, blocks, and templates has significantly accelerated my workflow."
-        },
-        "item-9": {
-          "name": "Khatab Wedaa",
-          "role": "MerakiUI Creator",
-          "image": "https://randomuser.me/api/portraits/men/10.jpg",
-          "quote": "PhotoCraft is an elegant, clean, and responsive tailwind css components it's very helpful to start fast with your project."
-        },
-        "item-10": {
-          "name": "Rodrigo Aguilar",
-          "role": "TailwindAwesome Creator",
-          "image": "https://randomuser.me/api/portraits/men/11.jpg",
-          "quote": "I love PhotoCraft ❤️. The component blocks are well-structured, simple to use, and beautifully designed. It makes it really easy to have a good-looking website in no time."
-        },
-        "item-11": {
-          "name": "Eric Ampire",
-          "role": "@GoogleDevExpert for Android",
-          "image": "https://randomuser.me/api/portraits/men/12.jpg",
-          "quote": "PhotoCraft templates are the perfect solution for anyone who wants to create a beautiful and functional website without any web design experience."
-        },
-        "item-12": {
-          "name": "Roland Tubonge",
-          "role": "Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/13.jpg",
-          "quote": "PhotoCraft is so well designed that even with a very poor knowledge of web design you can do miracles. Let yourself be seduced!"
-        }
+        "item-1": { "name": "Jonathan Yombo", "role": "Software Engineer", "image": "https://randomuser.me/api/portraits/men/1.jpg", "quote": "PhotoCraftは本当に素晴らしく実用的。頭を悩ませる必要なし。まさに金鉱です。" },
+        "item-2": { "name": "Yves Kalume", "role": "GDE - Android", "image": "https://randomuser.me/api/portraits/men/6.jpg", "quote": "Webデザインの経験ゼロで、PhotoCraftのおかげでサイト全体を数分でリデザインしました。" },
+        "item-3": { "name": "Yucel Faruksahan", "role": "Tailkits Creator", "image": "https://randomuser.me/api/portraits/men/7.jpg", "quote": "PhotoCraftテンプレートの素晴らしい仕事ぶり。これまで見た中で最高の個人サイトの一つです。" },
+        "item-4": { "name": "Anonymous author", "role": "Product Manager", "image": "https://randomuser.me/api/portraits/men/8.jpg", "quote": "PhotoCraftテンプレートは最初から分かりやすく、コードやブロックを目的に合わせて調整できます。" },
+        "item-5": { "name": "Shekinah Tshiokufila", "role": "Senior Software Engineer", "image": "https://randomuser.me/api/portraits/men/4.jpg", "quote": "PhotoCraftはWebデザインの基準を再定義しています。美しさを愛するが時間のない人に簡単で効率的な方法を提供します。" },
+        "item-6": { "name": "Oketa Fred", "role": "Fullstack Developer", "image": "https://randomuser.me/api/portraits/men/2.jpg", "quote": "PhotoCraftが大好きです!コンポーネントブロックが美しく使いやすく、見栄えの良いサイト作りが楽々です。" },
+        "item-7": { "name": "Zeki", "role": "Founder of ChatExtend", "image": "https://randomuser.me/api/portraits/men/5.jpg", "quote": "PhotoCraftはシンプルさと汎用性の完璧な融合で、美しく使いやすいUIを作れます。" },
+        "item-8": { "name": "Joseph Kitheka", "role": "Fullstack Developer", "image": "https://randomuser.me/api/portraits/men/9.jpg", "quote": "PhotoCraftはWebアプリ開発の方法を変えました。豊富なUIコンポーネントとテンプレートで作業が大幅に加速しました。" },
+        "item-9": { "name": "Khatab Wedaa", "role": "MerakiUI Creator", "image": "https://randomuser.me/api/portraits/men/10.jpg", "quote": "PhotoCraftはエレガントでクリーン、レスポンシブなTailwind CSSコンポーネントで、素早いスタートに役立ちます。" },
+        "item-10": { "name": "Rodrigo Aguilar", "role": "TailwindAwesome Creator", "image": "https://randomuser.me/api/portraits/men/11.jpg", "quote": "PhotoCraftが大好きです❤️。コンポーネントブロックは構造が良く、シンプルで美しい。短時間で良いサイトが作れます。" },
+        "item-11": { "name": "Eric Ampire", "role": "@GoogleDevExpert for Android", "image": "https://randomuser.me/api/portraits/men/12.jpg", "quote": "PhotoCraftテンプレートは、Webデザイン経験なしで美しく機能的なサイトを作りたい人に最適です。" },
+        "item-12": { "name": "Roland Tubonge", "role": "Software Engineer", "image": "https://randomuser.me/api/portraits/men/13.jpg", "quote": "PhotoCraftのデザインが素晴らしく、Webデザインの知識が乏しくても驚きの結果が出せます。" }
       }
     },
     "stats": {
-      "title": "Stats",
-      "subtitle": "PhotoCraft in numbers",
-      "description": "PhotoCraft lets you make AI SaaS in days, simply and effortlessly",
+      "title": "実績",
+      "subtitle": "数字で見るPhotoCraft",
+      "description": "PhotoCraftで数日でAI SaaSを作ろう、シンプルに手軽に",
       "items": {
-        "item-1": {
-          "title": "Stars on GitHub"
-        },
-        "item-2": {
-          "title": "Active Users"
-        },
-        "item-3": {
-          "title": "Powered Apps"
-        }
+        "item-1": { "title": "GitHubスター" },
+        "item-2": { "title": "アクティブユーザー" },
+        "item-3": { "title": "構築アプリ数" }
       }
     },
     "calltoaction": {
-      "title": "Start Building",
-      "description": "PhotoCraft lets you make AI SaaS in days, simply and effortlessly",
-      "primaryButton": "Get Started",
-      "secondaryButton": "See Demo"
+      "title": "作り始めよう",
+      "description": "PhotoCraftで数日でAI SaaSを作ろう、シンプルに手軽に",
+      "primaryButton": "始める",
+      "secondaryButton": "デモを見る"
+    }
+  },
+  "PhotoTools": {
+    "categories": {
+      "enhance": "高画質化",
+      "background": "背景",
+      "creative": "クリエイティブ",
+      "fun": "お楽しみ",
+      "all": "すべて"
+    },
+    "tools": {
+      "enhance": { "title": "AI写真高画質化", "tagline": "ぼやけ・ノイズ除去、ワンタップで4Kの鮮明さ" },
+      "restore": { "title": "AI古写真修復", "tagline": "傷・折れ・破損を修復" },
+      "colorize": { "title": "AI写真カラー化", "tagline": "白黒→鮮やかなカラーに" },
+      "eraser": { "title": "AIマジック消去", "tagline": "物・人物・文字を除去" },
+      "watermark": { "title": "透かし除去", "tagline": "ロゴや重ね文字をきれいに" },
+      "bg": { "title": "AI背景除去", "tagline": "精密な切り抜き、髪の毛レベルのエッジ" },
+      "bg_change": { "title": "AI背景変更", "tagline": "ワンクリックでスタジオ背景に" },
+      "sky": { "title": "AI空置換", "tagline": "夕焼け・星空・ドラマチックな空" },
+      "room": { "title": "AIルームデザイン", "tagline": "室内をフォトリアルにリスタイル" },
+      "avatar": { "title": "AIアバター生成", "tagline": "スタジオ級のプロアバター" },
+      "scene": { "title": "AIシーン生成", "tagline": "あなたが主役の映画的シーン" },
+      "anime": { "title": "AIアニメ生成", "tagline": "写真→アニメイラスト" },
+      "cartoon": { "title": "AIカートゥーン化", "tagline": "楽しい似顔絵ポートレート" },
+      "hairstyle": { "title": "AI髪型チェンジ", "tagline": "新しい髪型を即お試し" },
+      "expression": { "title": "AI表情チェンジ", "tagline": "自然な笑顔、そのままのあなた" },
+      "transform": { "title": "AI変身", "tagline": "ファッション撮影級のリスタイル" }
+    },
+    "hero": {
+      "badge": "16のAIツール·登録不要でお試し·数秒で結果",
+      "titleA": "あらゆる写真加工を、",
+      "titleB": "ワンクリックで",
+      "subtitle": "高画質化、修復、カラー化、消去、背景切り抜き、アニメ化まで。下からツールを選んでアップロードするだけ。",
+      "upload": "写真をアップロード",
+      "browse": "ツールを見る",
+      "trust": "★ 4.9 · 200万枚以上の写真を高画質化",
+      "freePreview": "無料プレビュー·支払いはダウンロード時のみ",
+      "steps": "3ステップ:ツールを選ぶ→アップロード→ダウンロード。学習不要です。",
+      "hot": "人気",
+      "credits": { "one": "クレジット", "other": "クレジット" },
+      "allTools": "すべてのツール",
+      "uploadHint": "ドラッグ/クリックでアップロード(JPG/PNG/WebP ≤20MB)",
+      "download": "結果をダウンロード",
+      "before": "前",
+      "after": "後",
+      "run": "実行"
+    },
+    "editor": {
+      "balance": "クレジット",
+      "insufficient": "クレジットが不足しています",
+      "topup": "チャージ",
+      "run": "実行"
     }
   }
 }

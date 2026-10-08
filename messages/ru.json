@@ -1,915 +1,769 @@
 {
   "Metadata": {
     "name": "PhotoCraft",
-    "title": "PhotoCraft - AI Photo Enhancer, Restore Old Photos, Remove Background & Watermark",
-    "description": "PhotoCraft is an AI photo editor: enhance blurry photos, restore and colorize old photos, remove watermarks and backgrounds in seconds."
+    "title": "PhotoCraft — ИИ-улучшение фото, реставрация старых фото, удаление фона и водяных знаков",
+    "description": "PhotoCraft — ИИ-фоторедактор: улучшайте размытые фото, реставрируйте и раскрашивайте старые снимки, удаляйте водяные знаки и фон за секунды."
   },
   "Common": {
-    "login": "Log in",
-    "logout": "Log out",
-    "signUp": "Sign up",
-    "language": "Switch language",
+    "login": "Войти",
+    "logout": "Выйти",
+    "signUp": "Регистрация",
+    "language": "Сменить язык",
     "mode": {
-      "label": "Toggle mode",
-      "light": "Light",
-      "dark": "Dark",
-      "system": "System"
+      "label": "Переключить тему",
+      "light": "Светлая",
+      "dark": "Тёмная",
+      "system": "Системная"
     },
-    "copy": "Copy",
-    "saving": "Saving...",
-    "save": "Save",
-    "loading": "Loading...",
-    "cancel": "Cancel",
-    "logoutFailed": "Failed to log out",
+    "copy": "Копировать",
+    "saving": "Сохранение...",
+    "save": "Сохранить",
+    "loading": "Загрузка...",
+    "cancel": "Отмена",
+    "logoutFailed": "Не удалось выйти",
     "table": {
-      "totalRecords": "Total {count} records",
-      "noResults": "No results",
-      "loading": "Loading...",
-      "columns": "Columns",
-      "rowsPerPage": "Rows per page",
-      "page": "Page",
-      "firstPage": "First Page",
-      "lastPage": "Last Page",
-      "nextPage": "Next Page",
-      "previousPage": "Previous Page",
-      "ascending": "Asc",
-      "descending": "Desc",
-      "resetSorting": "Reset",
-      "hideColumn": "Hide",
-      "viewOptions": "View",
-      "toggleColumns": "Toggle columns",
-      "searchColumns": "Search columns...",
-      "noColumns": "No columns found.",
-      "clearFilters": "Clear filters"
+      "totalRecords": "Всего записей: {count}",
+      "noResults": "Ничего не найдено",
+      "loading": "Загрузка...",
+      "columns": "Столбцы",
+      "rowsPerPage": "Строк на странице",
+      "page": "Страница",
+      "firstPage": "Первая страница",
+      "lastPage": "Последняя страница",
+      "nextPage": "Следующая страница",
+      "previousPage": "Предыдущая страница",
+      "ascending": "По возр.",
+      "descending": "По убыв.",
+      "resetSorting": "Сбросить",
+      "hideColumn": "Скрыть",
+      "viewOptions": "Вид",
+      "toggleColumns": "Переключить столбцы",
+      "searchColumns": "Поиск столбцов...",
+      "noColumns": "Столбцы не найдены.",
+      "clearFilters": "Очистить фильтры"
     }
   },
   "PricingPage": {
-    "title": "Pricing",
-    "description": "Choose the plan that works best for you",
-    "subtitle": "Choose the plan that works best for you",
-    "monthly": "Monthly",
-    "yearly": "Yearly",
+    "title": "Тарифы",
+    "description": "Выберите подходящий вам план",
+    "subtitle": "Выберите подходящий вам план",
+    "monthly": "Ежемесячно",
+    "yearly": "Ежегодно",
     "PricingCard": {
       "freePrice": "$0",
-      "perMonth": "/month",
-      "perYear": "/year",
-      "popular": "Popular",
-      "currentPlan": "Current Plan",
-      "yourCurrentPlan": "Your Current Plan",
-      "getStartedForFree": "Get Started For Free",
-      "getLifetimeAccess": "Get Lifetime Access",
-      "getStarted": "Get Started",
-      "notAvailable": "Not Available",
-      "daysTrial": "{days}-day free trial"
+      "perMonth": "/мес",
+      "perYear": "/год",
+      "popular": "Популярный",
+      "currentPlan": "Текущий план",
+      "yourCurrentPlan": "Ваш текущий план",
+      "getStartedForFree": "Начать бесплатно",
+      "getLifetimeAccess": "Получить lifetime-доступ",
+      "getStarted": "Начать",
+      "notAvailable": "Недоступно",
+      "daysTrial": "{days}-дневный бесплатный пробный период"
     },
     "CheckoutButton": {
-      "loading": "Loading...",
-      "checkoutFailed": "Failed to open checkout page"
+      "loading": "Загрузка...",
+      "checkoutFailed": "Не удалось открыть страницу оплаты"
     }
   },
   "PricePlans": {
     "free": {
-      "name": "Free",
-      "description": "Basic features for personal use",
+      "name": "Бесплатный",
+      "description": "Базовые функции для личного использования",
       "features": {
-        "feature-1": "Up to 3 projects",
-        "feature-2": "1 GB storage",
-        "feature-3": "Basic analytics",
-        "feature-4": "Community support"
+        "feature-1": "До 3 проектов",
+        "feature-2": "1 ГБ хранилища",
+        "feature-3": "Базовая аналитика",
+        "feature-4": "Поддержка сообщества"
       },
       "limits": {
-        "limit-1": "Custom domains",
-        "limit-2": "Custom branding",
-        "limit-3": "Lifetime updates"
+        "limit-1": "Свои домены",
+        "limit-2": "Свой брендинг",
+        "limit-3": "Пожизненные обновления"
       }
     },
     "pro": {
       "name": "Pro",
-      "description": "Advanced features for professionals",
+      "description": "Продвинутые функции для профессионалов",
       "features": {
-        "feature-1": "Unlimited projects",
-        "feature-2": "10 GB storage",
-        "feature-3": "Advanced analytics",
-        "feature-4": "Priority support",
-        "feature-5": "Custom domains"
+        "feature-1": "Безлимитные проекты",
+        "feature-2": "10 ГБ хранилища",
+        "feature-3": "Продвинутая аналитика",
+        "feature-4": "Приоритетная поддержка",
+        "feature-5": "Свои домены"
       },
       "limits": {
-        "limit-1": "Custom branding",
-        "limit-2": "Lifetime updates"
+        "limit-1": "Свой брендинг",
+        "limit-2": "Пожизненные обновления"
       }
     },
     "lifetime": {
-      "name": "Lifetime",
-      "description": "Premium features with one-time payment",
+      "name": "Навсегда",
+      "description": "Премиум-функции за разовый платёж",
       "features": {
-        "feature-1": "All Pro features",
-        "feature-2": "100 GB storage",
-        "feature-3": "Dedicated support",
-        "feature-4": "Enterprise-grade security",
-        "feature-5": "Advanced integrations",
-        "feature-6": "Custom branding",
-        "feature-7": "Lifetime updates"
+        "feature-1": "Все функции Pro",
+        "feature-2": "100 ГБ хранилища",
+        "feature-3": "Персональная поддержка",
+        "feature-4": "Безопасность корпоративного уровня",
+        "feature-5": "Продвинутые интеграции",
+        "feature-6": "Свой брендинг",
+        "feature-7": "Пожизненные обновления"
       }
     }
   },
   "NotFoundPage": {
     "title": "404",
-    "message": "Sorry, the page you are looking for does not exist.",
-    "backToHome": "Back to home"
+    "message": "Извините, такой страницы не существует.",
+    "backToHome": "На главную"
   },
   "ErrorPage": {
-    "title": "Oops! Something went wrong!",
-    "tryAgain": "Try again",
-    "backToHome": "Back to home"
+    "title": "Упс! Что-то пошло не так!",
+    "tryAgain": "Попробовать снова",
+    "backToHome": "На главную"
   },
   "AboutPage": {
-    "title": "About",
-    "description": "PhotoCraft is an AI photo editor with 16 one-click tools: enhance, restore, colorize, erase, background removal and more.",
-    "heading": "Give every photo a fresh, vibrant look",
-    "mission": "PhotoCraft is an AI-driven photo editor for fast, precise restoration and enhancement. Restore old photos, sharpen blurry images, remove backgrounds and watermarks — no editing skills needed, results in seconds.",
+    "title": "О нас",
+    "description": "PhotoCraft — ИИ-фоторедактор с 16 инструментами в один клик: улучшение, реставрация, раскрашивание, стирание, удаление фона и другое.",
+    "heading": "Верните каждой фотографии яркость и свежесть",
+    "mission": "PhotoCraft — ИИ-фоторедактор для быстрой и точной реставрации и улучшения. Восстанавливайте старые фото, повышайте чёткость размытых снимков, удаляйте фон и водяные знаки — без навыков редактирования, результат за секунды.",
     "stats": {
-      "tools": "AI tools",
-      "speed": "avg. processing",
-      "rating": "user rating"
+      "tools": "ИИ-инструментов",
+      "speed": "средняя обработка",
+      "rating": "оценка пользователей"
     },
-    "toolsTitle": "What PhotoCraft can do",
-    "storyTitle": "Our story",
-    "story1": "PhotoCraft started from a simple frustration: precious old photos fading away, and pro repair costing time and money. We packed professional restoration, enhancement and creative effects into one-click AI tools anyone can use.",
-    "story2": "Today PhotoCraft offers 16 AI tools — from photo enhancement and old-photo colorization to background removal, magic erasing, sky replacement and anime generation. Upload a photo, pick a tool, download the result. That is the whole learning curve."
+    "toolsTitle": "Что умеет PhotoCraft",
+    "storyTitle": "Наша история",
+    "story1": "PhotoCraft начался с простой боли: драгоценные старые фотографии выцветают, а профессиональная реставрация отнимает время и деньги. Мы упаковали профессиональную реставрацию, улучшение и креативные эффекты в ИИ-инструменты в один клик, которыми может пользоваться каждый.",
+    "story2": "Сегодня PhotoCraft предлагает 16 ИИ-инструментов — от улучшения фото и раскрашивания старых снимков до удаления фона, волшебного стирания, замены неба и генерации аниме. Загрузите фото, выберите инструмент, скачайте результат. Вот и всё обучение."
   },
   "ChangelogPage": {
-    "title": "Changelog",
-    "description": "Stay up to date with the latest changes in our product",
-    "subtitle": "Stay up to date with the latest changes in our product"
+    "title": "История изменений",
+    "description": "Следите за последними изменениями нашего продукта",
+    "subtitle": "Следите за последними изменениями нашего продукта"
   },
   "AiPage": {
-    "title": "AI Playground",
-    "description": "Built with Vercel AI SDK. Switch between DeepSeek, and OpenAI GPT models."
+    "title": "ИИ-песочница",
+    "description": "Создано на Vercel AI SDK. Переключайтесь между моделями DeepSeek и OpenAI GPT."
   },
   "RoadmapPage": {
-    "title": "Roadmap",
-    "description": "Explore our future plans and upcoming features",
-    "subtitle": "Explore our future plans and upcoming features"
+    "title": "Планы развития",
+    "description": "Наши будущие планы и предстоящие функции",
+    "subtitle": "Наши будущие планы и предстоящие функции"
   },
   "ContactPage": {
-    "title": "Contact",
-    "description": "Questions, feedback or business inquiries — send us a message and we will reply within 1-2 business days.",
-    "subtitle": "Questions, feedback or business inquiries? We reply within 1-2 business days.",
-    "directHint": "Prefer email? Reach us directly at",
+    "title": "Контакты",
+    "description": "Вопросы, отзывы или деловые предложения — напишите нам, ответим в течение 1–2 рабочих дней.",
+    "subtitle": "Вопросы, отзывы или деловые предложения? Ответим в течение 1–2 рабочих дней.",
+    "directHint": "Удобнее по почте? Напишите нам напрямую:",
     "form": {
-      "title": "Contact Us",
-      "description": "If you have any questions or feedback, please reach out to our team",
-      "name": "Name",
-      "email": "Email",
-      "message": "Message",
-      "submit": "Submit",
-      "submitting": "Submitting...",
-      "success": "Message sent successfully",
-      "fail": "Failed to send message",
-      "nameMinLength": "Name must be at least 3 characters",
-      "nameMaxLength": "Name must not exceed 30 characters",
-      "emailValidation": "Please enter a valid email address",
-      "messageMinLength": "Message must be at least 10 characters",
-      "messageMaxLength": "Message must not exceed 500 characters"
+      "title": "Свяжитесь с нами",
+      "description": "Если у вас есть вопросы или отзывы, напишите нашей команде",
+      "name": "Имя",
+      "email": "Почта",
+      "message": "Сообщение",
+      "submit": "Отправить",
+      "submitting": "Отправка...",
+      "success": "Сообщение успешно отправлено",
+      "fail": "Не удалось отправить сообщение",
+      "nameMinLength": "Имя должно содержать минимум 3 символа",
+      "nameMaxLength": "Имя должно содержать не более 30 символов",
+      "emailValidation": "Введите корректный адрес электронной почты",
+      "messageMinLength": "Сообщение должно содержать минимум 10 символов",
+      "messageMaxLength": "Сообщение должно содержать не более 500 символов"
     }
   },
   "WaitlistPage": {
-    "title": "Waitlist",
-    "description": "Join our waitlist for the launch of our product",
-    "subtitle": "Join our waitlist for the launch of our product",
+    "title": "Лист ожидания",
+    "description": "Запишитесь в лист ожидания запуска нашего продукта",
+    "subtitle": "Запишитесь в лист ожидания запуска нашего продукта",
     "form": {
-      "title": "Join Our Waitlist",
-      "description": "We will notify you when we launch our product",
-      "email": "Email",
-      "subscribe": "Subscribe",
-      "subscribing": "Subscribing...",
-      "success": "Subscribed successfully",
-      "fail": "Failed to subscribe",
-      "emailValidation": "Please enter a valid email address"
+      "title": "Вступить в лист ожидания",
+      "description": "Мы сообщим вам, когда запустим продукт",
+      "email": "Почта",
+      "subscribe": "Подписаться",
+      "subscribing": "Подписка...",
+      "success": "Подписка оформлена",
+      "fail": "Не удалось подписаться",
+      "emailValidation": "Введите корректный адрес электронной почты"
     }
   },
   "Newsletter": {
-    "title": "Newsletter",
-    "subtitle": "Join the community",
-    "description": "Subscribe to our newsletter for the latest news and updates",
+    "title": "Рассылка",
+    "subtitle": "Присоединяйтесь к сообществу",
+    "description": "Подпишитесь на нашу рассылку, чтобы получать новости и обновления",
     "form": {
-      "email": "Email",
-      "subscribe": "Subscribe",
-      "subscribing": "Subscribing...",
-      "success": "Subscribed successfully",
-      "fail": "Failed to subscribe",
-      "emailValidation": "Please enter a valid email address"
+      "email": "Почта",
+      "subscribe": "Подписаться",
+      "subscribing": "Подписка...",
+      "success": "Подписка оформлена",
+      "fail": "Не удалось подписаться",
+      "emailValidation": "Введите корректный адрес электронной почты"
     }
   },
   "AuthPage": {
     "login": {
-      "title": "Login",
-      "welcomeBack": "Welcome back",
-      "email": "Email",
-      "password": "Password",
-      "signIn": "Sign In",
-      "signUpHint": "Don't have an account? Sign up",
-      "forgotPassword": "Forgot Password?",
-      "signInWithGoogle": "Sign In with Google",
-      "signInWithGitHub": "Sign In with GitHub",
-      "showPassword": "Show password",
-      "hidePassword": "Hide password",
-      "or": "Or continue with",
-      "emailRequired": "Please enter your email",
-      "passwordRequired": "Please enter your password",
-      "captchaInvalid": "Captcha verification failed",
-      "captchaError": "Captcha verification error"
+      "title": "Вход",
+      "welcomeBack": "С возвращением",
+      "email": "Почта",
+      "password": "Пароль",
+      "signIn": "Войти",
+      "signUpHint": "Нет аккаунта? Зарегистрируйтесь",
+      "forgotPassword": "Забыли пароль?",
+      "signInWithGoogle": "Войти через Google",
+      "signInWithGitHub": "Войти через GitHub",
+      "showPassword": "Показать пароль",
+      "hidePassword": "Скрыть пароль",
+      "or": "Или продолжить через",
+      "emailRequired": "Введите вашу почту",
+      "passwordRequired": "Введите ваш пароль",
+      "captchaInvalid": "Проверка капчи не пройдена",
+      "captchaError": "Ошибка проверки капчи"
     },
     "register": {
-      "title": "Register",
-      "createAccount": "Create an account",
-      "name": "Name",
-      "email": "Email",
-      "password": "Password",
-      "signUp": "Sign Up",
-      "signInHint": "Already have an account? Sign in",
-      "checkEmail": "Please check your email inbox",
-      "showPassword": "Show password",
-      "hidePassword": "Hide password",
-      "nameRequired": "Please enter your name",
-      "emailRequired": "Please enter your email",
-      "passwordRequired": "Please enter your password",
-      "captchaInvalid": "Captcha verification failed",
-      "captchaError": "Captcha verification error"
+      "title": "Регистрация",
+      "createAccount": "Создать аккаунт",
+      "name": "Имя",
+      "email": "Почта",
+      "password": "Пароль",
+      "signUp": "Зарегистрироваться",
+      "signInHint": "Уже есть аккаунт? Войдите",
+      "checkEmail": "Проверьте входящие письма",
+      "showPassword": "Показать пароль",
+      "hidePassword": "Скрыть пароль",
+      "nameRequired": "Введите ваше имя",
+      "emailRequired": "Введите вашу почту",
+      "passwordRequired": "Введите ваш пароль",
+      "captchaInvalid": "Проверка капчи не пройдена",
+      "captchaError": "Ошибка проверки капчи"
     },
     "forgotPassword": {
-      "title": "Forgot Password",
-      "email": "Email",
-      "send": "Send reset link",
-      "backToLogin": "Back to login",
-      "checkEmail": "Please check your email inbox",
-      "emailRequired": "Please enter your email"
+      "title": "Забыли пароль",
+      "email": "Почта",
+      "send": "Отправить ссылку для сброса",
+      "backToLogin": "Назад ко входу",
+      "checkEmail": "Проверьте входящие письма",
+      "emailRequired": "Введите вашу почту"
     },
     "resetPassword": {
-      "title": "Reset Password",
-      "password": "Password",
-      "reset": "Reset password",
-      "backToLogin": "Back to login",
-      "showPassword": "Show password",
-      "hidePassword": "Hide password",
-      "minLength": "Password must be at least 8 characters"
+      "title": "Сброс пароля",
+      "password": "Пароль",
+      "reset": "Сбросить пароль",
+      "backToLogin": "Назад ко входу",
+      "showPassword": "Показать пароль",
+      "hidePassword": "Скрыть пароль",
+      "minLength": "Пароль должен содержать минимум 8 символов"
     },
     "error": {
-      "title": "Oops! Something went wrong!",
-      "tryAgain": "Please try again.",
-      "backToLogin": "Back to login",
-      "checkEmail": "Please check your email inbox",
+      "title": "Упс! Что-то пошло не так!",
+      "tryAgain": "Попробуйте ещё раз.",
+      "backToLogin": "Назад ко входу",
+      "checkEmail": "Проверьте входящие письма",
       "codes": {
-        "verification_token_expired": "This verification link has expired. Please request a new one.",
-        "verification_failed": "Invalid verification token. Please request a new verification email.",
-        "email_not_verified": "Please sign in again to receive a new verification email."
+        "verification_token_expired": "Срок действия ссылки истёк. Запросите новую.",
+        "verification_failed": "Недействительный токен. Запросите новое письмо для подтверждения.",
+        "email_not_verified": "Войдите ещё раз, чтобы получить новое письмо для подтверждения."
       }
     },
     "common": {
-      "termsOfService": "Terms of Service",
-      "privacyPolicy": "Privacy Policy",
-      "byClickingContinue": "By clicking continue, you agree to our ",
-      "and": " and "
+      "termsOfService": "Условия использования",
+      "privacyPolicy": "Политика конфиденциальности",
+      "byClickingContinue": "Нажимая «Продолжить», вы соглашаетесь с нашими ",
+      "and": " и "
     }
   },
   "BlogPage": {
-    "title": "Blog",
-    "description": "Latest news and updates from our team",
-    "subtitle": "Latest news and updates from our team",
-    "author": "Author",
-    "categories": "Categories",
-    "tableOfContents": "Table of Contents",
-    "readTime": "{minutes} min read",
-    "all": "All",
-    "noPostsFound": "No posts found",
-    "allPosts": "All Posts",
-    "morePosts": "More Posts"
+    "title": "Блог",
+    "description": "Последние новости и обновления от нашей команды",
+    "subtitle": "Последние новости и обновления от нашей команды",
+    "author": "Автор",
+    "categories": "Категории",
+    "tableOfContents": "Содержание",
+    "readTime": "{minutes} мин чтения",
+    "all": "Все",
+    "noPostsFound": "Записей не найдено",
+    "allPosts": "Все записи",
+    "morePosts": "Ещё записи"
   },
   "DocsPage": {
-    "toc": "Table of Contents",
-    "search": "Search docs",
-    "lastUpdate": "Last updated on",
-    "searchNoResult": "No results",
-    "previousPage": "Previous",
-    "nextPage": "Next",
-    "chooseLanguage": "Select language",
-    "title": "PhotoCraft Docs",
-    "homepage": "Homepage",
+    "toc": "Содержание",
+    "search": "Поиск по документации",
+    "lastUpdate": "Последнее обновление",
+    "searchNoResult": "Ничего не найдено",
+    "previousPage": "Назад",
+    "nextPage": "Далее",
+    "chooseLanguage": "Выберите язык",
+    "title": "Документация PhotoCraft",
+    "homepage": "Главная",
     "PageActions": {
-      "copyMarkdown": "Copy Markdown",
-      "open": "Open",
-      "openInChatGPT": "Open in ChatGPT",
-      "openInClaude": "Open in Claude",
-      "queryHint": "Read {url}, I want to ask questions about it."
+      "copyMarkdown": "Копировать Markdown",
+      "open": "Открыть",
+      "openInChatGPT": "Открыть в ChatGPT",
+      "openInClaude": "Открыть в Claude",
+      "queryHint": "Прочитай {url}, я хочу задать вопросы об этом."
     }
   },
   "Marketing": {
     "navbar": {
-      "editor": {
-        "title": "Editor"
-      },
-      "features": {
-        "title": "Features"
-      },
-      "pricing": {
-        "title": "Pricing"
-      },
-      "blog": {
-        "title": "Blog"
-      },
-      "docs": {
-        "title": "Docs"
-      },
+      "editor": { "title": "Редактор" },
+      "features": { "title": "Функции" },
+      "pricing": { "title": "Тарифы" },
+      "blog": { "title": "Блог" },
+      "docs": { "title": "Документация" },
       "pages": {
-        "title": "Pages",
+        "title": "Страницы",
         "items": {
           "about": {
-            "title": "About",
-            "description": "Learn more about our company, mission, and values"
+            "title": "О нас",
+            "description": "Узнайте больше о нашей компании, миссии и ценностях"
           },
           "contact": {
-            "title": "Contact",
-            "description": "Get in touch with our team for support or inquiries"
+            "title": "Контакты",
+            "description": "Свяжитесь с нашей командой по вопросам поддержки"
           },
           "waitlist": {
-            "title": "Waitlist",
-            "description": "Join our waitlist for latest news and updates"
+            "title": "Лист ожидания",
+            "description": "Запишитесь в лист ожидания новостей и обновлений"
           },
           "changelog": {
-            "title": "Changelog",
-            "description": "See the latest updates to our products"
+            "title": "История изменений",
+            "description": "Последние обновления наших продуктов"
           },
           "ai": {
-            "title": "AI Playground",
-            "description": "Try AI features with DeepSeek, and OpenAI GPT models"
+            "title": "ИИ-песочница",
+            "description": "Попробуйте ИИ-функции на моделях DeepSeek и OpenAI GPT"
           },
           "roadmap": {
-            "title": "Roadmap",
-            "description": "Explore our future plans and upcoming features"
+            "title": "Планы развития",
+            "description": "Наши будущие планы и предстоящие функции"
           },
           "cookiePolicy": {
-            "title": "Cookie Policy",
-            "description": "How we use the cookies on our website"
+            "title": "Политика cookie",
+            "description": "Как мы используем cookie на нашем сайте"
           },
           "privacyPolicy": {
-            "title": "Privacy Policy",
-            "description": "How we protect and handle your data"
+            "title": "Политика конфиденциальности",
+            "description": "Как мы защищаем и обрабатываем ваши данные"
           },
           "termsOfService": {
-            "title": "Terms of Service",
-            "description": "The legal agreements between us"
+            "title": "Условия использования",
+            "description": "Юридические соглашения между нами"
           }
         }
       },
-      "home": {
-        "title": "Home"
-      }
+      "home": { "title": "Главная" }
     },
     "footer": {
-      "tagline": "Give your photos a fresh, vibrant look with AI",
+      "tagline": "Верните фотографиям свежесть и яркость с помощью ИИ",
       "product": {
-        "title": "Product",
+        "title": "Продукт",
         "items": {
-          "editor": "Editor",
-          "features": "Features",
-          "pricing": "Pricing",
+          "editor": "Редактор",
+          "features": "Функции",
+          "pricing": "Тарифы",
           "faq": "FAQ"
         }
       },
       "resources": {
-        "title": "Resources",
+        "title": "Ресурсы",
         "items": {
-          "blog": "Blog",
-          "docs": "Documentation",
-          "changelog": "Changelog",
-          "roadmap": "Roadmap"
+          "blog": "Блог",
+          "docs": "Документация",
+          "changelog": "История изменений",
+          "roadmap": "Планы развития"
         }
       },
       "company": {
-        "title": "Company",
+        "title": "Компания",
         "items": {
-          "about": "About",
-          "contact": "Contact",
-          "waitlist": "Waitlist"
+          "about": "О нас",
+          "contact": "Контакты",
+          "waitlist": "Лист ожидания"
         }
       },
       "legal": {
-        "title": "Legal",
+        "title": "Право",
         "items": {
-          "cookiePolicy": "Cookie Policy",
-          "privacyPolicy": "Privacy Policy",
-          "termsOfService": "Terms of Service"
+          "cookiePolicy": "Политика cookie",
+          "privacyPolicy": "Политика конфиденциальности",
+          "termsOfService": "Условия использования"
         }
-      }
+      },
+      "rights": "© {year} {name}. Все права защищены.",
+      "builtWith": "Создано на"
     },
     "avatar": {
-      "dashboard": "Dashboard",
-      "billing": "Billing",
-      "settings": "Settings"
+      "dashboard": "Панель",
+      "billing": "Оплата",
+      "settings": "Настройки"
     }
   },
   "Dashboard": {
-    "dashboard": {
-      "title": "My Photos"
-    },
-    "editor": {
-      "title": "Editor"
-    },
-    "admin": {
-      "title": "Admin",
-      "users": {
-        "title": "Users",
-        "fakeData": "Note: Faked data for demonstration, some features are disabled",
-        "error": "Failed to get users",
-        "search": "Search users...",
-        "noResults": "No users found",
-        "columns": {
-          "columns": "Columns",
-          "name": "Name",
-          "email": "Email",
-          "role": "Role",
-          "createdAt": "Created At",
-          "customerId": "Customer ID",
-          "status": "Status",
-          "banReason": "Ban Reason",
-          "banExpires": "Ban Expires"
-        },
-        "admin": "Admin",
-        "user": "User",
-        "email": {
-          "verified": "Email Verified",
-          "unverified": "Email Unverified"
-        },
-        "emailCopied": "Email copied to clipboard",
-        "banned": "Banned",
-        "active": "Active",
-        "inactive": "Inactive",
-        "clearSearch": "Clear search",
-        "joined": "Joined at",
-        "updated": "Updated at",
-        "ban": {
-          "reason": "Ban Reason",
-          "reasonPlaceholder": "Enter the reason for banning this user",
-          "defaultReason": "Spamming",
-          "never": "Never",
-          "expires": "Ban Expires",
-          "selectDate": "Select Date",
-          "button": "Ban User",
-          "success": "User has been banned",
-          "error": "Failed to ban user"
-        },
-        "unban": {
-          "button": "Unban User",
-          "success": "User has been unbanned",
-          "error": "Failed to unban user"
-        },
-        "close": "Close"
-      }
-    },
+    "dashboard": { "title": "Мои фото" },
+    "editor": { "title": "Редактор" },
     "settings": {
-      "title": "Settings",
+      "title": "Настройки",
       "profile": {
-        "title": "Profile",
-        "description": "Manage your account information",
+        "title": "Профиль",
+        "description": "Управление данными аккаунта",
         "avatar": {
-          "title": "Avatar",
-          "description": "Click upload button to upload a custom one",
-          "recommendation": "An avatar is optional but strongly recommended",
-          "uploading": "Uploading...",
-          "uploadAvatar": "Upload Avatar",
-          "success": "Avatar updated successfully",
-          "fail": "Failed to update avatar"
+          "title": "Аватар",
+          "description": "Нажмите кнопку загрузки, чтобы загрузить свой",
+          "recommendation": "Аватар необязателен, но настоятельно рекомендуется",
+          "uploading": "Загрузка...",
+          "uploadAvatar": "Загрузить аватар",
+          "success": "Аватар успешно обновлён",
+          "fail": "Не удалось обновить аватар"
         },
         "name": {
-          "title": "Name",
-          "description": "Please enter your display name",
-          "placeholder": "Enter your name",
-          "minLength": "Please use 3 characters at minimum",
-          "maxLength": "Please use 30 characters at maximum",
-          "hint": "Please use 3-30 characters for your name",
-          "success": "Name updated successfully",
-          "fail": "Failed to update name",
-          "saving": "Saving...",
-          "save": "Save"
+          "title": "Имя",
+          "description": "Введите отображаемое имя",
+          "placeholder": "Введите имя",
+          "minLength": "Используйте минимум 3 символа",
+          "maxLength": "Используйте максимум 30 символов",
+          "hint": "Используйте от 3 до 30 символов для имени",
+          "success": "Имя успешно обновлено",
+          "fail": "Не удалось обновить имя",
+          "saving": "Сохранение...",
+          "save": "Сохранить"
         }
       },
       "billing": {
-        "title": "Billing",
-        "description": "Manage your subscription and billing details",
+        "title": "Оплата",
+        "description": "Управление подпиской и платёжными данными",
         "status": {
-          "active": "Active",
-          "trial": "Trial",
-          "free": "Free",
-          "lifetime": "Lifetime"
+          "active": "Активна",
+          "trial": "Пробная",
+          "free": "Бесплатная",
+          "lifetime": "Навсегда"
         },
         "interval": {
-          "month": "month",
-          "year": "year",
-          "oneTime": "one-time"
+          "month": "месяц",
+          "year": "год",
+          "oneTime": "разово"
         },
         "currentPlan": {
-          "title": "Current Plan",
-          "description": "Your current plan details",
-          "noPlan": "You have no active plan"
+          "title": "Текущий план",
+          "description": "Детали вашего текущего плана",
+          "noPlan": "У вас нет активного плана"
         },
         "CustomerPortalButton": {
-          "loading": "Loading...",
-          "createCustomerPortalFailed": "Failed to open Stripe customer portal"
+          "loading": "Загрузка...",
+          "createCustomerPortalFailed": "Не удалось открыть клиентский портал Stripe"
         },
-        "price": "Price:",
-        "periodStartDate": "Period start date:",
-        "periodEndDate": "Period end date:",
-        "trialEnds": "Trial ends:",
-        "freePlanMessage": "You are currently on the free plan with limited features",
-        "lifetimeMessage": "You have lifetime access to all premium features",
-        "manageSubscription": "Manage Subscription and Billing",
-        "manageBilling": "Manage Billing",
-        "upgradePlan": "Upgrade Plan",
-        "retry": "Retry",
-        "errorMessage": "Failed to get data",
-        "paymentSuccess": "Payment success"
-      },
-      "payment": {
-        "processing": {
-          "title": "Processing Payment",
-          "description": "Please wait while we confirm your payment..."
-        },
-        "success": {
-          "title": "Payment Success",
-          "description": "Redirecting automatically..."
-        },
-        "failed": {
-          "title": "Payment Failed",
-          "description": "There was an issue processing your payment."
-        },
-        "timeout": {
-          "title": "Processing Timeout",
-          "description": "Payment processing is taking longer than expected."
-        },
-        "retry": "Retry"
+        "price": "Цена:",
+        "periodStartDate": "Начало периода:",
+        "periodEndDate": "Конец периода:",
+        "trialEnds": "Пробный период до:",
+        "freePlanMessage": "Сейчас у вас бесплатный план с ограниченными функциями",
+        "lifetimeMessage": "У вас пожизненный доступ ко всем премиум-функциям",
+        "manageSubscription": "Управление подпиской и оплатой",
+        "manageBilling": "Управление оплатой",
+        "upgradePlan": "Улучшить план",
+        "retry": "Повторить",
+        "errorMessage": "Не удалось получить данные",
+        "paymentSuccess": "Оплата прошла успешно"
       },
       "notification": {
-        "title": "Notification",
-        "description": "Manage your notification preferences",
+        "title": "Уведомления",
+        "description": "Управление настройками уведомлений",
         "newsletter": {
-          "title": "Newsletter Subscription",
-          "description": "Manage your newsletter subscription preferences",
-          "label": "Subscribe to newsletter",
-          "hint": "You can change your subscription preferences at any time",
-          "emailRequired": "Email is required to subscribe to the newsletter",
-          "subscribeSuccess": "Successfully subscribed to the newsletter",
-          "subscribeFail": "Failed to subscribe to the newsletter",
-          "unsubscribeSuccess": "Successfully unsubscribed from the newsletter",
-          "unsubscribeFail": "Failed to unsubscribe from the newsletter",
-          "error": "An error occurred while updating your subscription"
+          "title": "Подписка на рассылку",
+          "description": "Управление подпиской на рассылку",
+          "label": "Подписаться на рассылку",
+          "hint": "Вы можете изменить настройки подписки в любое время",
+          "emailRequired": "Для подписки требуется почта",
+          "subscribeSuccess": "Подписка на рассылку оформлена",
+          "subscribeFail": "Не удалось подписаться на рассылку",
+          "unsubscribeSuccess": "Подписка на рассылку отменена",
+          "unsubscribeFail": "Не удалось отменить подписку",
+          "error": "Произошла ошибка при обновлении подписки"
         }
       },
       "security": {
-        "title": "Security",
-        "description": "Manage your security settings",
+        "title": "Безопасность",
+        "description": "Управление настройками безопасности",
         "updatePassword": {
-          "title": "Change Password",
-          "description": "Enter your current password and a new password",
-          "currentPassword": "Current Password",
-          "currentRequired": "Current password is required",
-          "newPassword": "New Password",
-          "newMinLength": "Password must be at least 8 characters",
-          "hint": "Please use at least 8 characters for password",
-          "showPassword": "Show password",
-          "hidePassword": "Hide password",
-          "success": "Password updated successfully",
-          "fail": "Failed to update password",
-          "saving": "Saving...",
-          "save": "Save"
+          "title": "Смена пароля",
+          "description": "Введите текущий и новый пароль",
+          "currentPassword": "Текущий пароль",
+          "currentRequired": "Требуется текущий пароль",
+          "newPassword": "Новый пароль",
+          "newMinLength": "Пароль должен содержать минимум 8 символов",
+          "hint": "Используйте минимум 8 символов для пароля",
+          "showPassword": "Показать пароль",
+          "hidePassword": "Скрыть пароль",
+          "success": "Пароль успешно обновлён",
+          "fail": "Не удалось обновить пароль",
+          "saving": "Сохранение...",
+          "save": "Сохранить"
         },
         "resetPassword": {
-          "title": "Reset Password",
-          "description": "Reset password to enable email login",
-          "info": "Resetting your password will allow you to sign in using your email and password in addition to your social login methods. You will receive an email with instructions to reset your password",
-          "button": "Reset Password"
+          "title": "Сброс пароля",
+          "description": "Сбросьте пароль, чтобы включить вход по почте",
+          "info": "Сброс пароля позволит входить по почте и паролю в дополнение к социальным входам. Вы получите письмо с инструкциями",
+          "button": "Сбросить пароль"
         },
         "deleteAccount": {
-          "title": "Delete Account",
-          "description": "Permanently remove your account and all of its contents",
-          "warning": "This action is not reversible, so please continue with caution",
-          "button": "Delete Account",
-          "confirmTitle": "Delete Account",
-          "confirmDescription": "Are you sure you want to delete your account? This action cannot be undone.",
-          "confirm": "Delete",
-          "cancel": "Cancel",
-          "deleting": "Deleting...",
-          "success": "Account deleted successfully",
-          "fail": "Failed to delete account"
+          "title": "Удаление аккаунта",
+          "description": "Навсегда удалить аккаунт и всё его содержимое",
+          "warning": "Это действие необратимо, продолжайте с осторожностью",
+          "button": "Удалить аккаунт",
+          "confirmTitle": "Удаление аккаунта",
+          "confirmDescription": "Вы уверены, что хотите удалить аккаунт? Это действие нельзя отменить.",
+          "confirm": "Удалить",
+          "cancel": "Отмена",
+          "deleting": "Удаление...",
+          "success": "Аккаунт успешно удалён",
+          "fail": "Не удалось удалить аккаунт"
         }
       },
       "apiKeys": {
-        "title": "API Keys",
-        "description": "Manage your API keys for authentication",
-        "createButton": "Create API Key",
-        "createDialogTitle": "Create New API Key",
-        "createDialogDescription": "Give your API key a name to identify it later",
-        "keyNameLabel": "Key Name",
-        "keyNamePlaceholder": "Please enter a name for your API key",
-        "cancel": "Cancel",
-        "create": "Create",
-        "creating": "Creating...",
-        "noResults": "No API keys found",
-        "createSuccess": "API key created successfully",
-        "createError": "Failed to create API key",
-        "deleteSuccess": "API key deleted successfully",
-        "deleteError": "Failed to delete API key",
-        "never": "Never",
-        "delete": "Delete",
-        "done": "Done",
-        "newKeyDialogTitle": "Your New API Key",
-        "newKeyDialogDescription": "Please copy and save this key now. You won't be able to see it again!",
+        "title": "API-ключи",
+        "description": "Управление API-ключами для аутентификации",
+        "createButton": "Создать API-ключ",
+        "createDialogTitle": "Новый API-ключ",
+        "createDialogDescription": "Дайте ключу имя, чтобы узнать его позже",
+        "keyNameLabel": "Имя ключа",
+        "keyNamePlaceholder": "Введите имя для API-ключа",
+        "cancel": "Отмена",
+        "create": "Создать",
+        "creating": "Создание...",
+        "noResults": "API-ключи не найдены",
+        "createSuccess": "API-ключ успешно создан",
+        "createError": "Не удалось создать API-ключ",
+        "deleteSuccess": "API-ключ успешно удалён",
+        "deleteError": "Не удалось удалить API-ключ",
+        "never": "Никогда",
+        "delete": "Удалить",
+        "done": "Готово",
+        "newKeyDialogTitle": "Ваш новый API-ключ",
+        "newKeyDialogDescription": "Скопируйте и сохраните ключ сейчас. Больше вы его не увидите!",
         "columns": {
-          "name": "Name",
-          "key": "Key",
-          "createdAt": "Created At",
-          "expiresAt": "Expires At",
-          "actions": "Actions"
+          "name": "Имя",
+          "key": "Ключ",
+          "createdAt": "Создан",
+          "expiresAt": "Истекает",
+          "actions": "Действия"
         }
       }
     },
     "upgrade": {
-      "title": "Upgrade",
-      "description": "Upgrade to Pro to access all features",
-      "button": "Upgrade"
+      "title": "Улучшить",
+      "description": "Перейдите на Pro, чтобы получить все функции",
+      "button": "Улучшить"
+    },
+    "photos": {
+      "subtitle": "Все ваши ИИ-творения в одном месте",
+      "emptyTitle": "Пока нет фото",
+      "emptyDesc": "Выберите инструмент, загрузите фото — и ваши творения появятся здесь.",
+      "cta": "Создать первое фото",
+      "browseTools": "Смотреть инструменты",
+      "download": "Скачать",
+      "openEditor": "Открыть в редакторе",
+      "status": {
+        "pending": "В очереди",
+        "processing": "Обработка",
+        "done": "Готово",
+        "failed": "Ошибка"
+      },
+      "creditsUsed": "{count} кредитов",
+      "createdAt": "{date}"
     }
   },
   "Mail": {
     "common": {
-      "team": "{name} Team",
-      "copyright": "©️ {year} All Rights Reserved."
+      "team": "Команда {name}",
+      "copyright": "©️ {year} Все права защищены."
     },
     "verifyEmail": {
-      "title": "Hi, {name}.",
-      "body": "Please click the link below to verify your email address.",
-      "confirmEmail": "Confirm email",
-      "subject": "Verify your email"
+      "title": "Здравствуйте, {name}.",
+      "body": "Нажмите на ссылку ниже, чтобы подтвердить адрес почты.",
+      "confirmEmail": "Подтвердить почту",
+      "subject": "Подтвердите вашу почту"
     },
     "forgotPassword": {
-      "title": "Hi, {name}.",
-      "body": "Please click the link below to reset your password.",
-      "resetPassword": "Reset password",
-      "subject": "Reset your password"
+      "title": "Здравствуйте, {name}.",
+      "body": "Нажмите на ссылку ниже, чтобы сбросить пароль.",
+      "resetPassword": "Сбросить пароль",
+      "subject": "Сброс пароля"
     },
     "subscribeNewsletter": {
-      "body": "Thank you for subscribing to the newsletter. We will keep you updated with the latest news and updates.",
-      "subject": "Thanks for subscribing"
+      "body": "Спасибо за подписку на рассылку. Будем держать вас в курсе новостей и обновлений.",
+      "subject": "Спасибо за подписку"
     },
     "contactMessage": {
-      "name": "Name: {name}",
-      "email": "Email: {email}",
-      "message": "Message: {message}",
-      "subject": "Contact Message from Website"
+      "name": "Имя: {name}",
+      "email": "Почта: {email}",
+      "message": "Сообщение: {message}",
+      "subject": "Сообщение с сайта"
     }
   },
   "HomePage": {
     "title": "PhotoCraft",
-    "description": "Make AI SaaS in days, simply and effortlessly",
+    "description": "Создавайте ИИ-продукты за дни — просто и легко",
     "hero": {
-      "title": "Make AI SaaS in days, simply and effortlessly",
-      "description": "The is a demo website built with PhotoCraft, a Next.js SaaS boilerplate to help you build your AI SaaS faster and better.",
-      "introduction": "Introducing PhotoCraft Boilerplate",
-      "primary": "Get Started",
-      "secondary": "See Demo"
+      "title": "Создавайте ИИ-продукты за дни — просто и легко",
+      "description": "Это демо-сайт на PhotoCraft — Next.js-шаблоне, который помогает создавать ИИ-продукты быстрее и лучше.",
+      "introduction": "Представляем шаблон PhotoCraft",
+      "primary": "Начать",
+      "secondary": "Смотреть демо"
     },
-    "logocloud": {
-      "title": "Your favorite companies are our partners"
-    },
+    "logocloud": { "title": "Ваши любимые компании — наши партнёры" },
     "integration": {
-      "title": "Integrations",
-      "subtitle": "Integrate with your favorite tools",
-      "description": "Connect seamlessly with popular platforms and services to enhance your workflow.",
-      "learnMore": "Learn More",
+      "title": "Интеграции",
+      "subtitle": "Интеграция с любимыми инструментами",
+      "description": "Легко подключайтесь к популярным платформам и сервисам.",
+      "learnMore": "Подробнее",
       "items": {
-        "item-1": {
-          "title": "Google Gemini",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-2": {
-          "title": "Replit",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-3": {
-          "title": "MagicUI",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-4": {
-          "title": "VSCodium",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-5": {
-          "title": "MediaWiki",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-6": {
-          "title": "Google PaLM",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        }
+        "item-1": { "title": "Google Gemini", "description": "Бесшовная интеграция ИИ-моделей Google в ваш рабочий процесс." },
+        "item-2": { "title": "Replit", "description": "Бесшовная интеграция Replit в ваш рабочий процесс." },
+        "item-3": { "title": "MagicUI", "description": "Бесшовная интеграция MagicUI в ваш рабочий процесс." },
+        "item-4": { "title": "VSCodium", "description": "Бесшовная интеграция VSCodium в ваш рабочий процесс." },
+        "item-5": { "title": "MediaWiki", "description": "Бесшовная интеграция MediaWiki в ваш рабочий процесс." },
+        "item-6": { "title": "Google PaLM", "description": "Бесшовная интеграция Google PaLM в ваш рабочий процесс." }
       }
     },
     "integration2": {
-      "title": "Integrate with your favorite tools",
-      "description": "Connect seamlessly with popular platforms and services to enhance your workflow.",
-      "primaryButton": "Get Started",
-      "secondaryButton": "See Demo"
+      "title": "Интеграция с любимыми инструментами",
+      "description": "Легко подключайтесь к популярным платформам и сервисам.",
+      "primaryButton": "Начать",
+      "secondaryButton": "Смотреть демо"
     },
     "features": {
-      "title": "Features",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
+      "title": "Функции",
+      "subtitle": "Возможности вашего продукта",
+      "description": "Напишите описание вашего продукта здесь",
       "items": {
-        "item-1": {
-          "title": "Product Feature One",
-          "description": "Please write the detailed description of feature one here, make it as detailed as possible, make it more attractive to users"
-        },
-        "item-2": {
-          "title": "Product Feature Two",
-          "description": "Please write the detailed description of feature two here, make it as detailed as possible, make it more attractive to users"
-        },
-        "item-3": {
-          "title": "Product Feature Three",
-          "description": "Please write the detailed description of feature three here, make it as detailed as possible, make it more attractive to users"
-        },
-        "item-4": {
-          "title": "Product Feature Four",
-          "description": "Please write the detailed description of feature four here, make it as detailed as possible, make it more attractive to users"
-        }
+        "item-1": { "title": "Функция продукта 1", "description": "Напишите подробное описание первой функции — как можно детальнее и привлекательнее для пользователей" },
+        "item-2": { "title": "Функция продукта 2", "description": "Напишите подробное описание второй функции — как можно детальнее и привлекательнее для пользователей" },
+        "item-3": { "title": "Функция продукта 3", "description": "Напишите подробное описание третьей функции — как можно детальнее и привлекательнее для пользователей" },
+        "item-4": { "title": "Функция продукта 4", "description": "Напишите подробное описание четвёртой функции — как можно детальнее и привлекательнее для пользователей" }
       }
     },
     "features2": {
-      "title": "Features2",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
-      "feature-1": "Product Feature One",
-      "feature-2": "Product Feature Two",
-      "feature-3": "Product Feature Three",
-      "feature-4": "Product Feature Four"
+      "title": "Функции 2",
+      "subtitle": "Возможности вашего продукта",
+      "description": "Напишите описание вашего продукта здесь",
+      "feature-1": "Функция продукта 1",
+      "feature-2": "Функция продукта 2",
+      "feature-3": "Функция продукта 3",
+      "feature-4": "Функция продукта 4"
     },
     "features3": {
-      "title": "Features3",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
+      "title": "Функции 3",
+      "subtitle": "Возможности вашего продукта",
+      "description": "Напишите описание вашего продукта здесь",
       "items": {
-        "item-1": {
-          "title": "Product Feature One",
-          "description": "Please write the detailed description of feature one here"
-        },
-        "item-2": {
-          "title": "Product Feature Two",
-          "description": "Please write the detailed description of feature two here"
-        },
-        "item-3": {
-          "title": "Product Feature Three",
-          "description": "Please write the detailed description of feature three here"
-        },
-        "item-4": {
-          "title": "Product Feature Four",
-          "description": "Please write the detailed description of feature four here"
-        },
-        "item-5": {
-          "title": "Product Feature Five",
-          "description": "Please write the detailed description of feature five here"
-        },
-        "item-6": {
-          "title": "Product Feature Six",
-          "description": "Please write the detailed description of feature six here"
-        }
+        "item-1": { "title": "Функция продукта 1", "description": "Напишите подробное описание первой функции здесь" },
+        "item-2": { "title": "Функция продукта 2", "description": "Напишите подробное описание второй функции здесь" },
+        "item-3": { "title": "Функция продукта 3", "description": "Напишите подробное описание третьей функции здесь" },
+        "item-4": { "title": "Функция продукта 4", "description": "Напишите подробное описание четвёртой функции здесь" },
+        "item-5": { "title": "Функция продукта 5", "description": "Напишите подробное описание пятой функции здесь" },
+        "item-6": { "title": "Функция продукта 6", "description": "Напишите подробное описание шестой функции здесь" }
       }
     },
     "pricing": {
-      "title": "Pricing",
-      "subtitle": "Pricing",
-      "description": "Choose the plan that works best for you"
+      "title": "Тарифы",
+      "subtitle": "Тарифы",
+      "description": "Выберите подходящий вам план"
     },
     "faqs": {
       "title": "FAQ",
-      "subtitle": "Frequently Asked Questions",
+      "subtitle": "Часто задаваемые вопросы",
       "items": {
-        "item-1": {
-          "question": "Do you offer a free trial?",
-          "answer": "Yes, we offer a 7-day free trial."
-        },
-        "item-2": {
-          "question": "How do I cancel my subscription?",
-          "answer": "You can cancel your subscription by visiting the billing page."
-        },
-        "item-3": {
-          "question": "Can I change my plan?",
-          "answer": "Yes, you can change your plan at any time by visiting the billing page."
-        },
-        "item-4": {
-          "question": "What is the refund policy?",
-          "answer": "We offer a 30-day money-back guarantee if you are not happy with our product."
-        },
-        "item-5": {
-          "question": "Can't find what you're looking for?",
-          "answer": "Please contact our customer support team at support@photoscraft.top"
-        }
+        "item-1": { "question": "Есть ли бесплатный пробный период?", "answer": "Да, мы предлагаем 7-дневный бесплатный пробный период." },
+        "item-2": { "question": "Как отменить подписку?", "answer": "Вы можете отменить подписку на странице оплаты." },
+        "item-3": { "question": "Можно ли сменить план?", "answer": "Да, вы можете сменить план в любое время на странице оплаты." },
+        "item-4": { "question": "Какая политика возврата?", "answer": "Мы предлагаем 30-дневную гарантию возврата денег, если продукт вам не понравится." },
+        "item-5": { "question": "Не нашли то, что искали?", "answer": "Обратитесь в нашу поддержку: support@photoscraft.top" }
       }
     },
     "testimonials": {
-      "title": "Testimonials",
-      "subtitle": "What our customers are saying",
+      "title": "Отзывы",
+      "subtitle": "Что говорят наши клиенты",
       "items": {
-        "item-1": {
-          "name": "Jonathan Yombo",
-          "role": "Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/1.jpg",
-          "quote": "PhotoCraft is really extraordinary and very practical, no need to break your head. A real gold mine."
-        },
-        "item-2": {
-          "name": "Yves Kalume",
-          "role": "GDE - Android",
-          "image": "https://randomuser.me/api/portraits/men/6.jpg",
-          "quote": "With no experience in webdesign I just redesigned my entire website in a few minutes with tailwindcss thanks to PhotoCraft."
-        },
-        "item-3": {
-          "name": "Yucel Faruksahan",
-          "role": "Tailkits Creator",
-          "image": "https://randomuser.me/api/portraits/men/7.jpg",
-          "quote": "Great work on PhotoCraft template. This is one of the best personal website that I have seen so far :)"
-        },
-        "item-4": {
-          "name": "Anonymous author",
-          "role": "Product Manager",
-          "image": "https://randomuser.me/api/portraits/men/8.jpg",
-          "quote": "I downloaded the one of PhotoCraft template which is very clear to understand at the start and you could modify the codes/blocks to fit perfectly on your purpose of the page."
-        },
-        "item-5": {
-          "name": "Shekinah Tshiokufila",
-          "role": "Senior Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/4.jpg",
-          "quote": "PhotoCraft is redefining the standard of web design, with these blocks it provides an easy and efficient way for those who love beauty but may lack the time to implement it."
-        },
-        "item-6": {
-          "name": "Oketa Fred",
-          "role": "Fullstack Developer",
-          "image": "https://randomuser.me/api/portraits/men/2.jpg",
-          "quote": "I absolutely love PhotoCraft! The component blocks are beautifully designed and easy to use, which makes creating a great-looking website a breeze."
-        },
-        "item-7": {
-          "name": "Zeki",
-          "role": "Founder of ChatExtend",
-          "image": "https://randomuser.me/api/portraits/men/5.jpg",
-          "quote": "PhotoCraft is the perfect fusion of simplicity and versatility, enabling us to create UIs that are as stunning as they are user-friendly."
-        },
-        "item-8": {
-          "name": "Joseph Kitheka",
-          "role": "Fullstack Developer",
-          "image": "https://randomuser.me/api/portraits/men/9.jpg",
-          "quote": "PhotoCraft has transformed the way I develop web applications. Their extensive collection of UI components, blocks, and templates has significantly accelerated my workflow."
-        },
-        "item-9": {
-          "name": "Khatab Wedaa",
-          "role": "MerakiUI Creator",
-          "image": "https://randomuser.me/api/portraits/men/10.jpg",
-          "quote": "PhotoCraft is an elegant, clean, and responsive tailwind css components it's very helpful to start fast with your project."
-        },
-        "item-10": {
-          "name": "Rodrigo Aguilar",
-          "role": "TailwindAwesome Creator",
-          "image": "https://randomuser.me/api/portraits/men/11.jpg",
-          "quote": "I love PhotoCraft ❤️. The component blocks are well-structured, simple to use, and beautifully designed. It makes it really easy to have a good-looking website in no time."
-        },
-        "item-11": {
-          "name": "Eric Ampire",
-          "role": "@GoogleDevExpert for Android",
-          "image": "https://randomuser.me/api/portraits/men/12.jpg",
-          "quote": "PhotoCraft templates are the perfect solution for anyone who wants to create a beautiful and functional website without any web design experience."
-        },
-        "item-12": {
-          "name": "Roland Tubonge",
-          "role": "Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/13.jpg",
-          "quote": "PhotoCraft is so well designed that even with a very poor knowledge of web design you can do miracles. Let yourself be seduced!"
-        }
+        "item-1": { "name": "Jonathan Yombo", "role": "Software Engineer", "image": "https://randomuser.me/api/portraits/men/1.jpg", "quote": "PhotoCraft действительно необыкновенен и очень практичен. Настоящий клад." },
+        "item-2": { "name": "Yves Kalume", "role": "GDE - Android", "image": "https://randomuser.me/api/portraits/men/6.jpg", "quote": "Без опыта в веб-дизайне я за несколько минут полностью переделал свой сайт благодаря PhotoCraft." },
+        "item-3": { "name": "Yucel Faruksahan", "role": "Tailkits Creator", "image": "https://randomuser.me/api/portraits/men/7.jpg", "quote": "Отличная работа над шаблоном PhotoCraft. Один из лучших персональных сайтов, что я видел." },
+        "item-4": { "name": "Anonymous author", "role": "Product Manager", "image": "https://randomuser.me/api/portraits/men/8.jpg", "quote": "Шаблон PhotoCraft очень понятен с самого начала, блоки легко адаптировать под свои задачи." },
+        "item-5": { "name": "Shekinah Tshiokufila", "role": "Senior Software Engineer", "image": "https://randomuser.me/api/portraits/men/4.jpg", "quote": "PhotoCraft задаёт новый стандарт веб-дизайна: простой и эффективный способ для тех, кто любит красоту, но ограничен во времени." },
+        "item-6": { "name": "Oketa Fred", "role": "Fullstack Developer", "image": "https://randomuser.me/api/portraits/men/2.jpg", "quote": "Обожаю PhotoCraft! Блоки компонентов красивые и удобные — создать отличный сайт проще простого." },
+        "item-7": { "name": "Zeki", "role": "Founder of ChatExtend", "image": "https://randomuser.me/api/portraits/men/5.jpg", "quote": "PhotoCraft — идеальное сочетание простоты и гибкости: интерфейсы получаются красивыми и удобными." },
+        "item-8": { "name": "Joseph Kitheka", "role": "Fullstack Developer", "image": "https://randomuser.me/api/portraits/men/9.jpg", "quote": "PhotoCraft изменил мой подход к разработке: огромная коллекция компонентов и шаблонов заметно ускорила работу." },
+        "item-9": { "name": "Khatab Wedaa", "role": "MerakiUI Creator", "image": "https://randomuser.me/api/portraits/men/10.jpg", "quote": "PhotoCraft — элегантные и отзывчивые tailwind-компоненты, очень помогают быстро стартовать." },
+        "item-10": { "name": "Rodrigo Aguilar", "role": "TailwindAwesome Creator", "image": "https://randomuser.me/api/portraits/men/11.jpg", "quote": "Люблю PhotoCraft ❤️. Блоки хорошо структурированы и красивы — хороший сайт получается в кратчайшие сроки." },
+        "item-11": { "name": "Eric Ampire", "role": "@GoogleDevExpert for Android", "image": "https://randomuser.me/api/portraits/men/12.jpg", "quote": "Шаблоны PhotoCraft — идеальное решение для тех, кто хочет красивый сайт без опыта в веб-дизайне." },
+        "item-12": { "name": "Roland Tubonge", "role": "Software Engineer", "image": "https://randomuser.me/api/portraits/men/13.jpg", "quote": "PhotoCraft так хорошо спроектирован, что даже с минимальными знаниями веб-дизайна можно творить чудеса." }
       }
     },
     "stats": {
-      "title": "Stats",
-      "subtitle": "PhotoCraft in numbers",
-      "description": "PhotoCraft lets you make AI SaaS in days, simply and effortlessly",
+      "title": "Цифры",
+      "subtitle": "PhotoCraft в цифрах",
+      "description": "С PhotoCraft вы создадите ИИ-продукт за дни — просто и легко",
       "items": {
-        "item-1": {
-          "title": "Stars on GitHub"
-        },
-        "item-2": {
-          "title": "Active Users"
-        },
-        "item-3": {
-          "title": "Powered Apps"
-        }
+        "item-1": { "title": "Звёзд на GitHub" },
+        "item-2": { "title": "Активных пользователей" },
+        "item-3": { "title": "Приложений создано" }
       }
     },
     "calltoaction": {
-      "title": "Start Building",
-      "description": "PhotoCraft lets you make AI SaaS in days, simply and effortlessly",
-      "primaryButton": "Get Started",
-      "secondaryButton": "See Demo"
+      "title": "Начните создавать",
+      "description": "С PhotoCraft вы создадите ИИ-продукт за дни — просто и легко",
+      "primaryButton": "Начать",
+      "secondaryButton": "Смотреть демо"
+    }
+  },
+  "PhotoTools": {
+    "categories": {
+      "enhance": "Улучшение",
+      "background": "Фон",
+      "creative": "Креатив",
+      "fun": "Развлечения",
+      "all": "Все"
+    },
+    "tools": {
+      "enhance": { "title": "ИИ-улучшение фото", "tagline": "Убрать размытие и шум, чёткость 4K в один клик" },
+      "restore": { "title": "ИИ-реставрация старых фото", "tagline": "Убрать царапины, заломы и повреждения" },
+      "colorize": { "title": "ИИ-раскрашивание фото", "tagline": "Чёрно-белое → яркий цвет" },
+      "eraser": { "title": "ИИ-волшебный ластик", "tagline": "Удалить объекты, людей и текст" },
+      "watermark": { "title": "Удаление водяных знаков", "tagline": "Чистим логотипы и надписи" },
+      "bg": { "title": "ИИ-удаление фона", "tagline": "Точное вырезание, края до волоска" },
+      "bg_change": { "title": "ИИ-замена фона", "tagline": "Студийные фоны в один клик" },
+      "sky": { "title": "ИИ-замена неба", "tagline": "Закат, звёзды, драматичное небо" },
+      "room": { "title": "ИИ-дизайн комнат", "tagline": "Фотореалистичный рестайлинг интерьеров" },
+      "avatar": { "title": "ИИ-генератор аватаров", "tagline": "Аватары студийного качества" },
+      "scene": { "title": "ИИ-генератор сцен", "tagline": "Кинематографичные сцены с вами в кадре" },
+      "anime": { "title": "ИИ-генератор аниме", "tagline": "Фото → аниме-иллюстрация" },
+      "cartoon": { "title": "ИИ-мультяшка", "tagline": "Весёлые мультяшные портреты" },
+      "hairstyle": { "title": "ИИ-смена причёски", "tagline": "Примерьте новую причёску мгновенно" },
+      "expression": { "title": "ИИ-смена выражения", "tagline": "Естественная улыбка — вы остаётесь собой" },
+      "transform": { "title": "ИИ-преображение", "tagline": "Рестайлинг уровня модной съёмки" }
+    },
+    "hero": {
+      "badge": "16 ИИ-инструментов · Проба без регистрации · Результат за секунды",
+      "titleA": "Любая обработка фото —",
+      "titleB": "в один клик",
+      "subtitle": "Улучшайте, реставрируйте, раскрашивайте, стирайте, вырезайте фон или превращайте фото в аниме — выберите инструмент ниже и загрузите снимок.",
+      "upload": "Загрузить фото",
+      "browse": "Смотреть инструменты",
+      "trust": "★ 4.9 · 2M+ улучшенных фото",
+      "freePreview": "Бесплатный предпросмотр · Оплата только за скачивание",
+      "steps": "Три шага: выберите инструмент → загрузите → скачайте. Обучение не нужно.",
+      "hot": "ХИТ",
+      "credits": { "one": "кредит", "other": "кредитов" },
+      "allTools": "Все инструменты",
+      "uploadHint": "Перетащите или нажмите для загрузки (JPG/PNG/WebP ≤20MB)",
+      "download": "Скачать результат",
+      "before": "До",
+      "after": "После",
+      "run": "Запустить"
+    },
+    "editor": {
+      "balance": "Кредиты",
+      "insufficient": "Недостаточно кредитов",
+      "topup": "Пополнить",
+      "run": "Запустить"
     }
   }
 }

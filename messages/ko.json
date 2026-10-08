@@ -1,915 +1,769 @@
 {
   "Metadata": {
     "name": "PhotoCraft",
-    "title": "PhotoCraft - AI Photo Enhancer, Restore Old Photos, Remove Background & Watermark",
-    "description": "PhotoCraft is an AI photo editor: enhance blurry photos, restore and colorize old photos, remove watermarks and backgrounds in seconds."
+    "title": "PhotoCraft - AI 사진 화질 개선, 오래된 사진 복원, 배경·워터마크 제거",
+    "description": "PhotoCraft는 AI 사진 편집기입니다. 흐릿한 사진 화질 개선, 오래된 사진 복원·컬러화, 워터마크와 배경 제거를 몇 초 만에."
   },
   "Common": {
-    "login": "Log in",
-    "logout": "Log out",
-    "signUp": "Sign up",
-    "language": "Switch language",
+    "login": "로그인",
+    "logout": "로그아웃",
+    "signUp": "회원가입",
+    "language": "언어 변경",
     "mode": {
-      "label": "Toggle mode",
-      "light": "Light",
-      "dark": "Dark",
-      "system": "System"
+      "label": "모드 전환",
+      "light": "라이트",
+      "dark": "다크",
+      "system": "시스템"
     },
-    "copy": "Copy",
-    "saving": "Saving...",
-    "save": "Save",
-    "loading": "Loading...",
-    "cancel": "Cancel",
-    "logoutFailed": "Failed to log out",
+    "copy": "복사",
+    "saving": "저장 중...",
+    "save": "저장",
+    "loading": "불러오는 중...",
+    "cancel": "취소",
+    "logoutFailed": "로그아웃에 실패했습니다",
     "table": {
-      "totalRecords": "Total {count} records",
-      "noResults": "No results",
-      "loading": "Loading...",
-      "columns": "Columns",
-      "rowsPerPage": "Rows per page",
-      "page": "Page",
-      "firstPage": "First Page",
-      "lastPage": "Last Page",
-      "nextPage": "Next Page",
-      "previousPage": "Previous Page",
-      "ascending": "Asc",
-      "descending": "Desc",
-      "resetSorting": "Reset",
-      "hideColumn": "Hide",
-      "viewOptions": "View",
-      "toggleColumns": "Toggle columns",
-      "searchColumns": "Search columns...",
-      "noColumns": "No columns found.",
-      "clearFilters": "Clear filters"
+      "totalRecords": "총 {count}건",
+      "noResults": "결과 없음",
+      "loading": "불러오는 중...",
+      "columns": "열",
+      "rowsPerPage": "페이지당 행 수",
+      "page": "페이지",
+      "firstPage": "첫 페이지",
+      "lastPage": "마지막 페이지",
+      "nextPage": "다음 페이지",
+      "previousPage": "이전 페이지",
+      "ascending": "오름차순",
+      "descending": "내림차순",
+      "resetSorting": "초기화",
+      "hideColumn": "숨기기",
+      "viewOptions": "보기",
+      "toggleColumns": "열 전환",
+      "searchColumns": "열 검색...",
+      "noColumns": "열을 찾을 수 없습니다.",
+      "clearFilters": "필터 지우기"
     }
   },
   "PricingPage": {
-    "title": "Pricing",
-    "description": "Choose the plan that works best for you",
-    "subtitle": "Choose the plan that works best for you",
-    "monthly": "Monthly",
-    "yearly": "Yearly",
+    "title": "요금제",
+    "description": "나에게 맞는 플랜을 선택하세요",
+    "subtitle": "나에게 맞는 플랜을 선택하세요",
+    "monthly": "월간",
+    "yearly": "연간",
     "PricingCard": {
       "freePrice": "$0",
-      "perMonth": "/month",
-      "perYear": "/year",
-      "popular": "Popular",
-      "currentPlan": "Current Plan",
-      "yourCurrentPlan": "Your Current Plan",
-      "getStartedForFree": "Get Started For Free",
-      "getLifetimeAccess": "Get Lifetime Access",
-      "getStarted": "Get Started",
-      "notAvailable": "Not Available",
-      "daysTrial": "{days}-day free trial"
+      "perMonth": "/월",
+      "perYear": "/년",
+      "popular": "인기",
+      "currentPlan": "현재 플랜",
+      "yourCurrentPlan": "이용 중인 플랜",
+      "getStartedForFree": "무료로 시작하기",
+      "getLifetimeAccess": "평생 플랜 구매",
+      "getStarted": "시작하기",
+      "notAvailable": "이용 불가",
+      "daysTrial": "{days}일 무료 체험"
     },
     "CheckoutButton": {
-      "loading": "Loading...",
-      "checkoutFailed": "Failed to open checkout page"
+      "loading": "불러오는 중...",
+      "checkoutFailed": "결제 페이지를 열지 못했습니다"
     }
   },
   "PricePlans": {
     "free": {
-      "name": "Free",
-      "description": "Basic features for personal use",
+      "name": "무료",
+      "description": "개인용 기본 기능",
       "features": {
-        "feature-1": "Up to 3 projects",
-        "feature-2": "1 GB storage",
-        "feature-3": "Basic analytics",
-        "feature-4": "Community support"
+        "feature-1": "최대 3개 프로젝트",
+        "feature-2": "1GB 저장공간",
+        "feature-3": "기본 분석",
+        "feature-4": "커뮤니티 지원"
       },
       "limits": {
-        "limit-1": "Custom domains",
-        "limit-2": "Custom branding",
-        "limit-3": "Lifetime updates"
+        "limit-1": "커스텀 도메인",
+        "limit-2": "커스텀 브랜딩",
+        "limit-3": "평생 업데이트"
       }
     },
     "pro": {
       "name": "Pro",
-      "description": "Advanced features for professionals",
+      "description": "전문가를 위한 고급 기능",
       "features": {
-        "feature-1": "Unlimited projects",
-        "feature-2": "10 GB storage",
-        "feature-3": "Advanced analytics",
-        "feature-4": "Priority support",
-        "feature-5": "Custom domains"
+        "feature-1": "무제한 프로젝트",
+        "feature-2": "10GB 저장공간",
+        "feature-3": "고급 분석",
+        "feature-4": "우선 지원",
+        "feature-5": "커스텀 도메인"
       },
       "limits": {
-        "limit-1": "Custom branding",
-        "limit-2": "Lifetime updates"
+        "limit-1": "커스텀 브랜딩",
+        "limit-2": "평생 업데이트"
       }
     },
     "lifetime": {
-      "name": "Lifetime",
-      "description": "Premium features with one-time payment",
+      "name": "평생",
+      "description": "한 번 결제로 쓰는 프리미엄 기능",
       "features": {
-        "feature-1": "All Pro features",
-        "feature-2": "100 GB storage",
-        "feature-3": "Dedicated support",
-        "feature-4": "Enterprise-grade security",
-        "feature-5": "Advanced integrations",
-        "feature-6": "Custom branding",
-        "feature-7": "Lifetime updates"
+        "feature-1": "Pro 모든 기능",
+        "feature-2": "100GB 저장공간",
+        "feature-3": "전담 지원",
+        "feature-4": "기업급 보안",
+        "feature-5": "고급 연동",
+        "feature-6": "커스텀 브랜딩",
+        "feature-7": "평생 업데이트"
       }
     }
   },
   "NotFoundPage": {
     "title": "404",
-    "message": "Sorry, the page you are looking for does not exist.",
-    "backToHome": "Back to home"
+    "message": "죄송합니다. 찾는 페이지가 없습니다.",
+    "backToHome": "홈으로 돌아가기"
   },
   "ErrorPage": {
-    "title": "Oops! Something went wrong!",
-    "tryAgain": "Try again",
-    "backToHome": "Back to home"
+    "title": "이런! 문제가 발생했습니다!",
+    "tryAgain": "다시 시도",
+    "backToHome": "홈으로 돌아가기"
   },
   "AboutPage": {
-    "title": "About",
-    "description": "PhotoCraft is an AI photo editor with 16 one-click tools: enhance, restore, colorize, erase, background removal and more.",
-    "heading": "Give every photo a fresh, vibrant look",
-    "mission": "PhotoCraft is an AI-driven photo editor for fast, precise restoration and enhancement. Restore old photos, sharpen blurry images, remove backgrounds and watermarks — no editing skills needed, results in seconds.",
+    "title": "소개",
+    "description": "PhotoCraft는 원클릭 16종 도구의 AI 사진 편집기입니다. 화질 개선, 복원, 컬러화, 지우기, 배경 제거 등.",
+    "heading": "모든 사진에 생생함을 되돌려주세요",
+    "mission": "PhotoCraft는 빠르고 정밀한 복원과 화질 개선을 위한 AI 사진 편집기입니다. 오래된 사진 복원, 흐릿한 사진 선명화, 배경과 워터마크 제거를 편집 기술 없이 몇 초 만에.",
     "stats": {
-      "tools": "AI tools",
-      "speed": "avg. processing",
-      "rating": "user rating"
+      "tools": "AI 도구",
+      "speed": "평균 처리 시간",
+      "rating": "사용자 평점"
     },
-    "toolsTitle": "What PhotoCraft can do",
-    "storyTitle": "Our story",
-    "story1": "PhotoCraft started from a simple frustration: precious old photos fading away, and pro repair costing time and money. We packed professional restoration, enhancement and creative effects into one-click AI tools anyone can use.",
-    "story2": "Today PhotoCraft offers 16 AI tools — from photo enhancement and old-photo colorization to background removal, magic erasing, sky replacement and anime generation. Upload a photo, pick a tool, download the result. That is the whole learning curve."
+    "toolsTitle": "PhotoCraft로 할 수 있는 일",
+    "storyTitle": "우리의 이야기",
+    "story1": "PhotoCraft는 단순한 답답함에서 시작됐습니다. 소중한 오래된 사진은 바래가는데 전문가 복원은 시간도 돈도 듭니다. 전문가급 복원·화질 개선·창작 효과를 누구나 쓸 수 있는 원클릭 AI 도구에 담았습니다.",
+    "story2": "지금 PhotoCraft는 16가지 AI 도구를 제공합니다. 사진 화질 개선과 오래된 사진 컬러화부터 배경 제거, 매직 지우기, 하늘 교체, 애니메이션 생성까지. 사진을 올리고 도구를 고르고 결과를 내려받으면 끝. 배울 게 없습니다."
   },
   "ChangelogPage": {
-    "title": "Changelog",
-    "description": "Stay up to date with the latest changes in our product",
-    "subtitle": "Stay up to date with the latest changes in our product"
+    "title": "업데이트 내역",
+    "description": "제품의 최신 변경 사항을 확인하세요",
+    "subtitle": "제품의 최신 변경 사항을 확인하세요"
   },
   "AiPage": {
-    "title": "AI Playground",
-    "description": "Built with Vercel AI SDK. Switch between DeepSeek, and OpenAI GPT models."
+    "title": "AI 플레이그라운드",
+    "description": "Vercel AI SDK 기반. DeepSeek와 OpenAI GPT 모델을 오가며 사용하세요."
   },
   "RoadmapPage": {
-    "title": "Roadmap",
-    "description": "Explore our future plans and upcoming features",
-    "subtitle": "Explore our future plans and upcoming features"
+    "title": "로드맵",
+    "description": "앞으로의 계획과 출시 예정 기능을 소개합니다",
+    "subtitle": "앞으로의 계획과 출시 예정 기능을 소개합니다"
   },
   "ContactPage": {
-    "title": "Contact",
-    "description": "Questions, feedback or business inquiries — send us a message and we will reply within 1-2 business days.",
-    "subtitle": "Questions, feedback or business inquiries? We reply within 1-2 business days.",
-    "directHint": "Prefer email? Reach us directly at",
+    "title": "문의하기",
+    "description": "질문·피드백·사업 문의는 메시지로 보내주세요. 1~2영업일 내 답장드립니다.",
+    "subtitle": "질문·피드백·사업 문의? 1~2영업일 내 답장드립니다.",
+    "directHint": "이메일이 편하신가요? 여기로 직접 보내주세요:",
     "form": {
-      "title": "Contact Us",
-      "description": "If you have any questions or feedback, please reach out to our team",
-      "name": "Name",
-      "email": "Email",
-      "message": "Message",
-      "submit": "Submit",
-      "submitting": "Submitting...",
-      "success": "Message sent successfully",
-      "fail": "Failed to send message",
-      "nameMinLength": "Name must be at least 3 characters",
-      "nameMaxLength": "Name must not exceed 30 characters",
-      "emailValidation": "Please enter a valid email address",
-      "messageMinLength": "Message must be at least 10 characters",
-      "messageMaxLength": "Message must not exceed 500 characters"
+      "title": "문의하기",
+      "description": "질문이나 피드백이 있으면 팀에 연락해 주세요",
+      "name": "이름",
+      "email": "이메일",
+      "message": "메시지",
+      "submit": "보내기",
+      "submitting": "보내는 중...",
+      "success": "메시지를 보냈습니다",
+      "fail": "메시지 보내기에 실패했습니다",
+      "nameMinLength": "이름은 3자 이상 입력해 주세요",
+      "nameMaxLength": "이름은 30자 이내로 입력해 주세요",
+      "emailValidation": "올바른 이메일 주소를 입력해 주세요",
+      "messageMinLength": "메시지는 10자 이상 입력해 주세요",
+      "messageMaxLength": "메시지는 500자 이내로 입력해 주세요"
     }
   },
   "WaitlistPage": {
-    "title": "Waitlist",
-    "description": "Join our waitlist for the launch of our product",
-    "subtitle": "Join our waitlist for the launch of our product",
+    "title": "대기자 명단",
+    "description": "제품 출시 대기자 명단에 참여하세요",
+    "subtitle": "제품 출시 대기자 명단에 참여하세요",
     "form": {
-      "title": "Join Our Waitlist",
-      "description": "We will notify you when we launch our product",
-      "email": "Email",
-      "subscribe": "Subscribe",
-      "subscribing": "Subscribing...",
-      "success": "Subscribed successfully",
-      "fail": "Failed to subscribe",
-      "emailValidation": "Please enter a valid email address"
+      "title": "대기자 명단 참여",
+      "description": "출시되면 알려드리겠습니다",
+      "email": "이메일",
+      "subscribe": "신청",
+      "subscribing": "신청 중...",
+      "success": "신청됐습니다",
+      "fail": "신청에 실패했습니다",
+      "emailValidation": "올바른 이메일 주소를 입력해 주세요"
     }
   },
   "Newsletter": {
-    "title": "Newsletter",
-    "subtitle": "Join the community",
-    "description": "Subscribe to our newsletter for the latest news and updates",
+    "title": "뉴스레터",
+    "subtitle": "커뮤니티에 참여하세요",
+    "description": "최신 소식과 업데이트를 받으려면 구독하세요",
     "form": {
-      "email": "Email",
-      "subscribe": "Subscribe",
-      "subscribing": "Subscribing...",
-      "success": "Subscribed successfully",
-      "fail": "Failed to subscribe",
-      "emailValidation": "Please enter a valid email address"
+      "email": "이메일",
+      "subscribe": "구독",
+      "subscribing": "구독 중...",
+      "success": "구독됐습니다",
+      "fail": "구독에 실패했습니다",
+      "emailValidation": "올바른 이메일 주소를 입력해 주세요"
     }
   },
   "AuthPage": {
     "login": {
-      "title": "Login",
-      "welcomeBack": "Welcome back",
-      "email": "Email",
-      "password": "Password",
-      "signIn": "Sign In",
-      "signUpHint": "Don't have an account? Sign up",
-      "forgotPassword": "Forgot Password?",
-      "signInWithGoogle": "Sign In with Google",
-      "signInWithGitHub": "Sign In with GitHub",
-      "showPassword": "Show password",
-      "hidePassword": "Hide password",
-      "or": "Or continue with",
-      "emailRequired": "Please enter your email",
-      "passwordRequired": "Please enter your password",
-      "captchaInvalid": "Captcha verification failed",
-      "captchaError": "Captcha verification error"
+      "title": "로그인",
+      "welcomeBack": "다시 오신 걸 환영합니다",
+      "email": "이메일",
+      "password": "비밀번호",
+      "signIn": "로그인",
+      "signUpHint": "계정이 없으신가요? 회원가입",
+      "forgotPassword": "비밀번호를 잊으셨나요?",
+      "signInWithGoogle": "Google로 로그인",
+      "signInWithGitHub": "GitHub으로 로그인",
+      "showPassword": "비밀번호 표시",
+      "hidePassword": "비밀번호 숨기기",
+      "or": "또는 다음으로 계속",
+      "emailRequired": "이메일을 입력해 주세요",
+      "passwordRequired": "비밀번호를 입력해 주세요",
+      "captchaInvalid": "캡차 인증에 실패했습니다",
+      "captchaError": "캡차 인증 오류"
     },
     "register": {
-      "title": "Register",
-      "createAccount": "Create an account",
-      "name": "Name",
-      "email": "Email",
-      "password": "Password",
-      "signUp": "Sign Up",
-      "signInHint": "Already have an account? Sign in",
-      "checkEmail": "Please check your email inbox",
-      "showPassword": "Show password",
-      "hidePassword": "Hide password",
-      "nameRequired": "Please enter your name",
-      "emailRequired": "Please enter your email",
-      "passwordRequired": "Please enter your password",
-      "captchaInvalid": "Captcha verification failed",
-      "captchaError": "Captcha verification error"
+      "title": "회원가입",
+      "createAccount": "계정 만들기",
+      "name": "이름",
+      "email": "이메일",
+      "password": "비밀번호",
+      "signUp": "가입하기",
+      "signInHint": "이미 계정이 있으신가요? 로그인",
+      "checkEmail": "받은편지함을 확인해 주세요",
+      "showPassword": "비밀번호 표시",
+      "hidePassword": "비밀번호 숨기기",
+      "nameRequired": "이름을 입력해 주세요",
+      "emailRequired": "이메일을 입력해 주세요",
+      "passwordRequired": "비밀번호를 입력해 주세요",
+      "captchaInvalid": "캡차 인증에 실패했습니다",
+      "captchaError": "캡차 인증 오류"
     },
     "forgotPassword": {
-      "title": "Forgot Password",
-      "email": "Email",
-      "send": "Send reset link",
-      "backToLogin": "Back to login",
-      "checkEmail": "Please check your email inbox",
-      "emailRequired": "Please enter your email"
+      "title": "비밀번호 찾기",
+      "email": "이메일",
+      "send": "재설정 링크 보내기",
+      "backToLogin": "로그인으로 돌아가기",
+      "checkEmail": "받은편지함을 확인해 주세요",
+      "emailRequired": "이메일을 입력해 주세요"
     },
     "resetPassword": {
-      "title": "Reset Password",
-      "password": "Password",
-      "reset": "Reset password",
-      "backToLogin": "Back to login",
-      "showPassword": "Show password",
-      "hidePassword": "Hide password",
-      "minLength": "Password must be at least 8 characters"
+      "title": "비밀번호 재설정",
+      "password": "비밀번호",
+      "reset": "비밀번호 재설정",
+      "backToLogin": "로그인으로 돌아가기",
+      "showPassword": "비밀번호 표시",
+      "hidePassword": "비밀번호 숨기기",
+      "minLength": "비밀번호는 8자 이상 입력해 주세요"
     },
     "error": {
-      "title": "Oops! Something went wrong!",
-      "tryAgain": "Please try again.",
-      "backToLogin": "Back to login",
-      "checkEmail": "Please check your email inbox",
+      "title": "이런! 문제가 발생했습니다!",
+      "tryAgain": "다시 시도해 주세요.",
+      "backToLogin": "로그인으로 돌아가기",
+      "checkEmail": "받은편지함을 확인해 주세요",
       "codes": {
-        "verification_token_expired": "This verification link has expired. Please request a new one.",
-        "verification_failed": "Invalid verification token. Please request a new verification email.",
-        "email_not_verified": "Please sign in again to receive a new verification email."
+        "verification_token_expired": "이 인증 링크가 만료됐습니다. 새 링크를 요청해 주세요.",
+        "verification_failed": "인증 토큰이 유효하지 않습니다. 확인 이메일을 다시 요청해 주세요.",
+        "email_not_verified": "확인 메일을 다시 받으려면 로그인해 주세요."
       }
     },
     "common": {
-      "termsOfService": "Terms of Service",
-      "privacyPolicy": "Privacy Policy",
-      "byClickingContinue": "By clicking continue, you agree to our ",
-      "and": " and "
+      "termsOfService": "이용약관",
+      "privacyPolicy": "개인정보처리방침",
+      "byClickingContinue": "계속을 클릭하면 당사의 ",
+      "and": " 및 "
     }
   },
   "BlogPage": {
-    "title": "Blog",
-    "description": "Latest news and updates from our team",
-    "subtitle": "Latest news and updates from our team",
-    "author": "Author",
-    "categories": "Categories",
-    "tableOfContents": "Table of Contents",
-    "readTime": "{minutes} min read",
-    "all": "All",
-    "noPostsFound": "No posts found",
-    "allPosts": "All Posts",
-    "morePosts": "More Posts"
+    "title": "블로그",
+    "description": "팀의 최신 소식과 업데이트",
+    "subtitle": "팀의 최신 소식과 업데이트",
+    "author": "작성자",
+    "categories": "카테고리",
+    "tableOfContents": "목차",
+    "readTime": "{minutes}분 읽기",
+    "all": "전체",
+    "noPostsFound": "글이 없습니다",
+    "allPosts": "모든 글",
+    "morePosts": "글 더 보기"
   },
   "DocsPage": {
-    "toc": "Table of Contents",
-    "search": "Search docs",
-    "lastUpdate": "Last updated on",
-    "searchNoResult": "No results",
-    "previousPage": "Previous",
-    "nextPage": "Next",
-    "chooseLanguage": "Select language",
-    "title": "PhotoCraft Docs",
-    "homepage": "Homepage",
+    "toc": "목차",
+    "search": "문서 검색",
+    "lastUpdate": "마지막 업데이트",
+    "searchNoResult": "결과 없음",
+    "previousPage": "이전",
+    "nextPage": "다음",
+    "chooseLanguage": "언어 선택",
+    "title": "PhotoCraft 문서",
+    "homepage": "홈",
     "PageActions": {
-      "copyMarkdown": "Copy Markdown",
-      "open": "Open",
-      "openInChatGPT": "Open in ChatGPT",
-      "openInClaude": "Open in Claude",
-      "queryHint": "Read {url}, I want to ask questions about it."
+      "copyMarkdown": "Markdown 복사",
+      "open": "열기",
+      "openInChatGPT": "ChatGPT에서 열기",
+      "openInClaude": "Claude에서 열기",
+      "queryHint": "{url}을 읽고, 이에 대해 질문하고 싶습니다."
     }
   },
   "Marketing": {
     "navbar": {
-      "editor": {
-        "title": "Editor"
-      },
-      "features": {
-        "title": "Features"
-      },
-      "pricing": {
-        "title": "Pricing"
-      },
-      "blog": {
-        "title": "Blog"
-      },
-      "docs": {
-        "title": "Docs"
-      },
+      "editor": { "title": "편집기" },
+      "features": { "title": "기능" },
+      "pricing": { "title": "요금제" },
+      "blog": { "title": "블로그" },
+      "docs": { "title": "문서" },
       "pages": {
-        "title": "Pages",
+        "title": "페이지",
         "items": {
           "about": {
-            "title": "About",
-            "description": "Learn more about our company, mission, and values"
+            "title": "소개",
+            "description": "회사·미션·가치에 대해 더 알아보세요"
           },
           "contact": {
-            "title": "Contact",
-            "description": "Get in touch with our team for support or inquiries"
+            "title": "문의하기",
+            "description": "지원이나 문의는 팀에 연락해 주세요"
           },
           "waitlist": {
-            "title": "Waitlist",
-            "description": "Join our waitlist for latest news and updates"
+            "title": "대기자 명단",
+            "description": "최신 소식과 업데이트 대기자 명단에 참여하세요"
           },
           "changelog": {
-            "title": "Changelog",
-            "description": "See the latest updates to our products"
+            "title": "업데이트 내역",
+            "description": "제품의 최신 업데이트 보기"
           },
           "ai": {
-            "title": "AI Playground",
-            "description": "Try AI features with DeepSeek, and OpenAI GPT models"
+            "title": "AI 플레이그라운드",
+            "description": "DeepSeek·OpenAI GPT 모델로 AI 기능을 체험해 보세요"
           },
           "roadmap": {
-            "title": "Roadmap",
-            "description": "Explore our future plans and upcoming features"
+            "title": "로드맵",
+            "description": "앞으로의 계획과 출시 예정 기능"
           },
           "cookiePolicy": {
-            "title": "Cookie Policy",
-            "description": "How we use the cookies on our website"
+            "title": "쿠키 정책",
+            "description": "사이트의 쿠키 사용 방식"
           },
           "privacyPolicy": {
-            "title": "Privacy Policy",
-            "description": "How we protect and handle your data"
+            "title": "개인정보처리방침",
+            "description": "데이터 보호와 처리 방식"
           },
           "termsOfService": {
-            "title": "Terms of Service",
-            "description": "The legal agreements between us"
+            "title": "이용약관",
+            "description": "당사와의 법적 합의"
           }
         }
       },
-      "home": {
-        "title": "Home"
-      }
+      "home": { "title": "홈" }
     },
     "footer": {
-      "tagline": "Give your photos a fresh, vibrant look with AI",
+      "tagline": "AI로 사진에 생생함을 되돌리세요",
       "product": {
-        "title": "Product",
+        "title": "제품",
         "items": {
-          "editor": "Editor",
-          "features": "Features",
-          "pricing": "Pricing",
-          "faq": "FAQ"
+          "editor": "편집기",
+          "features": "기능",
+          "pricing": "요금제",
+          "faq": "자주 묻는 질문"
         }
       },
       "resources": {
-        "title": "Resources",
+        "title": "자료",
         "items": {
-          "blog": "Blog",
-          "docs": "Documentation",
-          "changelog": "Changelog",
-          "roadmap": "Roadmap"
+          "blog": "블로그",
+          "docs": "문서",
+          "changelog": "업데이트 내역",
+          "roadmap": "로드맵"
         }
       },
       "company": {
-        "title": "Company",
+        "title": "회사",
         "items": {
-          "about": "About",
-          "contact": "Contact",
-          "waitlist": "Waitlist"
+          "about": "소개",
+          "contact": "문의하기",
+          "waitlist": "대기자 명단"
         }
       },
       "legal": {
-        "title": "Legal",
+        "title": "법적 고지",
         "items": {
-          "cookiePolicy": "Cookie Policy",
-          "privacyPolicy": "Privacy Policy",
-          "termsOfService": "Terms of Service"
+          "cookiePolicy": "쿠키 정책",
+          "privacyPolicy": "개인정보처리방침",
+          "termsOfService": "이용약관"
         }
-      }
+      },
+      "rights": "© {year} {name}. All Rights Reserved.",
+      "builtWith": "제작:"
     },
     "avatar": {
-      "dashboard": "Dashboard",
-      "billing": "Billing",
-      "settings": "Settings"
+      "dashboard": "대시보드",
+      "billing": "결제",
+      "settings": "설정"
     }
   },
   "Dashboard": {
-    "dashboard": {
-      "title": "My Photos"
-    },
-    "editor": {
-      "title": "Editor"
-    },
-    "admin": {
-      "title": "Admin",
-      "users": {
-        "title": "Users",
-        "fakeData": "Note: Faked data for demonstration, some features are disabled",
-        "error": "Failed to get users",
-        "search": "Search users...",
-        "noResults": "No users found",
-        "columns": {
-          "columns": "Columns",
-          "name": "Name",
-          "email": "Email",
-          "role": "Role",
-          "createdAt": "Created At",
-          "customerId": "Customer ID",
-          "status": "Status",
-          "banReason": "Ban Reason",
-          "banExpires": "Ban Expires"
-        },
-        "admin": "Admin",
-        "user": "User",
-        "email": {
-          "verified": "Email Verified",
-          "unverified": "Email Unverified"
-        },
-        "emailCopied": "Email copied to clipboard",
-        "banned": "Banned",
-        "active": "Active",
-        "inactive": "Inactive",
-        "clearSearch": "Clear search",
-        "joined": "Joined at",
-        "updated": "Updated at",
-        "ban": {
-          "reason": "Ban Reason",
-          "reasonPlaceholder": "Enter the reason for banning this user",
-          "defaultReason": "Spamming",
-          "never": "Never",
-          "expires": "Ban Expires",
-          "selectDate": "Select Date",
-          "button": "Ban User",
-          "success": "User has been banned",
-          "error": "Failed to ban user"
-        },
-        "unban": {
-          "button": "Unban User",
-          "success": "User has been unbanned",
-          "error": "Failed to unban user"
-        },
-        "close": "Close"
-      }
-    },
+    "dashboard": { "title": "내 사진" },
+    "editor": { "title": "편집기" },
     "settings": {
-      "title": "Settings",
+      "title": "설정",
       "profile": {
-        "title": "Profile",
-        "description": "Manage your account information",
+        "title": "프로필",
+        "description": "계정 정보 관리",
         "avatar": {
-          "title": "Avatar",
-          "description": "Click upload button to upload a custom one",
-          "recommendation": "An avatar is optional but strongly recommended",
-          "uploading": "Uploading...",
-          "uploadAvatar": "Upload Avatar",
-          "success": "Avatar updated successfully",
-          "fail": "Failed to update avatar"
+          "title": "아바타",
+          "description": "업로드 버튼을 눌러 커스텀 이미지를 올려보세요",
+          "recommendation": "아바타는 선택 사항이지만 적극 권장합니다",
+          "uploading": "업로드 중...",
+          "uploadAvatar": "아바타 업로드",
+          "success": "아바타를 업데이트했습니다",
+          "fail": "아바타 업데이트에 실패했습니다"
         },
         "name": {
-          "title": "Name",
-          "description": "Please enter your display name",
-          "placeholder": "Enter your name",
-          "minLength": "Please use 3 characters at minimum",
-          "maxLength": "Please use 30 characters at maximum",
-          "hint": "Please use 3-30 characters for your name",
-          "success": "Name updated successfully",
-          "fail": "Failed to update name",
-          "saving": "Saving...",
-          "save": "Save"
+          "title": "이름",
+          "description": "표시 이름을 입력해 주세요",
+          "placeholder": "이름 입력",
+          "minLength": "3자 이상 입력해 주세요",
+          "maxLength": "30자 이내로 입력해 주세요",
+          "hint": "이름은 3~30자로 입력해 주세요",
+          "success": "이름을 업데이트했습니다",
+          "fail": "이름 업데이트에 실패했습니다",
+          "saving": "저장 중...",
+          "save": "저장"
         }
       },
       "billing": {
-        "title": "Billing",
-        "description": "Manage your subscription and billing details",
+        "title": "결제",
+        "description": "구독과 결제 정보 관리",
         "status": {
-          "active": "Active",
-          "trial": "Trial",
-          "free": "Free",
-          "lifetime": "Lifetime"
+          "active": "활성",
+          "trial": "체험",
+          "free": "무료",
+          "lifetime": "평생"
         },
         "interval": {
-          "month": "month",
-          "year": "year",
-          "oneTime": "one-time"
+          "month": "월",
+          "year": "년",
+          "oneTime": "일시불"
         },
         "currentPlan": {
-          "title": "Current Plan",
-          "description": "Your current plan details",
-          "noPlan": "You have no active plan"
+          "title": "현재 플랜",
+          "description": "현재 플랜 정보",
+          "noPlan": "활성 플랜이 없습니다"
         },
         "CustomerPortalButton": {
-          "loading": "Loading...",
-          "createCustomerPortalFailed": "Failed to open Stripe customer portal"
+          "loading": "불러오는 중...",
+          "createCustomerPortalFailed": "Stripe 고객 포털을 열지 못했습니다"
         },
-        "price": "Price:",
-        "periodStartDate": "Period start date:",
-        "periodEndDate": "Period end date:",
-        "trialEnds": "Trial ends:",
-        "freePlanMessage": "You are currently on the free plan with limited features",
-        "lifetimeMessage": "You have lifetime access to all premium features",
-        "manageSubscription": "Manage Subscription and Billing",
-        "manageBilling": "Manage Billing",
-        "upgradePlan": "Upgrade Plan",
-        "retry": "Retry",
-        "errorMessage": "Failed to get data",
-        "paymentSuccess": "Payment success"
-      },
-      "payment": {
-        "processing": {
-          "title": "Processing Payment",
-          "description": "Please wait while we confirm your payment..."
-        },
-        "success": {
-          "title": "Payment Success",
-          "description": "Redirecting automatically..."
-        },
-        "failed": {
-          "title": "Payment Failed",
-          "description": "There was an issue processing your payment."
-        },
-        "timeout": {
-          "title": "Processing Timeout",
-          "description": "Payment processing is taking longer than expected."
-        },
-        "retry": "Retry"
+        "price": "가격:",
+        "periodStartDate": "기간 시작일:",
+        "periodEndDate": "기간 종료일:",
+        "trialEnds": "체험 종료:",
+        "freePlanMessage": "현재 기능이 제한된 무료 플랜입니다",
+        "lifetimeMessage": "모든 프리미엄 기능을 평생 이용할 수 있습니다",
+        "manageSubscription": "구독과 결제 관리",
+        "manageBilling": "결제 관리",
+        "upgradePlan": "플랜 업그레이드",
+        "retry": "다시 시도",
+        "errorMessage": "데이터를 가져오지 못했습니다",
+        "paymentSuccess": "결제가 완료됐습니다"
       },
       "notification": {
-        "title": "Notification",
-        "description": "Manage your notification preferences",
+        "title": "알림",
+        "description": "알림 설정 관리",
         "newsletter": {
-          "title": "Newsletter Subscription",
-          "description": "Manage your newsletter subscription preferences",
-          "label": "Subscribe to newsletter",
-          "hint": "You can change your subscription preferences at any time",
-          "emailRequired": "Email is required to subscribe to the newsletter",
-          "subscribeSuccess": "Successfully subscribed to the newsletter",
-          "subscribeFail": "Failed to subscribe to the newsletter",
-          "unsubscribeSuccess": "Successfully unsubscribed from the newsletter",
-          "unsubscribeFail": "Failed to unsubscribe from the newsletter",
-          "error": "An error occurred while updating your subscription"
+          "title": "뉴스레터 구독",
+          "description": "뉴스레터 구독 설정 관리",
+          "label": "뉴스레터 구독하기",
+          "hint": "구독 설정은 언제든 바꿀 수 있습니다",
+          "emailRequired": "구독하려면 이메일이 필요합니다",
+          "subscribeSuccess": "뉴스레터를 구독했습니다",
+          "subscribeFail": "뉴스레터 구독에 실패했습니다",
+          "unsubscribeSuccess": "뉴스레터를 해지했습니다",
+          "unsubscribeFail": "뉴스레터 해지에 실패했습니다",
+          "error": "구독 업데이트 중 오류가 발생했습니다"
         }
       },
       "security": {
-        "title": "Security",
-        "description": "Manage your security settings",
+        "title": "보안",
+        "description": "보안 설정 관리",
         "updatePassword": {
-          "title": "Change Password",
-          "description": "Enter your current password and a new password",
-          "currentPassword": "Current Password",
-          "currentRequired": "Current password is required",
-          "newPassword": "New Password",
-          "newMinLength": "Password must be at least 8 characters",
-          "hint": "Please use at least 8 characters for password",
-          "showPassword": "Show password",
-          "hidePassword": "Hide password",
-          "success": "Password updated successfully",
-          "fail": "Failed to update password",
-          "saving": "Saving...",
-          "save": "Save"
+          "title": "비밀번호 변경",
+          "description": "현재 비밀번호와 새 비밀번호를 입력하세요",
+          "currentPassword": "현재 비밀번호",
+          "currentRequired": "현재 비밀번호가 필요합니다",
+          "newPassword": "새 비밀번호",
+          "newMinLength": "비밀번호는 8자 이상 입력해 주세요",
+          "hint": "비밀번호는 8자 이상 입력해 주세요",
+          "showPassword": "비밀번호 표시",
+          "hidePassword": "비밀번호 숨기기",
+          "success": "비밀번호를 업데이트했습니다",
+          "fail": "비밀번호 업데이트에 실패했습니다",
+          "saving": "저장 중...",
+          "save": "저장"
         },
         "resetPassword": {
-          "title": "Reset Password",
-          "description": "Reset password to enable email login",
-          "info": "Resetting your password will allow you to sign in using your email and password in addition to your social login methods. You will receive an email with instructions to reset your password",
-          "button": "Reset Password"
+          "title": "비밀번호 재설정",
+          "description": "비밀번호를 재설정해 이메일 로그인을 활성화하세요",
+          "info": "비밀번호를 재설정하면 소셜 로그인 외에 이메일과 비밀번호로도 로그인할 수 있습니다. 재설정 안내 메일이 발송됩니다",
+          "button": "비밀번호 재설정"
         },
         "deleteAccount": {
-          "title": "Delete Account",
-          "description": "Permanently remove your account and all of its contents",
-          "warning": "This action is not reversible, so please continue with caution",
-          "button": "Delete Account",
-          "confirmTitle": "Delete Account",
-          "confirmDescription": "Are you sure you want to delete your account? This action cannot be undone.",
-          "confirm": "Delete",
-          "cancel": "Cancel",
-          "deleting": "Deleting...",
-          "success": "Account deleted successfully",
-          "fail": "Failed to delete account"
+          "title": "계정 삭제",
+          "description": "계정과 모든 콘텐츠를 영구 삭제",
+          "warning": "이 작업은 되돌릴 수 없으니 신중히 진행하세요",
+          "button": "계정 삭제",
+          "confirmTitle": "계정 삭제",
+          "confirmDescription": "정말 계정을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.",
+          "confirm": "삭제",
+          "cancel": "취소",
+          "deleting": "삭제 중...",
+          "success": "계정을 삭제했습니다",
+          "fail": "계정 삭제에 실패했습니다"
         }
       },
       "apiKeys": {
-        "title": "API Keys",
-        "description": "Manage your API keys for authentication",
-        "createButton": "Create API Key",
-        "createDialogTitle": "Create New API Key",
-        "createDialogDescription": "Give your API key a name to identify it later",
-        "keyNameLabel": "Key Name",
-        "keyNamePlaceholder": "Please enter a name for your API key",
-        "cancel": "Cancel",
-        "create": "Create",
-        "creating": "Creating...",
-        "noResults": "No API keys found",
-        "createSuccess": "API key created successfully",
-        "createError": "Failed to create API key",
-        "deleteSuccess": "API key deleted successfully",
-        "deleteError": "Failed to delete API key",
-        "never": "Never",
-        "delete": "Delete",
-        "done": "Done",
-        "newKeyDialogTitle": "Your New API Key",
-        "newKeyDialogDescription": "Please copy and save this key now. You won't be able to see it again!",
+        "title": "API 키",
+        "description": "인증용 API 키 관리",
+        "createButton": "API 키 만들기",
+        "createDialogTitle": "새 API 키",
+        "createDialogDescription": "나중에 알아볼 수 있게 이름을 지어주세요",
+        "keyNameLabel": "키 이름",
+        "keyNamePlaceholder": "API 키 이름을 입력해 주세요",
+        "cancel": "취소",
+        "create": "만들기",
+        "creating": "만드는 중...",
+        "noResults": "API 키가 없습니다",
+        "createSuccess": "API 키를 만들었습니다",
+        "createError": "API 키 만들기에 실패했습니다",
+        "deleteSuccess": "API 키를 삭제했습니다",
+        "deleteError": "API 키 삭제에 실패했습니다",
+        "never": "없음",
+        "delete": "삭제",
+        "done": "완료",
+        "newKeyDialogTitle": "새 API 키",
+        "newKeyDialogDescription": "지금 복사해 보관하세요. 다시 볼 수 없습니다!",
         "columns": {
-          "name": "Name",
-          "key": "Key",
-          "createdAt": "Created At",
-          "expiresAt": "Expires At",
-          "actions": "Actions"
+          "name": "이름",
+          "key": "키",
+          "createdAt": "생성일",
+          "expiresAt": "만료일",
+          "actions": "작업"
         }
       }
     },
     "upgrade": {
-      "title": "Upgrade",
-      "description": "Upgrade to Pro to access all features",
-      "button": "Upgrade"
+      "title": "업그레이드",
+      "description": "Pro로 업그레이드해 모든 기능을 이용하세요",
+      "button": "업그레이드"
+    },
+    "photos": {
+      "subtitle": "AI 창작물을 한곳에",
+      "emptyTitle": "아직 사진이 없습니다",
+      "emptyDesc": "도구를 고르고 사진을 올리면 창작물이 여기에 표시됩니다.",
+      "cta": "첫 사진 만들기",
+      "browseTools": "도구 보기",
+      "download": "다운로드",
+      "openEditor": "편집기에서 열기",
+      "status": {
+        "pending": "대기 중",
+        "processing": "처리 중",
+        "done": "완료",
+        "failed": "실패"
+      },
+      "creditsUsed": "{count} 크레딧",
+      "createdAt": "{date}"
     }
   },
   "Mail": {
     "common": {
-      "team": "{name} Team",
+      "team": "{name} 팀",
       "copyright": "©️ {year} All Rights Reserved."
     },
     "verifyEmail": {
-      "title": "Hi, {name}.",
-      "body": "Please click the link below to verify your email address.",
-      "confirmEmail": "Confirm email",
-      "subject": "Verify your email"
+      "title": "안녕하세요, {name}님.",
+      "body": "아래 링크를 눌러 이메일 주소를 확인해 주세요.",
+      "confirmEmail": "이메일 확인",
+      "subject": "이메일을 확인해 주세요"
     },
     "forgotPassword": {
-      "title": "Hi, {name}.",
-      "body": "Please click the link below to reset your password.",
-      "resetPassword": "Reset password",
-      "subject": "Reset your password"
+      "title": "안녕하세요, {name}님.",
+      "body": "아래 링크를 눌러 비밀번호를 재설정해 주세요.",
+      "resetPassword": "비밀번호 재설정",
+      "subject": "비밀번호 재설정"
     },
     "subscribeNewsletter": {
-      "body": "Thank you for subscribing to the newsletter. We will keep you updated with the latest news and updates.",
-      "subject": "Thanks for subscribing"
+      "body": "뉴스레터를 구독해 주셔서 감사합니다. 최신 소식과 업데이트를 전해드리겠습니다.",
+      "subject": "구독해 주셔서 감사합니다"
     },
     "contactMessage": {
-      "name": "Name: {name}",
-      "email": "Email: {email}",
-      "message": "Message: {message}",
-      "subject": "Contact Message from Website"
+      "name": "이름: {name}",
+      "email": "이메일: {email}",
+      "message": "메시지: {message}",
+      "subject": "사이트 문의 메시지"
     }
   },
   "HomePage": {
     "title": "PhotoCraft",
-    "description": "Make AI SaaS in days, simply and effortlessly",
+    "description": "며칠 만에 AI SaaS 만들기, 간단하고 쉽게",
     "hero": {
-      "title": "Make AI SaaS in days, simply and effortlessly",
-      "description": "The is a demo website built with PhotoCraft, a Next.js SaaS boilerplate to help you build your AI SaaS faster and better.",
-      "introduction": "Introducing PhotoCraft Boilerplate",
-      "primary": "Get Started",
-      "secondary": "See Demo"
+      "title": "며칠 만에 AI SaaS 만들기, 간단하고 쉽게",
+      "description": "AI SaaS를 더 빠르고 더 잘 만들 수 있는 Next.js SaaS 보일러플레이트 PhotoCraft로 만든 데모 사이트입니다.",
+      "introduction": "PhotoCraft 보일러플레이트 소개",
+      "primary": "시작하기",
+      "secondary": "데모 보기"
     },
-    "logocloud": {
-      "title": "Your favorite companies are our partners"
-    },
+    "logocloud": { "title": "좋아하는 기업들이 우리의 파트너입니다" },
     "integration": {
-      "title": "Integrations",
-      "subtitle": "Integrate with your favorite tools",
-      "description": "Connect seamlessly with popular platforms and services to enhance your workflow.",
-      "learnMore": "Learn More",
+      "title": "연동",
+      "subtitle": "좋아하는 도구와 연동",
+      "description": "인기 플랫폼·서비스와 매끄럽게 연결됩니다.",
+      "learnMore": "자세히 보기",
       "items": {
-        "item-1": {
-          "title": "Google Gemini",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-2": {
-          "title": "Replit",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-3": {
-          "title": "MagicUI",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-4": {
-          "title": "VSCodium",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-5": {
-          "title": "MediaWiki",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        },
-        "item-6": {
-          "title": "Google PaLM",
-          "description": "Amet praesentium deserunt ex commodi tempore fuga voluptatem."
-        }
+        "item-1": { "title": "Google Gemini", "description": "Google AI 모델을 워크플로에 매끄럽게 통합." },
+        "item-2": { "title": "Replit", "description": "Replit을 워크플로에 매끄럽게 통합." },
+        "item-3": { "title": "MagicUI", "description": "MagicUI를 워크플로에 매끄럽게 통합." },
+        "item-4": { "title": "VSCodium", "description": "VSCodium을 워크플로에 매끄럽게 통합." },
+        "item-5": { "title": "MediaWiki", "description": "MediaWiki를 워크플로에 매끄럽게 통합." },
+        "item-6": { "title": "Google PaLM", "description": "Google PaLM을 워크플로에 매끄럽게 통합." }
       }
     },
     "integration2": {
-      "title": "Integrate with your favorite tools",
-      "description": "Connect seamlessly with popular platforms and services to enhance your workflow.",
-      "primaryButton": "Get Started",
-      "secondaryButton": "See Demo"
+      "title": "좋아하는 도구와 연동",
+      "description": "인기 플랫폼·서비스와 매끄럽게 연결됩니다.",
+      "primaryButton": "시작하기",
+      "secondaryButton": "데모 보기"
     },
     "features": {
-      "title": "Features",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
+      "title": "기능",
+      "subtitle": "제품의 기능",
+      "description": "제품 설명을 여기에 작성하세요",
       "items": {
-        "item-1": {
-          "title": "Product Feature One",
-          "description": "Please write the detailed description of feature one here, make it as detailed as possible, make it more attractive to users"
-        },
-        "item-2": {
-          "title": "Product Feature Two",
-          "description": "Please write the detailed description of feature two here, make it as detailed as possible, make it more attractive to users"
-        },
-        "item-3": {
-          "title": "Product Feature Three",
-          "description": "Please write the detailed description of feature three here, make it as detailed as possible, make it more attractive to users"
-        },
-        "item-4": {
-          "title": "Product Feature Four",
-          "description": "Please write the detailed description of feature four here, make it as detailed as possible, make it more attractive to users"
-        }
+        "item-1": { "title": "제품 기능 1", "description": "기능 1의 상세 설명을 여기에 작성하세요. 최대한 자세하고 사용자에게 매력적으로" },
+        "item-2": { "title": "제품 기능 2", "description": "기능 2의 상세 설명을 여기에 작성하세요. 최대한 자세하고 사용자에게 매력적으로" },
+        "item-3": { "title": "제품 기능 3", "description": "기능 3의 상세 설명을 여기에 작성하세요. 최대한 자세하고 사용자에게 매력적으로" },
+        "item-4": { "title": "제품 기능 4", "description": "기능 4의 상세 설명을 여기에 작성하세요. 최대한 자세하고 사용자에게 매력적으로" }
       }
     },
     "features2": {
-      "title": "Features2",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
-      "feature-1": "Product Feature One",
-      "feature-2": "Product Feature Two",
-      "feature-3": "Product Feature Three",
-      "feature-4": "Product Feature Four"
+      "title": "기능 2",
+      "subtitle": "제품의 기능",
+      "description": "제품 설명을 여기에 작성하세요",
+      "feature-1": "제품 기능 1",
+      "feature-2": "제품 기능 2",
+      "feature-3": "제품 기능 3",
+      "feature-4": "제품 기능 4"
     },
     "features3": {
-      "title": "Features3",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
+      "title": "기능 3",
+      "subtitle": "제품의 기능",
+      "description": "제품 설명을 여기에 작성하세요",
       "items": {
-        "item-1": {
-          "title": "Product Feature One",
-          "description": "Please write the detailed description of feature one here"
-        },
-        "item-2": {
-          "title": "Product Feature Two",
-          "description": "Please write the detailed description of feature two here"
-        },
-        "item-3": {
-          "title": "Product Feature Three",
-          "description": "Please write the detailed description of feature three here"
-        },
-        "item-4": {
-          "title": "Product Feature Four",
-          "description": "Please write the detailed description of feature four here"
-        },
-        "item-5": {
-          "title": "Product Feature Five",
-          "description": "Please write the detailed description of feature five here"
-        },
-        "item-6": {
-          "title": "Product Feature Six",
-          "description": "Please write the detailed description of feature six here"
-        }
+        "item-1": { "title": "제품 기능 1", "description": "기능 1의 상세 설명을 여기에 작성하세요" },
+        "item-2": { "title": "제품 기능 2", "description": "기능 2의 상세 설명을 여기에 작성하세요" },
+        "item-3": { "title": "제품 기능 3", "description": "기능 3의 상세 설명을 여기에 작성하세요" },
+        "item-4": { "title": "제품 기능 4", "description": "기능 4의 상세 설명을 여기에 작성하세요" },
+        "item-5": { "title": "제품 기능 5", "description": "기능 5의 상세 설명을 여기에 작성하세요" },
+        "item-6": { "title": "제품 기능 6", "description": "기능 6의 상세 설명을 여기에 작성하세요" }
       }
     },
     "pricing": {
-      "title": "Pricing",
-      "subtitle": "Pricing",
-      "description": "Choose the plan that works best for you"
+      "title": "요금제",
+      "subtitle": "요금제",
+      "description": "나에게 맞는 플랜을 선택하세요"
     },
     "faqs": {
-      "title": "FAQ",
-      "subtitle": "Frequently Asked Questions",
+      "title": "자주 묻는 질문",
+      "subtitle": "자주 묻는 질문",
       "items": {
-        "item-1": {
-          "question": "Do you offer a free trial?",
-          "answer": "Yes, we offer a 7-day free trial."
-        },
-        "item-2": {
-          "question": "How do I cancel my subscription?",
-          "answer": "You can cancel your subscription by visiting the billing page."
-        },
-        "item-3": {
-          "question": "Can I change my plan?",
-          "answer": "Yes, you can change your plan at any time by visiting the billing page."
-        },
-        "item-4": {
-          "question": "What is the refund policy?",
-          "answer": "We offer a 30-day money-back guarantee if you are not happy with our product."
-        },
-        "item-5": {
-          "question": "Can't find what you're looking for?",
-          "answer": "Please contact our customer support team at support@photoscraft.top"
-        }
+        "item-1": { "question": "무료 체험이 있나요?", "answer": "네, 7일 무료 체험을 제공합니다." },
+        "item-2": { "question": "구독을 취소하려면?", "answer": "결제 페이지에서 취소할 수 있습니다." },
+        "item-3": { "question": "플랜을 바꿀 수 있나요?", "answer": "네, 결제 페이지에서 언제든 바꿀 수 있습니다." },
+        "item-4": { "question": "환불 정책은?", "answer": "제품이 마음에 들지 않으면 30일 환불 보장해 드립니다." },
+        "item-5": { "question": "찾는 답이 없나요?", "answer": "고객 지원팀에 문의해 주세요: support@photoscraft.top" }
       }
     },
     "testimonials": {
-      "title": "Testimonials",
-      "subtitle": "What our customers are saying",
+      "title": "이용 후기",
+      "subtitle": "고객들의 평가",
       "items": {
-        "item-1": {
-          "name": "Jonathan Yombo",
-          "role": "Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/1.jpg",
-          "quote": "PhotoCraft is really extraordinary and very practical, no need to break your head. A real gold mine."
-        },
-        "item-2": {
-          "name": "Yves Kalume",
-          "role": "GDE - Android",
-          "image": "https://randomuser.me/api/portraits/men/6.jpg",
-          "quote": "With no experience in webdesign I just redesigned my entire website in a few minutes with tailwindcss thanks to PhotoCraft."
-        },
-        "item-3": {
-          "name": "Yucel Faruksahan",
-          "role": "Tailkits Creator",
-          "image": "https://randomuser.me/api/portraits/men/7.jpg",
-          "quote": "Great work on PhotoCraft template. This is one of the best personal website that I have seen so far :)"
-        },
-        "item-4": {
-          "name": "Anonymous author",
-          "role": "Product Manager",
-          "image": "https://randomuser.me/api/portraits/men/8.jpg",
-          "quote": "I downloaded the one of PhotoCraft template which is very clear to understand at the start and you could modify the codes/blocks to fit perfectly on your purpose of the page."
-        },
-        "item-5": {
-          "name": "Shekinah Tshiokufila",
-          "role": "Senior Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/4.jpg",
-          "quote": "PhotoCraft is redefining the standard of web design, with these blocks it provides an easy and efficient way for those who love beauty but may lack the time to implement it."
-        },
-        "item-6": {
-          "name": "Oketa Fred",
-          "role": "Fullstack Developer",
-          "image": "https://randomuser.me/api/portraits/men/2.jpg",
-          "quote": "I absolutely love PhotoCraft! The component blocks are beautifully designed and easy to use, which makes creating a great-looking website a breeze."
-        },
-        "item-7": {
-          "name": "Zeki",
-          "role": "Founder of ChatExtend",
-          "image": "https://randomuser.me/api/portraits/men/5.jpg",
-          "quote": "PhotoCraft is the perfect fusion of simplicity and versatility, enabling us to create UIs that are as stunning as they are user-friendly."
-        },
-        "item-8": {
-          "name": "Joseph Kitheka",
-          "role": "Fullstack Developer",
-          "image": "https://randomuser.me/api/portraits/men/9.jpg",
-          "quote": "PhotoCraft has transformed the way I develop web applications. Their extensive collection of UI components, blocks, and templates has significantly accelerated my workflow."
-        },
-        "item-9": {
-          "name": "Khatab Wedaa",
-          "role": "MerakiUI Creator",
-          "image": "https://randomuser.me/api/portraits/men/10.jpg",
-          "quote": "PhotoCraft is an elegant, clean, and responsive tailwind css components it's very helpful to start fast with your project."
-        },
-        "item-10": {
-          "name": "Rodrigo Aguilar",
-          "role": "TailwindAwesome Creator",
-          "image": "https://randomuser.me/api/portraits/men/11.jpg",
-          "quote": "I love PhotoCraft ❤️. The component blocks are well-structured, simple to use, and beautifully designed. It makes it really easy to have a good-looking website in no time."
-        },
-        "item-11": {
-          "name": "Eric Ampire",
-          "role": "@GoogleDevExpert for Android",
-          "image": "https://randomuser.me/api/portraits/men/12.jpg",
-          "quote": "PhotoCraft templates are the perfect solution for anyone who wants to create a beautiful and functional website without any web design experience."
-        },
-        "item-12": {
-          "name": "Roland Tubonge",
-          "role": "Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/13.jpg",
-          "quote": "PhotoCraft is so well designed that even with a very poor knowledge of web design you can do miracles. Let yourself be seduced!"
-        }
+        "item-1": { "name": "Jonathan Yombo", "role": "Software Engineer", "image": "https://randomuser.me/api/portraits/men/1.jpg", "quote": "PhotoCraft는 정말 놀랍고 실용적입니다. 머리 아플 필요 없어요. 진짜 금광입니다." },
+        "item-2": { "name": "Yves Kalume", "role": "GDE - Android", "image": "https://randomuser.me/api/portraits/men/6.jpg", "quote": "웹디자인 경험 없이 PhotoCraft 덕분에 몇 분 만에 사이트 전체를 다시 만들었습니다." },
+        "item-3": { "name": "Yucel Faruksahan", "role": "Tailkits Creator", "image": "https://randomuser.me/api/portraits/men/7.jpg", "quote": "PhotoCraft 템플릿 작업이 훌륭합니다. 본 최고의 개인 사이트 중 하나예요." },
+        "item-4": { "name": "Anonymous author", "role": "Product Manager", "image": "https://randomuser.me/api/portraits/men/8.jpg", "quote": "PhotoCraft 템플릿은 처음부터 이해하기 쉽고 코드·블록을 목적에 맞게 고치기 좋습니다." },
+        "item-5": { "name": "Shekinah Tshiokufila", "role": "Senior Software Engineer", "image": "https://randomuser.me/api/portraits/men/4.jpg", "quote": "PhotoCraft는 웹디자인의 기준을 새로 쓰고 있습니다. 아름다움을 좋아하지만 시간이 없는 분께 쉽고 효율적인 방법을 줍니다." },
+        "item-6": { "name": "Oketa Fred", "role": "Fullstack Developer", "image": "https://randomuser.me/api/portraits/men/2.jpg", "quote": "PhotoCraft가 너무 좋아요! 컴포넌트 블록이 아름답고 쓰기 쉬워 멋진 사이트 만들기가 식은 죽 먹기입니다." },
+        "item-7": { "name": "Zeki", "role": "Founder of ChatExtend", "image": "https://randomuser.me/api/portraits/men/5.jpg", "quote": "PhotoCraft는 단순함과 활용도의 완벽한 조합으로 아름답고 쓰기 편한 UI를 만들게 해줍니다." },
+        "item-8": { "name": "Joseph Kitheka", "role": "Fullstack Developer", "image": "https://randomuser.me/api/portraits/men/9.jpg", "quote": "PhotoCraft는 웹앱 개발 방식을 바꿨습니다. 방대한 UI 컴포넌트·블록·템플릿 덕분에 작업이 훨씬 빨라졌습니다." },
+        "item-9": { "name": "Khatab Wedaa", "role": "MerakiUI Creator", "image": "https://randomuser.me/api/portraits/men/10.jpg", "quote": "PhotoCraft는 우아하고 깨끗하며 반응형인 Tailwind CSS 컴포넌트로 빠르게 시작하기 좋습니다." },
+        "item-10": { "name": "Rodrigo Aguilar", "role": "TailwindAwesome Creator", "image": "https://randomuser.me/api/portraits/men/11.jpg", "quote": "PhotoCraft가 좋아요❤️. 컴포넌트 블록이 잘 짜여 있고 간단하고 아름다워서 금방 멋진 사이트가 나옵니다." },
+        "item-11": { "name": "Eric Ampire", "role": "@GoogleDevExpert for Android", "image": "https://randomuser.me/api/portraits/men/12.jpg", "quote": "PhotoCraft 템플릿은 웹디자인 경험 없이 아름답고 쓸모 있는 사이트를 만들고 싶은 분께 딱입니다." },
+        "item-12": { "name": "Roland Tubonge", "role": "Software Engineer", "image": "https://randomuser.me/api/portraits/men/13.jpg", "quote": "PhotoCraft 설계가 훌륭해서 웹디자인 지식이 적어도 놀라운 결과를 낼 수 있습니다." }
       }
     },
     "stats": {
-      "title": "Stats",
-      "subtitle": "PhotoCraft in numbers",
-      "description": "PhotoCraft lets you make AI SaaS in days, simply and effortlessly",
+      "title": "숫자로 보기",
+      "subtitle": "숫자로 보는 PhotoCraft",
+      "description": "PhotoCraft로 며칠 만에 AI SaaS를, 간단하고 쉽게",
       "items": {
-        "item-1": {
-          "title": "Stars on GitHub"
-        },
-        "item-2": {
-          "title": "Active Users"
-        },
-        "item-3": {
-          "title": "Powered Apps"
-        }
+        "item-1": { "title": "GitHub 스타" },
+        "item-2": { "title": "활성 사용자" },
+        "item-3": { "title": "만들어진 앱" }
       }
     },
     "calltoaction": {
-      "title": "Start Building",
-      "description": "PhotoCraft lets you make AI SaaS in days, simply and effortlessly",
-      "primaryButton": "Get Started",
-      "secondaryButton": "See Demo"
+      "title": "만들기 시작하세요",
+      "description": "PhotoCraft로 며칠 만에 AI SaaS를, 간단하고 쉽게",
+      "primaryButton": "시작하기",
+      "secondaryButton": "데모 보기"
+    }
+  },
+  "PhotoTools": {
+    "categories": {
+      "enhance": "화질 개선",
+      "background": "배경",
+      "creative": "크리에이티브",
+      "fun": "재미",
+      "all": "전체"
+    },
+    "tools": {
+      "enhance": { "title": "AI 사진 화질 개선", "tagline": "블러·노이즈 제거, 원탭 4K 선명도" },
+      "restore": { "title": "AI 오래된 사진 복원", "tagline": "기스·접힘·훼손 복구" },
+      "colorize": { "title": "AI 사진 컬러화", "tagline": "흑백 → 생생한 컬러로" },
+      "eraser": { "title": "AI 매직 지우개", "tagline": "사물·인물·텍스트 제거" },
+      "watermark": { "title": "워터마크 제거", "tagline": "로고와 덧글자 깔끔하게" },
+      "bg": { "title": "AI 배경 제거", "tagline": "정밀한 오려내기, 머리카락 결 엣지" },
+      "bg_change": { "title": "AI 배경 변경", "tagline": "원클릭 스튜디오 배경" },
+      "sky": { "title": "AI 하늘 교체", "tagline": "노을·별밤·드라마틱한 하늘" },
+      "room": { "title": "AI 방 꾸미기", "tagline": "인테리어를 포토리얼하게" },
+      "avatar": { "title": "AI 아바타 생성", "tagline": "스튜디오급 프로 아바타" },
+      "scene": { "title": "AI 장면 생성", "tagline": "당신이 주인공인 영화 같은 장면" },
+      "anime": { "title": "AI 애니 생성", "tagline": "사진 → 애니 일러스트" },
+      "cartoon": { "title": "AI 캐리커처", "tagline": "유쾌한 카툰 초상화" },
+      "hairstyle": { "title": "AI 헤어스타일 변경", "tagline": "새 머리를 바로 체험" },
+      "expression": { "title": "AI 표정 변경", "tagline": "자연스러운 미소, 그대로의 당신" },
+      "transform": { "title": "AI 변신", "tagline": "화보급 리스타일" }
+    },
+    "hero": {
+      "badge": "16가지 AI 도구 · 가입 없이 체험 · 몇 초 만에 결과",
+      "titleA": "모든 사진 보정,",
+      "titleB": "원클릭으로",
+      "subtitle": "화질 개선·복원·컬러화·지우기·배경 오려내기·애니 변환까지 — 아래에서 도구를 고르고 올리세요.",
+      "upload": "사진 올리기",
+      "browse": "도구 보기",
+      "trust": "★ 4.9 · 200만 장 이상 화질 개선",
+      "freePreview": "무료 미리보기 · 다운로드할 때만 결제",
+      "steps": "세 단계: 도구 고르기 → 올리기 → 내려받기. 배울 것 없습니다.",
+      "hot": "인기",
+      "credits": { "one": "크레딧", "other": "크레딧" },
+      "allTools": "모든 도구",
+      "uploadHint": "드래그/클릭으로 올리기(JPG/PNG/WebP ≤20MB)",
+      "download": "결과 내려받기",
+      "before": "전",
+      "after": "후",
+      "run": "실행"
+    },
+    "editor": {
+      "balance": "크레딧",
+      "insufficient": "크레딧이 부족합니다",
+      "topup": "충전",
+      "run": "실행"
     }
   }
 }
