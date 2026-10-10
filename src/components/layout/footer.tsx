@@ -57,6 +57,46 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
 
               {/* built with button */}
               <BuiltWithButton />
+
+              {/* badges */}
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://goodaitools.com/ai/photoscraft"
+                  aria-label="Good AI Tools"
+                >
+                  <img
+                    src="https://goodaitools.com/assets/images/badge.png"
+                    alt="Good AI Tools"
+                    height={54}
+                    loading="lazy"
+                    className="block h-[54px] w-auto dark:hidden"
+                  />
+                  <img
+                    src="https://goodaitools.com/assets/images/badge-dark.png"
+                    alt="Good AI Tools"
+                    height={54}
+                    loading="lazy"
+                    className="hidden h-[54px] w-auto dark:block"
+                  />
+                </a>
+                <a
+                  href="https://frogdr.com/photoscraft.top?utm_source=photoscraft.top"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Monitor your Domain Rating with FrogDR"
+                >
+                  <img
+                    src="https://frogdr.com/photoscraft.top/badge-white.svg"
+                    alt="Monitor your Domain Rating with FrogDR"
+                    width={200}
+                    height={43}
+                    loading="lazy"
+                    className="h-[43px] w-auto"
+                  />
+                </a>
+              </div>
             </div>
           </div>
 
