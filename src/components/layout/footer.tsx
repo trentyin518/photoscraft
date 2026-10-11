@@ -120,6 +120,23 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
       ),
     },
     {
+      key: 'superlaunchlist',
+      href: 'https://superlaunchlist.com?ref=https%3A%2F%2Fphotoscraft.top',
+      label: 'Featured on SuperLaunch List',
+      chipClassName:
+        'shrink-0 rounded-lg border border-border bg-white px-2 py-0.5 dark:bg-slate-900',
+      img: (
+        <img
+          src="https://superlaunchlist.com/badge.svg"
+          alt="Featured on SuperLaunch List"
+          width={174}
+          height={42}
+          loading="lazy"
+          className="h-[21px] w-auto"
+        />
+      ),
+    },
+    {
       key: 'showmysites',
       href: 'https://www.showmysites.com',
       label: 'ShowMySites',
