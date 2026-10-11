@@ -93,6 +93,41 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
       ),
     },
     {
+      key: 'findly',
+      href: 'https://findly.tools/photoscraft?utm_source=photoscraft',
+      label: 'Featured on Findly.tools',
+      chipClassName:
+        'shrink-0 rounded-lg border border-border bg-white px-2 py-0.5 dark:bg-slate-900',
+      img: (
+        <>
+          <img
+            src="https://findly.tools/badges/findly-tools-badge-light.svg"
+            alt="Featured on Findly.tools"
+            width={175}
+            height={55}
+            loading="lazy"
+            className="block h-[21px] w-auto dark:hidden"
+          />
+          <img
+            src="https://findly.tools/badges/findly-tools-badge-dark.svg"
+            alt="Featured on Findly.tools"
+            width={175}
+            height={55}
+            loading="lazy"
+            className="hidden h-[21px] w-auto dark:block"
+          />
+        </>
+      ),
+    },
+    {
+      key: 'showmysites',
+      href: 'https://www.showmysites.com',
+      label: 'ShowMySites',
+      chipClassName:
+        'shrink-0 rounded-lg border border-border bg-white px-2 py-0.5 text-[12px] font-semibold text-foreground dark:bg-slate-900',
+      img: <span>ShowMySites</span>,
+    },
+    {
       key: 'apprater',
       href: 'https://apprater.net',
       label: 'AppRater — the independent app index',
