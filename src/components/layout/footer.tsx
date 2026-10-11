@@ -137,6 +137,22 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
       ),
     },
     {
+      key: 'submitaitools',
+      href: 'https://submitaitools.org',
+      label: 'Submit AI Tools',
+      chipClassName: 'shrink-0',
+      img: (
+        <img
+          src="https://submitaitools.org/static_submitaitools/images/submitaitools.png"
+          alt="Submit AI Tools"
+          width={200}
+          height={60}
+          loading="lazy"
+          className="h-[21px] w-auto rounded-[4px]"
+        />
+      ),
+    },
+    {
       key: 'showmysites',
       href: 'https://www.showmysites.com',
       label: 'ShowMySites',
