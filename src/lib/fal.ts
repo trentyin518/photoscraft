@@ -87,26 +87,26 @@ const EDIT_PROMPTS: Record<string, (params: ToolParams) => string> = {
     'Clean up this photo: seamlessly remove distracting spots, marks and overlay artifacts, then reconstruct the underlying background texture with matching light and detail so the result looks naturally clean.',
   eraser: () =>
     'Clean up this photo: remove distracting foreground objects and blemishes, then seamlessly reconstruct the background with matching light, color and texture.',
-  expression: () =>
-    'Change the facial expression to a natural warm happy smile with realistic teeth and eyes, keep face identity, lighting, hairstyle and everything else identical.',
-  hairstyle: () =>
-    'Change the hairstyle to a trendy modern stylish look with natural realistic hair texture and shine, keep face identity, clothing and background identical.',
-  'bg-change': () =>
-    'Keep the subject exactly identical (face, clothes, pose), replace the background with an elegant soft studio gradient backdrop, blend edges and lighting realistically.',
-  sky: () =>
-    'Replace the sky with a breathtaking dramatic sunset sky with vivid clouds, then color-grade the whole photo so light and tones match realistically.',
-  avatar: () =>
-    'Turn this photo into a polished professional avatar portrait: clean neutral background, flattering studio lighting, sharp details, keep face identity exactly.',
-  scene: () =>
-    'Place the person into a stunning cinematic scene with dramatic lighting, realistic shadows and reflections on the subject, keep face identity exactly.',
-  anime: () =>
-    'Redraw this photo as a high-quality anime-style illustration: clean line art, cel shading, vibrant colors, keep pose, composition and likeness.',
-  cartoon: () =>
-    'Turn this photo into a fun cartoon-style portrait: smooth shapes, cheerful colors, clean shading, keep likeness, pose and composition.',
-  transform: () =>
-    'Transform the outfit and setting into a stylish high-fashion photoshoot look, full body, realistic fabric texture and professional lighting.',
-  room: () =>
-    'Redesign this room interior with modern elegant decor and furniture, keep the same layout, perspective and lighting direction, photorealistic result.',
+  expression: (p) =>
+    `Change the facial expression to a natural ${String(p.expression ?? 'warm happy smile')}: realistic eyes and mouth, keep face identity, lighting, hairstyle and everything else identical.`,
+  hairstyle: (p) =>
+    `Change the hairstyle to "${String(p.hairstyle ?? 'trendy modern')}" style with natural realistic hair texture, shine and believable hairline, keep face identity, clothing and background identical.`,
+  'bg-change': (p) =>
+    `Keep the subject exactly identical (face, clothes, pose), replace the background with a "${String(p.backdrop ?? 'elegant soft studio gradient')}" backdrop, blend edges and lighting realistically.`,
+  sky: (p) =>
+    `Replace the sky with a breathtaking ${String(p.sky ?? 'dramatic sunset')} sky with vivid clouds, then color-grade the whole photo so light and tones match realistically.`,
+  avatar: (p) =>
+    `Turn this photo into a polished ${String(p.avatarStyle ?? 'professional')} avatar portrait: clean background, flattering studio lighting, sharp details, keep face identity exactly.`,
+  scene: (p) =>
+    `Place the person into a stunning ${String(p.scene ?? 'cinematic')} scene with dramatic lighting, realistic shadows and reflections on the subject, keep face identity exactly.`,
+  anime: (p) =>
+    `Redraw this photo as a high-quality ${String(p.animeStyle ?? 'anime')} style illustration: clean line art, cel shading, vibrant colors, keep pose, composition and likeness.`,
+  cartoon: (p) =>
+    `Turn this photo into a fun ${String(p.cartoonStyle ?? 'cartoon')} style portrait: smooth shapes, cheerful colors, clean shading, keep likeness, pose and composition.`,
+  transform: (p) =>
+    `Dress the person in a stylish ${String(p.outfit ?? 'high-fashion')} outfit in a matching photoshoot setting, full body, realistic fabric texture and professional lighting, keep face identity.`,
+  room: (p) =>
+    `Redesign this ${String(p.roomType ?? 'room')} interior in ${String(p.roomStyle ?? 'modern')} style with matching decor and furniture, keep the same layout, perspective and lighting direction, photorealistic result.`,
 };
 
 function editInput(tool: string, params: ToolParams) {

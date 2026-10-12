@@ -7,6 +7,21 @@ import { createPhotoJob } from '@/actions/create-photo-job';
 import { MaskPainter, type MaskPainterHandle } from './mask-painter';
 import { getCreditBalanceAction } from '@/actions/get-credit-balance';
 import { PHOTO_TOOLS, getPhotoToolText } from '@/config/photo-tools';
+import {
+  ANIME_STYLES,
+  AVATAR_STYLES,
+  BACKDROPS,
+  CARTOON_STYLES,
+  EXPRESSIONS,
+  HAIRSTYLES,
+  ROOM_STYLES,
+  ROOM_TYPES,
+  SCENE_STYLES,
+  SKIES,
+  TOOL_DEFAULT_PARAMS,
+  TRANSFORM_STYLES,
+  type StyleOption,
+} from '@/config/tool-options';
 import { useTranslations } from 'next-intl';
 import type { PhotoToolType } from '@/db/photocraft.schema';
 import { Button } from '@/components/ui/button';
@@ -70,7 +85,7 @@ export function PhotoEditor({
       outputUrl: null,
       jobId: null,
       status: 'idle',
-      params: { strength: 70 },
+      params: { ...(TOOL_DEFAULT_PARAMS[initialTool] ?? { strength: 70 }) },
     });
     setErr(null);
   }, [initialTool, initialImage, set]);
@@ -168,13 +183,14 @@ export function PhotoEditor({
           value={tool}
           onValueChange={(v) => {
             setErr(null);
+            const next = v as PhotoToolType;
             set({
-              tool: v as PhotoToolType,
+              tool: next,
               inputUrl: null,
               outputUrl: null,
               jobId: null,
               status: 'idle',
-              params: { strength: 70 },
+              params: { ...(TOOL_DEFAULT_PARAMS[next] ?? { strength: 70 }) },
             });
           }}
         >
@@ -270,36 +286,7 @@ export function PhotoEditor({
           {err && <p className="text-sm text-red-500">{err}</p>}
         </div>
         <div className="rounded-xl border p-4 flex flex-col gap-4 h-fit">
-          {(tool === 'enhance' || tool === 'restore') && (
-            <div>
-              <p className="text-sm mb-2">
-                Strength {(params.strength as number) ?? 70}
-              </p>
-              <Slider
-                defaultValue={[70]}
-                onValueChange={([v]) =>
-                  set({ params: { ...params, strength: v } })
-                }
-              />
-            </div>
-          )}
-          {tool === 'colorize' && (
-            <div>
-              <p className="text-sm mb-2">Style</p>
-              <div className="flex gap-2">
-                {['natural', 'vintage', 'vivid'].map((s) => (
-                  <button
-                    type="button"
-                    key={s}
-                    onClick={() => set({ params: { ...params, style: s } })}
-                    className={`rounded-full border px-3 py-1 text-xs ${params.style === s || (!params.style && s === 'natural') ? 'bg-black text-white' : ''}`}
-                  >
-                    {s}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
+          <ToolOptionPanel tool={tool} params={params} set={set} />
           {balance !== null && (
             <p className="text-sm text-muted-foreground">
               {t('editor.balance')}:{' '}
@@ -336,4 +323,167 @@ export function PhotoEditor({
       </div>
     </div>
   );
+}
+
+/** Thumbnail visual: remote image with gradient fallback if it fails to load. */
+function ThumbVisual({ option: o }: { option: StyleOption }) {
+  const [failed, setFailed] = useState(false);
+  if (!o.image || failed) {
+    return (
+      <span
+        className={`pointer-events-none absolute inset-0 bg-linear-to-br ${o.gradient}`}
+      />
+    );
+  }
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={o.image}
+      alt={o.label}
+      loading="lazy"
+      draggable={false}
+      onError={() => setFailed(true)}
+      className="pointer-events-none absolute inset-0 size-full object-cover"
+    />
+  );
+}
+
+function ThumbGrid({
+  title,
+  options,
+  value,
+  onPick,
+}: {
+  title: string;
+  options: StyleOption[];
+  value: unknown;
+  onPick: (id: string) => void;
+}) {
+  return (
+    <div>
+      <p className="text-sm font-medium mb-2">{title}</p>
+      <div className="grid grid-cols-3 gap-2">
+        {options.map((o) => {
+          const active = value === o.id;
+          return (
+            <button
+              type="button"
+              key={o.id}
+              onClick={() => onPick(o.id)}
+              aria-pressed={active}
+              className={`group relative overflow-hidden rounded-lg border-2 text-left transition ${
+                active
+                  ? 'border-blue-500 shadow-[0_0_0_2px_rgba(59,130,246,0.5)]'
+                  : 'border-transparent hover:border-foreground/40'
+              }`}
+              title={o.hint ?? o.label}
+            >
+              <span className="relative flex h-14 items-end justify-center overflow-hidden rounded-[6px] bg-muted">
+                <ThumbVisual option={o} />
+                {active && <span className="pointer-events-none absolute inset-0 bg-blue-500/20" />}
+                <span
+                  className={`relative m-1 rounded px-1.5 py-0.5 text-[10px] font-medium ${
+                    active
+                      ? 'bg-blue-600 text-white'
+                      : 'bg-black/55 text-white'
+                  }`}
+                >
+                  {o.label}
+                </span>
+              </span>
+              {active && (
+                <span className="absolute right-1 top-1 flex size-5 items-center justify-center rounded-full bg-blue-600 text-[11px] font-bold text-white shadow">
+                  ✓
+                </span>
+              )}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/** Right-panel options per tool: thumbnails / type+style pickers. */
+function ToolOptionPanel({
+  tool,
+  params,
+  set,
+}: {
+  tool: PhotoToolType;
+  params: Record<string, unknown>;
+  set: (p: {
+    params: Record<string, unknown>;
+  }) => void;
+}) {
+  const pick = (k: string, v: unknown) =>
+    set({ params: { ...params, [k]: v } });
+
+  if (tool === 'enhance' || tool === 'restore') {
+    return (
+      <div>
+        <p className="text-sm mb-2">Strength {(params.strength as number) ?? 70}</p>
+        <Slider
+          defaultValue={[(params.strength as number) ?? 70]}
+          onValueChange={([v]) => pick('strength', v)}
+        />
+      </div>
+    );
+  }
+  if (tool === 'hairstyle')
+    return (
+      <ThumbGrid
+        title="Hairstyle"
+        options={HAIRSTYLES}
+        value={params.hairstyle}
+        onPick={(id) => pick('hairstyle', id)}
+      />
+    );
+  if (tool === 'room')
+    return (
+      <div className="flex flex-col gap-4">
+        <ThumbGrid
+          title="Room type"
+          options={ROOM_TYPES}
+          value={params.roomType}
+          onPick={(id) => pick('roomType', id)}
+        />
+        <ThumbGrid
+          title="Style"
+          options={ROOM_STYLES}
+          value={params.roomStyle}
+          onPick={(id) => pick('roomStyle', id)}
+        />
+      </div>
+    );
+  const single: Record<string, { title: string; key: string; options: StyleOption[] }> = {
+    colorize: {
+      title: 'Style',
+      key: 'style',
+      options: [
+        { id: 'natural', label: 'Natural', gradient: 'from-stone-300 to-stone-500' },
+        { id: 'vintage', label: 'Vintage', gradient: 'from-amber-400 to-orange-600' },
+        { id: 'vivid', label: 'Vivid', gradient: 'from-pink-400 to-purple-500' },
+      ],
+    },
+    expression: { title: 'Expression', key: 'expression', options: EXPRESSIONS },
+    sky: { title: 'Sky', key: 'sky', options: SKIES },
+    'bg-change': { title: 'Backdrop', key: 'backdrop', options: BACKDROPS },
+    avatar: { title: 'Avatar style', key: 'avatarStyle', options: AVATAR_STYLES },
+    scene: { title: 'Scene', key: 'scene', options: SCENE_STYLES },
+    anime: { title: 'Anime style', key: 'animeStyle', options: ANIME_STYLES },
+    cartoon: { title: 'Cartoon style', key: 'cartoonStyle', options: CARTOON_STYLES },
+    transform: { title: 'Outfit', key: 'outfit', options: TRANSFORM_STYLES },
+  };
+  const cfg = single[tool];
+  if (cfg)
+    return (
+      <ThumbGrid
+        title={cfg.title}
+        options={cfg.options}
+        value={params[cfg.key]}
+        onPick={(id) => pick(cfg.key, id)}
+      />
+    );
+  return null;
 }
