@@ -23,3 +23,15 @@ export const deletePhotoJob = userActionClient
       );
     return { ok: true };
   });
+
+export const deletePhotoJobs = userActionClient
+  .inputSchema(z.object({ ids: z.array(z.string().min(1)).min(1).max(100) }))
+  .action(async ({ ctx, parsedInput }) => {
+    const db = await getDb();
+    for (const id of parsedInput.ids) {
+      await db
+        .delete(photoJob)
+        .where(and(eq(photoJob.id, id), eq(photoJob.userId, ctx.user.id)));
+    }
+    return { ok: true, count: parsedInput.ids.length };
+  });

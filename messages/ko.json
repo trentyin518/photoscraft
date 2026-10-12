@@ -586,7 +586,13 @@
       "creditsUsed": "{count} 크레딧",
       "createdAt": "{date}",
       "delete": "Delete",
-      "deleteConfirm": "Delete this record? This cannot be undone."
+      "deleteConfirm": "Delete this record? This cannot be undone.",
+      "deleteBatchConfirm": "Delete {count} records? This cannot be undone.",
+      "deleteSelected": "Delete selected ({count})",
+      "select": "Select",
+      "selectAll": "Select all",
+      "selectHint": "Select photos to batch delete",
+      "selectedCount": "{count} selected"
     }
   },
   "Mail": {

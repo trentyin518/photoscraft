@@ -649,6 +649,12 @@
       "openEditor": "在编辑器中打开",
       "delete": "删除",
       "deleteConfirm": "确定删除这条记录吗？删除后无法恢复。",
+      "deleteBatchConfirm": "确定删除选中的 {count} 条记录吗？删除后无法恢复。",
+      "deleteSelected": "删除选中 ({count})",
+      "select": "选择",
+      "selectAll": "全选",
+      "selectHint": "勾选照片可批量删除",
+      "selectedCount": "已选 {count} 张",
       "status": {
         "pending": "排队中",
         "processing": "生成中",
