@@ -33,8 +33,10 @@ async function pollJob(jobId: string): Promise<string> {
 
 export function PhotoEditor({
   initialTool = 'enhance' as PhotoToolType,
+  initialImage,
 }: {
   initialTool?: PhotoToolType;
+  initialImage?: string;
 }) {
   const { tool, inputUrl, outputUrl, status, params, set } =
     usePhotoEditorStore();
@@ -62,8 +64,16 @@ export function PhotoEditor({
   }, []);
 
   useEffect(() => {
-    set({ tool: initialTool });
-  }, [initialTool, set]);
+    set({
+      tool: initialTool,
+      inputUrl: initialImage ?? null,
+      outputUrl: null,
+      jobId: null,
+      status: 'idle',
+      params: { strength: 70 },
+    });
+    setErr(null);
+  }, [initialTool, initialImage, set]);
   const current =
     PHOTO_TOOLS.find((item) => item.id === tool) ?? PHOTO_TOOLS[0];
   const currentText = getPhotoToolText(current, tr);
@@ -156,9 +166,17 @@ export function PhotoEditor({
         </Link>
         <Select
           value={tool}
-          onValueChange={(v) =>
-            set({ tool: v as PhotoToolType, outputUrl: null, status: 'idle' })
-          }
+          onValueChange={(v) => {
+            setErr(null);
+            set({
+              tool: v as PhotoToolType,
+              inputUrl: null,
+              outputUrl: null,
+              jobId: null,
+              status: 'idle',
+              params: { strength: 70 },
+            });
+          }}
         >
           <SelectTrigger className="w-64">
             <SelectValue />
@@ -190,32 +208,56 @@ export function PhotoEditor({
               imageUrl={inputUrl}
             />
           ) : (
-            <label className="flex h-56 cursor-pointer items-center justify-center rounded-lg border-dashed border-2 text-sm text-muted-foreground overflow-hidden">
-              {inputUrl ? (
-                <img src={inputUrl} alt="" className="h-full object-contain" />
-              ) : (
-                t('hero.uploadHint')
+            <div className="relative">
+              <label className="flex h-56 cursor-pointer items-center justify-center rounded-lg border-dashed border-2 text-sm text-muted-foreground overflow-hidden">
+                {inputUrl ? (
+                  <img
+                    src={inputUrl}
+                    alt=""
+                    className="h-full object-contain"
+                  />
+                ) : (
+                  t('hero.uploadHint')
+                )}
+                <input
+                  type="file"
+                  className="hidden"
+                  accept="image/*"
+                  onChange={(e) => {
+                    const f = e.target.files?.[0];
+                    if (f) void onFile(f);
+                    // allow re-selecting the same file to re-upload
+                    e.target.value = '';
+                  }}
+                />
+              </label>
+              {inputUrl && (
+                <button
+                  type="button"
+                  onClick={() =>
+                    set({
+                      inputUrl: null,
+                      outputUrl: null,
+                      jobId: null,
+                      status: 'idle',
+                    })
+                  }
+                  className="absolute top-2 right-2 rounded-full bg-black/60 px-2.5 py-1 text-xs text-white hover:bg-black/80"
+                >
+                  ✕ Clear
+                </button>
               )}
-              <input
-                type="file"
-                className="hidden"
-                accept="image/*"
-                onChange={(e) => {
-                  const f = e.target.files?.[0];
-                  if (f) void onFile(f);
-                }}
-              />
-            </label>
+            </div>
           )}
-          {inputUrl && outputUrl && (
-            <div className="grid grid-cols-2 gap-2">
-              <div>
-                <p className="text-xs mb-1">{t('hero.before')}</p>
-                <img src={inputUrl} alt="before" className="rounded" />
-              </div>
-              <div>
-                <p className="text-xs mb-1">{t('hero.after')}</p>
-                <img src={outputUrl} alt="after" className="rounded" />
+          {outputUrl && (
+            <div>
+              <p className="text-xs mb-1">{t('hero.after')}</p>
+              <div className="flex h-56 items-center justify-center overflow-hidden rounded-lg border">
+                <img
+                  src={outputUrl}
+                  alt="result"
+                  className="h-full object-contain"
+                />
               </div>
             </div>
           )}

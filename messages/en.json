@@ -647,6 +647,8 @@
       "browseTools": "Browse tools",
       "download": "Download",
       "openEditor": "Open in editor",
+      "delete": "Delete",
+      "deleteConfirm": "Delete this record? This cannot be undone.",
       "status": {
         "pending": "Queued",
         "processing": "Processing",

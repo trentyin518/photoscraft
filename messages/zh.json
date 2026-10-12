@@ -647,6 +647,8 @@
       "browseTools": "浏览工具",
       "download": "下载",
       "openEditor": "在编辑器中打开",
+      "delete": "删除",
+      "deleteConfirm": "确定删除这条记录吗？删除后无法恢复。",
       "status": {
         "pending": "排队中",
         "processing": "生成中",

@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
@@ -8,8 +10,9 @@ import {
   type PhotoTool,
 } from '@/config/photo-tools';
 import type { photoJob } from '@/db/photocraft.schema';
+import { deletePhotoJob } from '@/actions/delete-photo-job';
 import { Routes } from '@/routes';
-import { DownloadIcon, Loader2Icon } from 'lucide-react';
+import { DownloadIcon, Loader2Icon, Trash2Icon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
@@ -35,6 +38,19 @@ export function MyPhotosGrid({ jobs }: { jobs: JobRow[] }) {
   const t = useTranslations('Dashboard.photos');
   const pt = useTranslations('PhotoTools');
   const ptr = pt as unknown as (key: string) => string;
+  const router = useRouter();
+  const [deletingId, setDeletingId] = useState<string | null>(null);
+
+  const onDelete = async (id: string) => {
+    if (!confirm(t('deleteConfirm'))) return;
+    setDeletingId(id);
+    try {
+      await (deletePhotoJob as unknown as (input: { id: string }) => Promise<unknown>)({ id });
+      router.refresh();
+    } finally {
+      setDeletingId(null);
+    }
+  };
 
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
@@ -94,8 +110,23 @@ export function MyPhotosGrid({ jobs }: { jobs: JobRow[] }) {
                     </a>
                   </Button>
                 )}
+                <Button
+                  size="icon"
+                  variant="ghost"
+                  title={t('delete')}
+                  disabled={deletingId === job.id}
+                  onClick={() => void onDelete(job.id)}
+                >
+                  {deletingId === job.id ? (
+                    <Loader2Icon className="size-4 animate-spin" />
+                  ) : (
+                    <Trash2Icon className="size-4" />
+                  )}
+                </Button>
                 <Button size="sm" variant="outline" asChild>
-                  <Link href={`${Routes.Editor}?tool=${job.tool}`}>
+                  <Link
+                    href={`${Routes.Editor}?tool=${job.tool}&image=${encodeURIComponent(job.inputUrl)}`}
+                  >
                     {t('openEditor')}
                   </Link>
                 </Button>

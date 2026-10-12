@@ -305,11 +305,21 @@
   },
   "Marketing": {
     "navbar": {
-      "editor": { "title": "エディター" },
-      "features": { "title": "機能" },
-      "pricing": { "title": "料金" },
-      "blog": { "title": "ブログ" },
-      "docs": { "title": "ドキュメント" },
+      "editor": {
+        "title": "エディター"
+      },
+      "features": {
+        "title": "機能"
+      },
+      "pricing": {
+        "title": "料金"
+      },
+      "blog": {
+        "title": "ブログ"
+      },
+      "docs": {
+        "title": "ドキュメント"
+      },
       "pages": {
         "title": "ページ",
         "items": {
@@ -351,7 +361,9 @@
           }
         }
       },
-      "home": { "title": "ホーム" }
+      "home": {
+        "title": "ホーム"
+      }
     },
     "footer": {
       "tagline": "AIで写真を鮮やかに蘇らせよう",
@@ -399,8 +411,12 @@
     }
   },
   "Dashboard": {
-    "dashboard": { "title": "マイフォト" },
-    "editor": { "title": "エディター" },
+    "dashboard": {
+      "title": "マイフォト"
+    },
+    "editor": {
+      "title": "エディター"
+    },
     "settings": {
       "title": "設定",
       "profile": {
@@ -568,7 +584,9 @@
         "failed": "失敗"
       },
       "creditsUsed": "{count}クレジット",
-      "createdAt": "{date}"
+      "createdAt": "{date}",
+      "delete": "Delete",
+      "deleteConfirm": "Delete this record? This cannot be undone."
     }
   },
   "Mail": {
@@ -609,19 +627,39 @@
       "primary": "始める",
       "secondary": "デモを見る"
     },
-    "logocloud": { "title": "お気に入りの企業が私たちのパートナーです" },
+    "logocloud": {
+      "title": "お気に入りの企業が私たちのパートナーです"
+    },
     "integration": {
       "title": "連携",
       "subtitle": "お気に入りのツールと連携",
       "description": "人気のプラットフォームやサービスとシームレスに連携できます。",
       "learnMore": "詳しく見る",
       "items": {
-        "item-1": { "title": "Google Gemini", "description": "GoogleのAIモデルをワークフローにシームレスに統合。" },
-        "item-2": { "title": "Replit", "description": "Replitをワークフローにシームレスに統合。" },
-        "item-3": { "title": "MagicUI", "description": "MagicUIをワークフローにシームレスに統合。" },
-        "item-4": { "title": "VSCodium", "description": "VSCodiumをワークフローにシームレスに統合。" },
-        "item-5": { "title": "MediaWiki", "description": "MediaWikiをワークフローにシームレスに統合。" },
-        "item-6": { "title": "Google PaLM", "description": "Google PaLMをワークフローにシームレスに統合。" }
+        "item-1": {
+          "title": "Google Gemini",
+          "description": "GoogleのAIモデルをワークフローにシームレスに統合。"
+        },
+        "item-2": {
+          "title": "Replit",
+          "description": "Replitをワークフローにシームレスに統合。"
+        },
+        "item-3": {
+          "title": "MagicUI",
+          "description": "MagicUIをワークフローにシームレスに統合。"
+        },
+        "item-4": {
+          "title": "VSCodium",
+          "description": "VSCodiumをワークフローにシームレスに統合。"
+        },
+        "item-5": {
+          "title": "MediaWiki",
+          "description": "MediaWikiをワークフローにシームレスに統合。"
+        },
+        "item-6": {
+          "title": "Google PaLM",
+          "description": "Google PaLMをワークフローにシームレスに統合。"
+        }
       }
     },
     "integration2": {
@@ -635,10 +673,22 @@
       "subtitle": "製品の機能",
       "description": "製品の説明をここに書いてください",
       "items": {
-        "item-1": { "title": "製品機能1", "description": "機能1の詳細な説明をここに書いてください。できるだけ詳しく、ユーザーにとって魅力的に" },
-        "item-2": { "title": "製品機能2", "description": "機能2の詳細な説明をここに書いてください。できるだけ詳しく、ユーザーにとって魅力的に" },
-        "item-3": { "title": "製品機能3", "description": "機能3の詳細な説明をここに書いてください。できるだけ詳しく、ユーザーにとって魅力的に" },
-        "item-4": { "title": "製品機能4", "description": "機能4の詳細な説明をここに書いてください。できるだけ詳しく、ユーザーにとって魅力的に" }
+        "item-1": {
+          "title": "製品機能1",
+          "description": "機能1の詳細な説明をここに書いてください。できるだけ詳しく、ユーザーにとって魅力的に"
+        },
+        "item-2": {
+          "title": "製品機能2",
+          "description": "機能2の詳細な説明をここに書いてください。できるだけ詳しく、ユーザーにとって魅力的に"
+        },
+        "item-3": {
+          "title": "製品機能3",
+          "description": "機能3の詳細な説明をここに書いてください。できるだけ詳しく、ユーザーにとって魅力的に"
+        },
+        "item-4": {
+          "title": "製品機能4",
+          "description": "機能4の詳細な説明をここに書いてください。できるだけ詳しく、ユーザーにとって魅力的に"
+        }
       }
     },
     "features2": {
@@ -655,12 +705,30 @@
       "subtitle": "製品の機能",
       "description": "製品の説明をここに書いてください",
       "items": {
-        "item-1": { "title": "製品機能1", "description": "機能1の詳細な説明をここに書いてください" },
-        "item-2": { "title": "製品機能2", "description": "機能2の詳細な説明をここに書いてください" },
-        "item-3": { "title": "製品機能3", "description": "機能3の詳細な説明をここに書いてください" },
-        "item-4": { "title": "製品機能4", "description": "機能4の詳細な説明をここに書いてください" },
-        "item-5": { "title": "製品機能5", "description": "機能5の詳細な説明をここに書いてください" },
-        "item-6": { "title": "製品機能6", "description": "機能6の詳細な説明をここに書いてください" }
+        "item-1": {
+          "title": "製品機能1",
+          "description": "機能1の詳細な説明をここに書いてください"
+        },
+        "item-2": {
+          "title": "製品機能2",
+          "description": "機能2の詳細な説明をここに書いてください"
+        },
+        "item-3": {
+          "title": "製品機能3",
+          "description": "機能3の詳細な説明をここに書いてください"
+        },
+        "item-4": {
+          "title": "製品機能4",
+          "description": "機能4の詳細な説明をここに書いてください"
+        },
+        "item-5": {
+          "title": "製品機能5",
+          "description": "機能5の詳細な説明をここに書いてください"
+        },
+        "item-6": {
+          "title": "製品機能6",
+          "description": "機能6の詳細な説明をここに書いてください"
+        }
       }
     },
     "pricing": {
@@ -672,29 +740,104 @@
       "title": "よくある質問",
       "subtitle": "よくある質問",
       "items": {
-        "item-1": { "question": "無料トライアルはありますか?", "answer": "はい、7日間の無料トライアルがあります。" },
-        "item-2": { "question": "サブスクを解約するには?", "answer": "請求ページから解約できます。" },
-        "item-3": { "question": "プランを変更できますか?", "answer": "はい、請求ページからいつでも変更できます。" },
-        "item-4": { "question": "返金ポリシーは?", "answer": "製品にご満足いただけない場合、30日間の返金保証があります。" },
-        "item-5": { "question": "探しているものが見つかりませんか?", "answer": "カスタマーサポートまでご連絡ください:support@photoscraft.top" }
+        "item-1": {
+          "question": "無料トライアルはありますか?",
+          "answer": "はい、7日間の無料トライアルがあります。"
+        },
+        "item-2": {
+          "question": "サブスクを解約するには?",
+          "answer": "請求ページから解約できます。"
+        },
+        "item-3": {
+          "question": "プランを変更できますか?",
+          "answer": "はい、請求ページからいつでも変更できます。"
+        },
+        "item-4": {
+          "question": "返金ポリシーは?",
+          "answer": "製品にご満足いただけない場合、30日間の返金保証があります。"
+        },
+        "item-5": {
+          "question": "探しているものが見つかりませんか?",
+          "answer": "カスタマーサポートまでご連絡ください:support@photoscraft.top"
+        }
       }
     },
     "testimonials": {
       "title": "お客様の声",
       "subtitle": "お客様からの評価",
       "items": {
-        "item-1": { "name": "Jonathan Yombo", "role": "Software Engineer", "image": "https://randomuser.me/api/portraits/men/1.jpg", "quote": "PhotoCraftは本当に素晴らしく実用的。頭を悩ませる必要なし。まさに金鉱です。" },
-        "item-2": { "name": "Yves Kalume", "role": "GDE - Android", "image": "https://randomuser.me/api/portraits/men/6.jpg", "quote": "Webデザインの経験ゼロで、PhotoCraftのおかげでサイト全体を数分でリデザインしました。" },
-        "item-3": { "name": "Yucel Faruksahan", "role": "Tailkits Creator", "image": "https://randomuser.me/api/portraits/men/7.jpg", "quote": "PhotoCraftテンプレートの素晴らしい仕事ぶり。これまで見た中で最高の個人サイトの一つです。" },
-        "item-4": { "name": "Anonymous author", "role": "Product Manager", "image": "https://randomuser.me/api/portraits/men/8.jpg", "quote": "PhotoCraftテンプレートは最初から分かりやすく、コードやブロックを目的に合わせて調整できます。" },
-        "item-5": { "name": "Shekinah Tshiokufila", "role": "Senior Software Engineer", "image": "https://randomuser.me/api/portraits/men/4.jpg", "quote": "PhotoCraftはWebデザインの基準を再定義しています。美しさを愛するが時間のない人に簡単で効率的な方法を提供します。" },
-        "item-6": { "name": "Oketa Fred", "role": "Fullstack Developer", "image": "https://randomuser.me/api/portraits/men/2.jpg", "quote": "PhotoCraftが大好きです!コンポーネントブロックが美しく使いやすく、見栄えの良いサイト作りが楽々です。" },
-        "item-7": { "name": "Zeki", "role": "Founder of ChatExtend", "image": "https://randomuser.me/api/portraits/men/5.jpg", "quote": "PhotoCraftはシンプルさと汎用性の完璧な融合で、美しく使いやすいUIを作れます。" },
-        "item-8": { "name": "Joseph Kitheka", "role": "Fullstack Developer", "image": "https://randomuser.me/api/portraits/men/9.jpg", "quote": "PhotoCraftはWebアプリ開発の方法を変えました。豊富なUIコンポーネントとテンプレートで作業が大幅に加速しました。" },
-        "item-9": { "name": "Khatab Wedaa", "role": "MerakiUI Creator", "image": "https://randomuser.me/api/portraits/men/10.jpg", "quote": "PhotoCraftはエレガントでクリーン、レスポンシブなTailwind CSSコンポーネントで、素早いスタートに役立ちます。" },
-        "item-10": { "name": "Rodrigo Aguilar", "role": "TailwindAwesome Creator", "image": "https://randomuser.me/api/portraits/men/11.jpg", "quote": "PhotoCraftが大好きです❤️。コンポーネントブロックは構造が良く、シンプルで美しい。短時間で良いサイトが作れます。" },
-        "item-11": { "name": "Eric Ampire", "role": "@GoogleDevExpert for Android", "image": "https://randomuser.me/api/portraits/men/12.jpg", "quote": "PhotoCraftテンプレートは、Webデザイン経験なしで美しく機能的なサイトを作りたい人に最適です。" },
-        "item-12": { "name": "Roland Tubonge", "role": "Software Engineer", "image": "https://randomuser.me/api/portraits/men/13.jpg", "quote": "PhotoCraftのデザインが素晴らしく、Webデザインの知識が乏しくても驚きの結果が出せます。" }
+        "item-1": {
+          "name": "Jonathan Yombo",
+          "role": "Software Engineer",
+          "image": "https://randomuser.me/api/portraits/men/1.jpg",
+          "quote": "PhotoCraftは本当に素晴らしく実用的。頭を悩ませる必要なし。まさに金鉱です。"
+        },
+        "item-2": {
+          "name": "Yves Kalume",
+          "role": "GDE - Android",
+          "image": "https://randomuser.me/api/portraits/men/6.jpg",
+          "quote": "Webデザインの経験ゼロで、PhotoCraftのおかげでサイト全体を数分でリデザインしました。"
+        },
+        "item-3": {
+          "name": "Yucel Faruksahan",
+          "role": "Tailkits Creator",
+          "image": "https://randomuser.me/api/portraits/men/7.jpg",
+          "quote": "PhotoCraftテンプレートの素晴らしい仕事ぶり。これまで見た中で最高の個人サイトの一つです。"
+        },
+        "item-4": {
+          "name": "Anonymous author",
+          "role": "Product Manager",
+          "image": "https://randomuser.me/api/portraits/men/8.jpg",
+          "quote": "PhotoCraftテンプレートは最初から分かりやすく、コードやブロックを目的に合わせて調整できます。"
+        },
+        "item-5": {
+          "name": "Shekinah Tshiokufila",
+          "role": "Senior Software Engineer",
+          "image": "https://randomuser.me/api/portraits/men/4.jpg",
+          "quote": "PhotoCraftはWebデザインの基準を再定義しています。美しさを愛するが時間のない人に簡単で効率的な方法を提供します。"
+        },
+        "item-6": {
+          "name": "Oketa Fred",
+          "role": "Fullstack Developer",
+          "image": "https://randomuser.me/api/portraits/men/2.jpg",
+          "quote": "PhotoCraftが大好きです!コンポーネントブロックが美しく使いやすく、見栄えの良いサイト作りが楽々です。"
+        },
+        "item-7": {
+          "name": "Zeki",
+          "role": "Founder of ChatExtend",
+          "image": "https://randomuser.me/api/portraits/men/5.jpg",
+          "quote": "PhotoCraftはシンプルさと汎用性の完璧な融合で、美しく使いやすいUIを作れます。"
+        },
+        "item-8": {
+          "name": "Joseph Kitheka",
+          "role": "Fullstack Developer",
+          "image": "https://randomuser.me/api/portraits/men/9.jpg",
+          "quote": "PhotoCraftはWebアプリ開発の方法を変えました。豊富なUIコンポーネントとテンプレートで作業が大幅に加速しました。"
+        },
+        "item-9": {
+          "name": "Khatab Wedaa",
+          "role": "MerakiUI Creator",
+          "image": "https://randomuser.me/api/portraits/men/10.jpg",
+          "quote": "PhotoCraftはエレガントでクリーン、レスポンシブなTailwind CSSコンポーネントで、素早いスタートに役立ちます。"
+        },
+        "item-10": {
+          "name": "Rodrigo Aguilar",
+          "role": "TailwindAwesome Creator",
+          "image": "https://randomuser.me/api/portraits/men/11.jpg",
+          "quote": "PhotoCraftが大好きです❤️。コンポーネントブロックは構造が良く、シンプルで美しい。短時間で良いサイトが作れます。"
+        },
+        "item-11": {
+          "name": "Eric Ampire",
+          "role": "@GoogleDevExpert for Android",
+          "image": "https://randomuser.me/api/portraits/men/12.jpg",
+          "quote": "PhotoCraftテンプレートは、Webデザイン経験なしで美しく機能的なサイトを作りたい人に最適です。"
+        },
+        "item-12": {
+          "name": "Roland Tubonge",
+          "role": "Software Engineer",
+          "image": "https://randomuser.me/api/portraits/men/13.jpg",
+          "quote": "PhotoCraftのデザインが素晴らしく、Webデザインの知識が乏しくても驚きの結果が出せます。"
+        }
       }
     },
     "stats": {
@@ -702,9 +845,15 @@
       "subtitle": "数字で見るPhotoCraft",
       "description": "PhotoCraftで数日でAI SaaSを作ろう、シンプルに手軽に",
       "items": {
-        "item-1": { "title": "GitHubスター" },
-        "item-2": { "title": "アクティブユーザー" },
-        "item-3": { "title": "構築アプリ数" }
+        "item-1": {
+          "title": "GitHubスター"
+        },
+        "item-2": {
+          "title": "アクティブユーザー"
+        },
+        "item-3": {
+          "title": "構築アプリ数"
+        }
       }
     },
     "calltoaction": {
@@ -723,22 +872,70 @@
       "all": "すべて"
     },
     "tools": {
-      "enhance": { "title": "AI写真高画質化", "tagline": "ぼやけ・ノイズ除去、ワンタップで4Kの鮮明さ" },
-      "restore": { "title": "AI古写真修復", "tagline": "傷・折れ・破損を修復" },
-      "colorize": { "title": "AI写真カラー化", "tagline": "白黒→鮮やかなカラーに" },
-      "eraser": { "title": "AIマジック消去", "tagline": "物・人物・文字を除去" },
-      "watermark": { "title": "透かし除去", "tagline": "ロゴや重ね文字をきれいに" },
-      "bg": { "title": "AI背景除去", "tagline": "精密な切り抜き、髪の毛レベルのエッジ" },
-      "bg_change": { "title": "AI背景変更", "tagline": "ワンクリックでスタジオ背景に" },
-      "sky": { "title": "AI空置換", "tagline": "夕焼け・星空・ドラマチックな空" },
-      "room": { "title": "AIルームデザイン", "tagline": "室内をフォトリアルにリスタイル" },
-      "avatar": { "title": "AIアバター生成", "tagline": "スタジオ級のプロアバター" },
-      "scene": { "title": "AIシーン生成", "tagline": "あなたが主役の映画的シーン" },
-      "anime": { "title": "AIアニメ生成", "tagline": "写真→アニメイラスト" },
-      "cartoon": { "title": "AIカートゥーン化", "tagline": "楽しい似顔絵ポートレート" },
-      "hairstyle": { "title": "AI髪型チェンジ", "tagline": "新しい髪型を即お試し" },
-      "expression": { "title": "AI表情チェンジ", "tagline": "自然な笑顔、そのままのあなた" },
-      "transform": { "title": "AI変身", "tagline": "ファッション撮影級のリスタイル" }
+      "enhance": {
+        "title": "AI写真高画質化",
+        "tagline": "ぼやけ・ノイズ除去、ワンタップで4Kの鮮明さ"
+      },
+      "restore": {
+        "title": "AI古写真修復",
+        "tagline": "傷・折れ・破損を修復"
+      },
+      "colorize": {
+        "title": "AI写真カラー化",
+        "tagline": "白黒→鮮やかなカラーに"
+      },
+      "eraser": {
+        "title": "AIマジック消去",
+        "tagline": "物・人物・文字を除去"
+      },
+      "watermark": {
+        "title": "透かし除去",
+        "tagline": "ロゴや重ね文字をきれいに"
+      },
+      "bg": {
+        "title": "AI背景除去",
+        "tagline": "精密な切り抜き、髪の毛レベルのエッジ"
+      },
+      "bg_change": {
+        "title": "AI背景変更",
+        "tagline": "ワンクリックでスタジオ背景に"
+      },
+      "sky": {
+        "title": "AI空置換",
+        "tagline": "夕焼け・星空・ドラマチックな空"
+      },
+      "room": {
+        "title": "AIルームデザイン",
+        "tagline": "室内をフォトリアルにリスタイル"
+      },
+      "avatar": {
+        "title": "AIアバター生成",
+        "tagline": "スタジオ級のプロアバター"
+      },
+      "scene": {
+        "title": "AIシーン生成",
+        "tagline": "あなたが主役の映画的シーン"
+      },
+      "anime": {
+        "title": "AIアニメ生成",
+        "tagline": "写真→アニメイラスト"
+      },
+      "cartoon": {
+        "title": "AIカートゥーン化",
+        "tagline": "楽しい似顔絵ポートレート"
+      },
+      "hairstyle": {
+        "title": "AI髪型チェンジ",
+        "tagline": "新しい髪型を即お試し"
+      },
+      "expression": {
+        "title": "AI表情チェンジ",
+        "tagline": "自然な笑顔、そのままのあなた"
+      },
+      "transform": {
+        "title": "AI変身",
+        "tagline": "ファッション撮影級のリスタイル"
+      }
     },
     "hero": {
       "badge": "16のAIツール·登録不要でお試し·数秒で結果",
@@ -751,7 +948,10 @@
       "freePreview": "無料プレビュー·支払いはダウンロード時のみ",
       "steps": "3ステップ:ツールを選ぶ→アップロード→ダウンロード。学習不要です。",
       "hot": "人気",
-      "credits": { "one": "クレジット", "other": "クレジット" },
+      "credits": {
+        "one": "クレジット",
+        "other": "クレジット"
+      },
       "allTools": "すべてのツール",
       "uploadHint": "ドラッグ/クリックでアップロード(JPG/PNG/WebP ≤20MB)",
       "download": "結果をダウンロード",

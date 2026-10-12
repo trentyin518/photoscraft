@@ -305,11 +305,21 @@
   },
   "Marketing": {
     "navbar": {
-      "editor": { "title": "Редактор" },
-      "features": { "title": "Функции" },
-      "pricing": { "title": "Тарифы" },
-      "blog": { "title": "Блог" },
-      "docs": { "title": "Документация" },
+      "editor": {
+        "title": "Редактор"
+      },
+      "features": {
+        "title": "Функции"
+      },
+      "pricing": {
+        "title": "Тарифы"
+      },
+      "blog": {
+        "title": "Блог"
+      },
+      "docs": {
+        "title": "Документация"
+      },
       "pages": {
         "title": "Страницы",
         "items": {
@@ -351,7 +361,9 @@
           }
         }
       },
-      "home": { "title": "Главная" }
+      "home": {
+        "title": "Главная"
+      }
     },
     "footer": {
       "tagline": "Верните фотографиям свежесть и яркость с помощью ИИ",
@@ -399,8 +411,12 @@
     }
   },
   "Dashboard": {
-    "dashboard": { "title": "Мои фото" },
-    "editor": { "title": "Редактор" },
+    "dashboard": {
+      "title": "Мои фото"
+    },
+    "editor": {
+      "title": "Редактор"
+    },
     "settings": {
       "title": "Настройки",
       "profile": {
@@ -568,7 +584,9 @@
         "failed": "Ошибка"
       },
       "creditsUsed": "{count} кредитов",
-      "createdAt": "{date}"
+      "createdAt": "{date}",
+      "delete": "Delete",
+      "deleteConfirm": "Delete this record? This cannot be undone."
     }
   },
   "Mail": {
@@ -609,19 +627,39 @@
       "primary": "Начать",
       "secondary": "Смотреть демо"
     },
-    "logocloud": { "title": "Ваши любимые компании — наши партнёры" },
+    "logocloud": {
+      "title": "Ваши любимые компании — наши партнёры"
+    },
     "integration": {
       "title": "Интеграции",
       "subtitle": "Интеграция с любимыми инструментами",
       "description": "Легко подключайтесь к популярным платформам и сервисам.",
       "learnMore": "Подробнее",
       "items": {
-        "item-1": { "title": "Google Gemini", "description": "Бесшовная интеграция ИИ-моделей Google в ваш рабочий процесс." },
-        "item-2": { "title": "Replit", "description": "Бесшовная интеграция Replit в ваш рабочий процесс." },
-        "item-3": { "title": "MagicUI", "description": "Бесшовная интеграция MagicUI в ваш рабочий процесс." },
-        "item-4": { "title": "VSCodium", "description": "Бесшовная интеграция VSCodium в ваш рабочий процесс." },
-        "item-5": { "title": "MediaWiki", "description": "Бесшовная интеграция MediaWiki в ваш рабочий процесс." },
-        "item-6": { "title": "Google PaLM", "description": "Бесшовная интеграция Google PaLM в ваш рабочий процесс." }
+        "item-1": {
+          "title": "Google Gemini",
+          "description": "Бесшовная интеграция ИИ-моделей Google в ваш рабочий процесс."
+        },
+        "item-2": {
+          "title": "Replit",
+          "description": "Бесшовная интеграция Replit в ваш рабочий процесс."
+        },
+        "item-3": {
+          "title": "MagicUI",
+          "description": "Бесшовная интеграция MagicUI в ваш рабочий процесс."
+        },
+        "item-4": {
+          "title": "VSCodium",
+          "description": "Бесшовная интеграция VSCodium в ваш рабочий процесс."
+        },
+        "item-5": {
+          "title": "MediaWiki",
+          "description": "Бесшовная интеграция MediaWiki в ваш рабочий процесс."
+        },
+        "item-6": {
+          "title": "Google PaLM",
+          "description": "Бесшовная интеграция Google PaLM в ваш рабочий процесс."
+        }
       }
     },
     "integration2": {
@@ -635,10 +673,22 @@
       "subtitle": "Возможности вашего продукта",
       "description": "Напишите описание вашего продукта здесь",
       "items": {
-        "item-1": { "title": "Функция продукта 1", "description": "Напишите подробное описание первой функции — как можно детальнее и привлекательнее для пользователей" },
-        "item-2": { "title": "Функция продукта 2", "description": "Напишите подробное описание второй функции — как можно детальнее и привлекательнее для пользователей" },
-        "item-3": { "title": "Функция продукта 3", "description": "Напишите подробное описание третьей функции — как можно детальнее и привлекательнее для пользователей" },
-        "item-4": { "title": "Функция продукта 4", "description": "Напишите подробное описание четвёртой функции — как можно детальнее и привлекательнее для пользователей" }
+        "item-1": {
+          "title": "Функция продукта 1",
+          "description": "Напишите подробное описание первой функции — как можно детальнее и привлекательнее для пользователей"
+        },
+        "item-2": {
+          "title": "Функция продукта 2",
+          "description": "Напишите подробное описание второй функции — как можно детальнее и привлекательнее для пользователей"
+        },
+        "item-3": {
+          "title": "Функция продукта 3",
+          "description": "Напишите подробное описание третьей функции — как можно детальнее и привлекательнее для пользователей"
+        },
+        "item-4": {
+          "title": "Функция продукта 4",
+          "description": "Напишите подробное описание четвёртой функции — как можно детальнее и привлекательнее для пользователей"
+        }
       }
     },
     "features2": {
@@ -655,12 +705,30 @@
       "subtitle": "Возможности вашего продукта",
       "description": "Напишите описание вашего продукта здесь",
       "items": {
-        "item-1": { "title": "Функция продукта 1", "description": "Напишите подробное описание первой функции здесь" },
-        "item-2": { "title": "Функция продукта 2", "description": "Напишите подробное описание второй функции здесь" },
-        "item-3": { "title": "Функция продукта 3", "description": "Напишите подробное описание третьей функции здесь" },
-        "item-4": { "title": "Функция продукта 4", "description": "Напишите подробное описание четвёртой функции здесь" },
-        "item-5": { "title": "Функция продукта 5", "description": "Напишите подробное описание пятой функции здесь" },
-        "item-6": { "title": "Функция продукта 6", "description": "Напишите подробное описание шестой функции здесь" }
+        "item-1": {
+          "title": "Функция продукта 1",
+          "description": "Напишите подробное описание первой функции здесь"
+        },
+        "item-2": {
+          "title": "Функция продукта 2",
+          "description": "Напишите подробное описание второй функции здесь"
+        },
+        "item-3": {
+          "title": "Функция продукта 3",
+          "description": "Напишите подробное описание третьей функции здесь"
+        },
+        "item-4": {
+          "title": "Функция продукта 4",
+          "description": "Напишите подробное описание четвёртой функции здесь"
+        },
+        "item-5": {
+          "title": "Функция продукта 5",
+          "description": "Напишите подробное описание пятой функции здесь"
+        },
+        "item-6": {
+          "title": "Функция продукта 6",
+          "description": "Напишите подробное описание шестой функции здесь"
+        }
       }
     },
     "pricing": {
@@ -672,29 +740,104 @@
       "title": "FAQ",
       "subtitle": "Часто задаваемые вопросы",
       "items": {
-        "item-1": { "question": "Есть ли бесплатный пробный период?", "answer": "Да, мы предлагаем 7-дневный бесплатный пробный период." },
-        "item-2": { "question": "Как отменить подписку?", "answer": "Вы можете отменить подписку на странице оплаты." },
-        "item-3": { "question": "Можно ли сменить план?", "answer": "Да, вы можете сменить план в любое время на странице оплаты." },
-        "item-4": { "question": "Какая политика возврата?", "answer": "Мы предлагаем 30-дневную гарантию возврата денег, если продукт вам не понравится." },
-        "item-5": { "question": "Не нашли то, что искали?", "answer": "Обратитесь в нашу поддержку: support@photoscraft.top" }
+        "item-1": {
+          "question": "Есть ли бесплатный пробный период?",
+          "answer": "Да, мы предлагаем 7-дневный бесплатный пробный период."
+        },
+        "item-2": {
+          "question": "Как отменить подписку?",
+          "answer": "Вы можете отменить подписку на странице оплаты."
+        },
+        "item-3": {
+          "question": "Можно ли сменить план?",
+          "answer": "Да, вы можете сменить план в любое время на странице оплаты."
+        },
+        "item-4": {
+          "question": "Какая политика возврата?",
+          "answer": "Мы предлагаем 30-дневную гарантию возврата денег, если продукт вам не понравится."
+        },
+        "item-5": {
+          "question": "Не нашли то, что искали?",
+          "answer": "Обратитесь в нашу поддержку: support@photoscraft.top"
+        }
       }
     },
     "testimonials": {
       "title": "Отзывы",
       "subtitle": "Что говорят наши клиенты",
       "items": {
-        "item-1": { "name": "Jonathan Yombo", "role": "Software Engineer", "image": "https://randomuser.me/api/portraits/men/1.jpg", "quote": "PhotoCraft действительно необыкновенен и очень практичен. Настоящий клад." },
-        "item-2": { "name": "Yves Kalume", "role": "GDE - Android", "image": "https://randomuser.me/api/portraits/men/6.jpg", "quote": "Без опыта в веб-дизайне я за несколько минут полностью переделал свой сайт благодаря PhotoCraft." },
-        "item-3": { "name": "Yucel Faruksahan", "role": "Tailkits Creator", "image": "https://randomuser.me/api/portraits/men/7.jpg", "quote": "Отличная работа над шаблоном PhotoCraft. Один из лучших персональных сайтов, что я видел." },
-        "item-4": { "name": "Anonymous author", "role": "Product Manager", "image": "https://randomuser.me/api/portraits/men/8.jpg", "quote": "Шаблон PhotoCraft очень понятен с самого начала, блоки легко адаптировать под свои задачи." },
-        "item-5": { "name": "Shekinah Tshiokufila", "role": "Senior Software Engineer", "image": "https://randomuser.me/api/portraits/men/4.jpg", "quote": "PhotoCraft задаёт новый стандарт веб-дизайна: простой и эффективный способ для тех, кто любит красоту, но ограничен во времени." },
-        "item-6": { "name": "Oketa Fred", "role": "Fullstack Developer", "image": "https://randomuser.me/api/portraits/men/2.jpg", "quote": "Обожаю PhotoCraft! Блоки компонентов красивые и удобные — создать отличный сайт проще простого." },
-        "item-7": { "name": "Zeki", "role": "Founder of ChatExtend", "image": "https://randomuser.me/api/portraits/men/5.jpg", "quote": "PhotoCraft — идеальное сочетание простоты и гибкости: интерфейсы получаются красивыми и удобными." },
-        "item-8": { "name": "Joseph Kitheka", "role": "Fullstack Developer", "image": "https://randomuser.me/api/portraits/men/9.jpg", "quote": "PhotoCraft изменил мой подход к разработке: огромная коллекция компонентов и шаблонов заметно ускорила работу." },
-        "item-9": { "name": "Khatab Wedaa", "role": "MerakiUI Creator", "image": "https://randomuser.me/api/portraits/men/10.jpg", "quote": "PhotoCraft — элегантные и отзывчивые tailwind-компоненты, очень помогают быстро стартовать." },
-        "item-10": { "name": "Rodrigo Aguilar", "role": "TailwindAwesome Creator", "image": "https://randomuser.me/api/portraits/men/11.jpg", "quote": "Люблю PhotoCraft ❤️. Блоки хорошо структурированы и красивы — хороший сайт получается в кратчайшие сроки." },
-        "item-11": { "name": "Eric Ampire", "role": "@GoogleDevExpert for Android", "image": "https://randomuser.me/api/portraits/men/12.jpg", "quote": "Шаблоны PhotoCraft — идеальное решение для тех, кто хочет красивый сайт без опыта в веб-дизайне." },
-        "item-12": { "name": "Roland Tubonge", "role": "Software Engineer", "image": "https://randomuser.me/api/portraits/men/13.jpg", "quote": "PhotoCraft так хорошо спроектирован, что даже с минимальными знаниями веб-дизайна можно творить чудеса." }
+        "item-1": {
+          "name": "Jonathan Yombo",
+          "role": "Software Engineer",
+          "image": "https://randomuser.me/api/portraits/men/1.jpg",
+          "quote": "PhotoCraft действительно необыкновенен и очень практичен. Настоящий клад."
+        },
+        "item-2": {
+          "name": "Yves Kalume",
+          "role": "GDE - Android",
+          "image": "https://randomuser.me/api/portraits/men/6.jpg",
+          "quote": "Без опыта в веб-дизайне я за несколько минут полностью переделал свой сайт благодаря PhotoCraft."
+        },
+        "item-3": {
+          "name": "Yucel Faruksahan",
+          "role": "Tailkits Creator",
+          "image": "https://randomuser.me/api/portraits/men/7.jpg",
+          "quote": "Отличная работа над шаблоном PhotoCraft. Один из лучших персональных сайтов, что я видел."
+        },
+        "item-4": {
+          "name": "Anonymous author",
+          "role": "Product Manager",
+          "image": "https://randomuser.me/api/portraits/men/8.jpg",
+          "quote": "Шаблон PhotoCraft очень понятен с самого начала, блоки легко адаптировать под свои задачи."
+        },
+        "item-5": {
+          "name": "Shekinah Tshiokufila",
+          "role": "Senior Software Engineer",
+          "image": "https://randomuser.me/api/portraits/men/4.jpg",
+          "quote": "PhotoCraft задаёт новый стандарт веб-дизайна: простой и эффективный способ для тех, кто любит красоту, но ограничен во времени."
+        },
+        "item-6": {
+          "name": "Oketa Fred",
+          "role": "Fullstack Developer",
+          "image": "https://randomuser.me/api/portraits/men/2.jpg",
+          "quote": "Обожаю PhotoCraft! Блоки компонентов красивые и удобные — создать отличный сайт проще простого."
+        },
+        "item-7": {
+          "name": "Zeki",
+          "role": "Founder of ChatExtend",
+          "image": "https://randomuser.me/api/portraits/men/5.jpg",
+          "quote": "PhotoCraft — идеальное сочетание простоты и гибкости: интерфейсы получаются красивыми и удобными."
+        },
+        "item-8": {
+          "name": "Joseph Kitheka",
+          "role": "Fullstack Developer",
+          "image": "https://randomuser.me/api/portraits/men/9.jpg",
+          "quote": "PhotoCraft изменил мой подход к разработке: огромная коллекция компонентов и шаблонов заметно ускорила работу."
+        },
+        "item-9": {
+          "name": "Khatab Wedaa",
+          "role": "MerakiUI Creator",
+          "image": "https://randomuser.me/api/portraits/men/10.jpg",
+          "quote": "PhotoCraft — элегантные и отзывчивые tailwind-компоненты, очень помогают быстро стартовать."
+        },
+        "item-10": {
+          "name": "Rodrigo Aguilar",
+          "role": "TailwindAwesome Creator",
+          "image": "https://randomuser.me/api/portraits/men/11.jpg",
+          "quote": "Люблю PhotoCraft ❤️. Блоки хорошо структурированы и красивы — хороший сайт получается в кратчайшие сроки."
+        },
+        "item-11": {
+          "name": "Eric Ampire",
+          "role": "@GoogleDevExpert for Android",
+          "image": "https://randomuser.me/api/portraits/men/12.jpg",
+          "quote": "Шаблоны PhotoCraft — идеальное решение для тех, кто хочет красивый сайт без опыта в веб-дизайне."
+        },
+        "item-12": {
+          "name": "Roland Tubonge",
+          "role": "Software Engineer",
+          "image": "https://randomuser.me/api/portraits/men/13.jpg",
+          "quote": "PhotoCraft так хорошо спроектирован, что даже с минимальными знаниями веб-дизайна можно творить чудеса."
+        }
       }
     },
     "stats": {
@@ -702,9 +845,15 @@
       "subtitle": "PhotoCraft в цифрах",
       "description": "С PhotoCraft вы создадите ИИ-продукт за дни — просто и легко",
       "items": {
-        "item-1": { "title": "Звёзд на GitHub" },
-        "item-2": { "title": "Активных пользователей" },
-        "item-3": { "title": "Приложений создано" }
+        "item-1": {
+          "title": "Звёзд на GitHub"
+        },
+        "item-2": {
+          "title": "Активных пользователей"
+        },
+        "item-3": {
+          "title": "Приложений создано"
+        }
       }
     },
     "calltoaction": {
@@ -723,22 +872,70 @@
       "all": "Все"
     },
     "tools": {
-      "enhance": { "title": "ИИ-улучшение фото", "tagline": "Убрать размытие и шум, чёткость 4K в один клик" },
-      "restore": { "title": "ИИ-реставрация старых фото", "tagline": "Убрать царапины, заломы и повреждения" },
-      "colorize": { "title": "ИИ-раскрашивание фото", "tagline": "Чёрно-белое → яркий цвет" },
-      "eraser": { "title": "ИИ-волшебный ластик", "tagline": "Удалить объекты, людей и текст" },
-      "watermark": { "title": "Удаление водяных знаков", "tagline": "Чистим логотипы и надписи" },
-      "bg": { "title": "ИИ-удаление фона", "tagline": "Точное вырезание, края до волоска" },
-      "bg_change": { "title": "ИИ-замена фона", "tagline": "Студийные фоны в один клик" },
-      "sky": { "title": "ИИ-замена неба", "tagline": "Закат, звёзды, драматичное небо" },
-      "room": { "title": "ИИ-дизайн комнат", "tagline": "Фотореалистичный рестайлинг интерьеров" },
-      "avatar": { "title": "ИИ-генератор аватаров", "tagline": "Аватары студийного качества" },
-      "scene": { "title": "ИИ-генератор сцен", "tagline": "Кинематографичные сцены с вами в кадре" },
-      "anime": { "title": "ИИ-генератор аниме", "tagline": "Фото → аниме-иллюстрация" },
-      "cartoon": { "title": "ИИ-мультяшка", "tagline": "Весёлые мультяшные портреты" },
-      "hairstyle": { "title": "ИИ-смена причёски", "tagline": "Примерьте новую причёску мгновенно" },
-      "expression": { "title": "ИИ-смена выражения", "tagline": "Естественная улыбка — вы остаётесь собой" },
-      "transform": { "title": "ИИ-преображение", "tagline": "Рестайлинг уровня модной съёмки" }
+      "enhance": {
+        "title": "ИИ-улучшение фото",
+        "tagline": "Убрать размытие и шум, чёткость 4K в один клик"
+      },
+      "restore": {
+        "title": "ИИ-реставрация старых фото",
+        "tagline": "Убрать царапины, заломы и повреждения"
+      },
+      "colorize": {
+        "title": "ИИ-раскрашивание фото",
+        "tagline": "Чёрно-белое → яркий цвет"
+      },
+      "eraser": {
+        "title": "ИИ-волшебный ластик",
+        "tagline": "Удалить объекты, людей и текст"
+      },
+      "watermark": {
+        "title": "Удаление водяных знаков",
+        "tagline": "Чистим логотипы и надписи"
+      },
+      "bg": {
+        "title": "ИИ-удаление фона",
+        "tagline": "Точное вырезание, края до волоска"
+      },
+      "bg_change": {
+        "title": "ИИ-замена фона",
+        "tagline": "Студийные фоны в один клик"
+      },
+      "sky": {
+        "title": "ИИ-замена неба",
+        "tagline": "Закат, звёзды, драматичное небо"
+      },
+      "room": {
+        "title": "ИИ-дизайн комнат",
+        "tagline": "Фотореалистичный рестайлинг интерьеров"
+      },
+      "avatar": {
+        "title": "ИИ-генератор аватаров",
+        "tagline": "Аватары студийного качества"
+      },
+      "scene": {
+        "title": "ИИ-генератор сцен",
+        "tagline": "Кинематографичные сцены с вами в кадре"
+      },
+      "anime": {
+        "title": "ИИ-генератор аниме",
+        "tagline": "Фото → аниме-иллюстрация"
+      },
+      "cartoon": {
+        "title": "ИИ-мультяшка",
+        "tagline": "Весёлые мультяшные портреты"
+      },
+      "hairstyle": {
+        "title": "ИИ-смена причёски",
+        "tagline": "Примерьте новую причёску мгновенно"
+      },
+      "expression": {
+        "title": "ИИ-смена выражения",
+        "tagline": "Естественная улыбка — вы остаётесь собой"
+      },
+      "transform": {
+        "title": "ИИ-преображение",
+        "tagline": "Рестайлинг уровня модной съёмки"
+      }
     },
     "hero": {
       "badge": "16 ИИ-инструментов · Проба без регистрации · Результат за секунды",
@@ -751,7 +948,10 @@
       "freePreview": "Бесплатный предпросмотр · Оплата только за скачивание",
       "steps": "Три шага: выберите инструмент → загрузите → скачайте. Обучение не нужно.",
       "hot": "ХИТ",
-      "credits": { "one": "кредит", "other": "кредитов" },
+      "credits": {
+        "one": "кредит",
+        "other": "кредитов"
+      },
       "allTools": "Все инструменты",
       "uploadHint": "Перетащите или нажмите для загрузки (JPG/PNG/WebP ≤20MB)",
       "download": "Скачать результат",
