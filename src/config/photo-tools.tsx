@@ -24,6 +24,16 @@ export interface PhotoTool {
   gradient: string;
   cost: number;
   hot?: boolean;
+  /** CSS filter for the "before" half of a before/after split preview */
+  splitFilter?: string;
+  /** CSS filter for the "after" half (stylized result grade) */
+  rightFilter?: string;
+  /** Decorative overlay on the "after" half */
+  rightOverlay?: 'stars' | 'vignette';
+  /** Show a cutout-style preview (photo + transparency checkerboard) */
+  cutout?: boolean;
+  /** Explicit artwork path (defaults to `/images/tools/{id}.jpg`) */
+  image?: string;
 }
 
 export const PHOTO_TOOL_CATEGORIES = [
@@ -45,6 +55,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
     gradient: 'from-violet-500 to-fuchsia-500',
     cost: 1,
     hot: true,
+    image: '/images/tools/enhance.jpg',
   },
   {
     id: 'restore',
@@ -67,6 +78,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
     gradient: 'from-rose-500 to-pink-500',
     cost: 2,
     hot: true,
+    image: '/images/tools/colorize.jpg',
   },
   {
     id: 'eraser',
@@ -77,6 +89,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
     icon: <BrushIcon className="size-5" />,
     gradient: 'from-cyan-500 to-blue-500',
     cost: 1,
+    image: '/images/tools/eraser.jpg',
   },
   {
     id: 'watermark',
@@ -87,6 +100,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
     icon: <Wand2Icon className="size-5" />,
     gradient: 'from-slate-500 to-gray-600',
     cost: 1,
+    image: '/images/tools/watermark.jpg',
   },
   {
     id: 'bg',
@@ -128,6 +142,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
     icon: <ImagePlusIcon className="size-5" />,
     gradient: 'from-stone-500 to-amber-600',
     cost: 2,
+    image: '/images/tools/room.jpg',
   },
   {
     id: 'avatar',
@@ -159,6 +174,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
     icon: <SparklesIcon className="size-5" />,
     gradient: 'from-pink-500 to-rose-500',
     cost: 2,
+    image: '/images/tools/anime.jpg',
   },
   {
     id: 'cartoon',
@@ -169,6 +185,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
     icon: <SmileIcon className="size-5" />,
     gradient: 'from-yellow-500 to-orange-500',
     cost: 2,
+    image: '/images/tools/cartoon.jpg',
   },
   {
     id: 'hairstyle',
@@ -199,6 +216,7 @@ export const PHOTO_TOOLS: PhotoTool[] = [
     icon: <Wand2Icon className="size-5" />,
     gradient: 'from-fuchsia-500 to-purple-600',
     cost: 2,
+    image: '/images/tools/transform.jpg',
   },
 ];
 

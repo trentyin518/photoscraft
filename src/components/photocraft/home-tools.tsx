@@ -108,6 +108,7 @@ export function PhotoToolGrid() {
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
           {tools.map((tool) => {
             const text = getPhotoToolText(tool, tr);
+            const imgSrc = tool.image ?? `/images/tools/${tool.id}.jpg`;
             return (
             <Link
               key={tool.id}
@@ -116,13 +117,91 @@ export function PhotoToolGrid() {
             >
               <div
                 className={cn(
-                  'relative flex h-36 items-center justify-center bg-gradient-to-br md:h-44',
+                  'relative h-36 overflow-hidden bg-gradient-to-br md:h-44',
                   tool.gradient,
                 )}
               >
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute inset-0 opacity-30 [background:radial-gradient(circle_at_30%_20%,white,transparent_60%)]" />
-                <span className="relative flex size-14 items-center justify-center rounded-2xl bg-black/35 text-white backdrop-blur transition group-hover:scale-110">
+                <img
+                  src={imgSrc}
+                  alt={text.title}
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                  className={cn(
+                    'absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-105',
+                    tool.splitFilter && 'hidden',
+                    tool.cutout && 'hidden',
+                  )}
+                />
+                {tool.splitFilter && (
+                  <>
+                    <img
+                      src={imgSrc}
+                      alt=""
+                      aria-hidden="true"
+                      loading="lazy"
+                      onError={(e) => {
+                        const el = e.currentTarget.parentElement;
+                        if (el) el.style.display = 'none';
+                      }}
+                      className={cn(
+                        'absolute inset-y-0 left-0 w-1/2 object-cover',
+                        tool.splitFilter,
+                      )}
+                    />
+                    <img
+                      src={imgSrc}
+                      alt={text.title}
+                      loading="lazy"
+                      onError={(e) => {
+                        const el = e.currentTarget.parentElement;
+                        if (el) el.style.display = 'none';
+                      }}
+                      className={cn(
+                        'absolute inset-y-0 right-0 w-1/2 object-cover transition duration-300 group-hover:scale-105',
+                        tool.rightFilter,
+                      )}
+                    />
+                    {tool.rightOverlay === 'stars' && (
+                      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/2 opacity-80 [background-image:radial-gradient(white_1px,transparent_1.5px)] [background-size:18px_18px]" />
+                    )}
+                    {tool.rightOverlay === 'vignette' && (
+                      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/2 [box-shadow:inset_0_0_60px_rgba(0,0,0,0.55)]" />
+                    )}
+                    <div className="absolute inset-y-0 left-1/2 w-0.5 -translate-x-1/2 bg-white/90" />
+                    {tool.id === 'restore' && (
+                      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/2 overflow-hidden opacity-60">
+                        <div className="absolute -left-6 top-0 h-full w-0.5 rotate-[24deg] bg-white/70" />
+                        <div className="absolute left-10 top-0 h-full w-px rotate-[24deg] bg-white/50" />
+                      </div>
+                    )}
+                  </>
+                )}
+                {tool.cutout && (
+                  <>
+                    <img
+                      src={imgSrc}
+                      alt=""
+                      aria-hidden="true"
+                      loading="lazy"
+                      className="absolute inset-y-0 left-0 w-[55%] object-cover"
+                    />
+                    <div className="absolute inset-y-0 right-0 w-[45%] [background-image:repeating-conic-gradient(#cbd5e1_0%_25%,#f8fafc_0%_50%)] [background-size:22px_22px]" />
+                    <div className="absolute inset-y-0 right-0 flex w-[45%] items-center justify-center p-3">
+                      <img
+                        src={imgSrc}
+                        alt={text.title}
+                        loading="lazy"
+                        className="h-full w-full rounded-full object-cover shadow-lg ring-2 ring-white/70 transition duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="absolute inset-y-0 left-[55%] w-0.5 -translate-x-1/2 bg-white/90" />
+                  </>
+                )}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+                <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(circle_at_30%_20%,white,transparent_60%)]" />
+                <span className="absolute bottom-3 left-3 flex size-11 items-center justify-center rounded-xl bg-black/45 text-white backdrop-blur transition group-hover:scale-110">
                   {tool.icon}
                 </span>
                 {tool.hot && (
