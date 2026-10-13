@@ -10,9 +10,15 @@ export function AdminFeedbackClient() {
   const [items, setItems] = useState<Row[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const [error, setError] = useState('');
   const refresh = async () => {
-    setItems(await getAllFeedback());
-    setLoading(false);
+    try {
+      setItems(await getAllFeedback());
+    } catch {
+      setError('Failed to load feedback.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -29,6 +35,7 @@ export function AdminFeedbackClient() {
   return (
     <div className="flex flex-col gap-4 px-4 py-6 lg:px-6">
       <h1 className="text-2xl font-bold">User feedback ({items.length})</h1>
+      {error && <p className="text-sm text-destructive">{error}</p>}
       {items.length === 0 && <p className="text-sm text-muted-foreground">No feedback yet.</p>}
       <div className="flex flex-col gap-2">
         {items.map((f) => (
