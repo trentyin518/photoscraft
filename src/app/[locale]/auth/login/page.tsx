@@ -16,7 +16,7 @@ export async function generateMetadata({
   const pt = await getTranslations({ locale, namespace: 'AuthPage.login' });
 
   return constructMetadata({
-    title: pt('title') + ' | ' + t('title'),
+    title: pt('title') + ' | ' + t('name'),
     description: t('description'),
     locale,
     pathname: '/auth/login',

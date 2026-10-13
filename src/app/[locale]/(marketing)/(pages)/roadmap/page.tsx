@@ -15,7 +15,7 @@ export async function generateMetadata({
   const pt = await getTranslations({ locale, namespace: 'RoadmapPage' });
 
   return constructMetadata({
-    title: pt('title') + ' | ' + t('title'),
+    title: pt('title') + ' | ' + t('name'),
     description: pt('description'),
     locale,
     pathname: '/roadmap',

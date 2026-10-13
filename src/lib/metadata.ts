@@ -7,6 +7,16 @@ import { generateAlternates, getCurrentHreflang } from './hreflang';
 import { getBaseUrl, getImageUrl, getUrlWithLocale } from './urls';
 
 /**
+ * SEO: keep `<title>` within ~60 chars so Google doesn't truncate it in SERP.
+ * CJK chars count as one char each via spread (avoids splitting surrogate pairs).
+ */
+function truncateTitle(title: string, max = 60): string {
+  const chars = [...title];
+  if (chars.length <= max) return title;
+  return `${chars.slice(0, max - 1).join('').trimEnd()}…`;
+}
+
+/**
  * Construct the metadata object for the current page (in docs/guides)
  */
 export function constructMetadata({
@@ -26,6 +36,7 @@ export function constructMetadata({
 } = {}): Metadata {
   title = title || defaultMessages.Metadata.title;
   description = description || defaultMessages.Metadata.description;
+  title = truncateTitle(title);
   image = image || websiteConfig.metadata.images?.ogImage;
   const ogImageUrl = getImageUrl(image || '');
 

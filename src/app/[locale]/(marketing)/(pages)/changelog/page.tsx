@@ -20,7 +20,7 @@ export async function generateMetadata({
   const pt = await getTranslations({ locale, namespace: 'ChangelogPage' });
 
   return constructMetadata({
-    title: pt('title') + ' | ' + t('title'),
+    title: pt('title') + ' | ' + t('name'),
     description: pt('description'),
     locale,
     pathname: '/changelog',

@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "name": "PhotoCraft",
-    "title": "PhotoCraft - AI写真高画質化、古い写真の修復、背景・透かし除去",
+    "title": "PhotoCraft – AI写真高画質化・古い写真修復",
     "description": "PhotoCraftはAI写真エディターです。ぼやけた写真の高画質化、古い写真の修復・カラー化、透かしや背景の除去が数秒でできます。"
   },
   "Common": {

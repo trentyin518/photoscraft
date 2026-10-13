@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: BlogCategoryPageProps) {
   const canonicalPath = `/blog/category/${slug}/page/${page}`;
 
   return constructMetadata({
-    title: `${category.data.name} | ${t('title')}`,
+    title: `${category.data.name} | ${t('name')}`,
     description: category.data.description,
     locale,
     pathname: canonicalPath,

@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: BlogListPageProps) {
   const pt = await getTranslations({ locale, namespace: 'BlogPage' });
 
   return constructMetadata({
-    title: `${pt('title')} | ${t('title')}`,
+    title: `${pt('title')} | ${t('name')}`,
     description: pt('description'),
     locale,
     pathname: '/blog',
