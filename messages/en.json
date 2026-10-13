@@ -2,7 +2,9 @@
   "Metadata": {
     "name": "PhotoCraft",
     "title": "PhotoCraft – AI Photo Enhancer & Old Photo Restore",
-    "description": "PhotoCraft is an AI photo editor: enhance blurry photos, restore and colorize old photos, remove watermarks and backgrounds in seconds."
+    "description": "PhotoCraft is an AI photo editor: enhance blurry photos, restore and colorize old photos, remove watermarks and backgrounds in seconds.",
+    "showcase": "Showcase",
+    "showcaseDescription": "Community AI photo creations shared by users, approved by our team."
   },
   "Common": {
     "login": "Log in",
@@ -363,6 +365,9 @@
       },
       "home": {
         "title": "Home"
+      },
+      "showcase": {
+        "title": "Showcase"
       }
     },
     "footer": {
@@ -407,7 +412,8 @@
     "avatar": {
       "dashboard": "Dashboard",
       "billing": "Billing",
-      "settings": "Settings"
+      "settings": "Settings",
+      "feedback": "Feedback"
     }
   },
   "Dashboard": {
@@ -416,57 +422,6 @@
     },
     "editor": {
       "title": "Editor"
-    },
-    "admin": {
-      "title": "Admin",
-      "users": {
-        "title": "Users",
-        "fakeData": "Note: Faked data for demonstration, some features are disabled",
-        "error": "Failed to get users",
-        "search": "Search users...",
-        "noResults": "No users found",
-        "columns": {
-          "columns": "Columns",
-          "name": "Name",
-          "email": "Email",
-          "role": "Role",
-          "createdAt": "Created At",
-          "customerId": "Customer ID",
-          "status": "Status",
-          "banReason": "Ban Reason",
-          "banExpires": "Ban Expires"
-        },
-        "admin": "Admin",
-        "user": "User",
-        "email": {
-          "verified": "Email Verified",
-          "unverified": "Email Unverified"
-        },
-        "emailCopied": "Email copied to clipboard",
-        "banned": "Banned",
-        "active": "Active",
-        "inactive": "Inactive",
-        "clearSearch": "Clear search",
-        "joined": "Joined at",
-        "updated": "Updated at",
-        "ban": {
-          "reason": "Ban Reason",
-          "reasonPlaceholder": "Enter the reason for banning this user",
-          "defaultReason": "Spamming",
-          "never": "Never",
-          "expires": "Ban Expires",
-          "selectDate": "Select Date",
-          "button": "Ban User",
-          "success": "User has been banned",
-          "error": "Failed to ban user"
-        },
-        "unban": {
-          "button": "Unban User",
-          "success": "User has been unbanned",
-          "error": "Failed to unban user"
-        },
-        "close": "Close"
-      }
     },
     "settings": {
       "title": "Settings",
@@ -632,6 +587,10 @@
           "expiresAt": "Expires At",
           "actions": "Actions"
         }
+      },
+      "feedback": {
+        "title": "Feedback",
+        "description": "Send us your feedback"
       }
     },
     "upgrade": {
@@ -663,6 +622,62 @@
       },
       "creditsUsed": "{count} credits",
       "createdAt": "{date}"
+    },
+    "showcase": {
+      "title": "Showcase"
+    },
+    "admin": {
+      "title": "Admin",
+      "users": {
+        "title": "Users",
+        "fakeData": "Note: Faked data for demonstration, some features are disabled",
+        "error": "Failed to get users",
+        "search": "Search users...",
+        "noResults": "No users found",
+        "columns": {
+          "columns": "Columns",
+          "name": "Name",
+          "email": "Email",
+          "role": "Role",
+          "createdAt": "Created At",
+          "customerId": "Customer ID",
+          "status": "Status",
+          "banReason": "Ban Reason",
+          "banExpires": "Ban Expires"
+        },
+        "admin": "Admin",
+        "user": "User",
+        "email": {
+          "verified": "Email Verified",
+          "unverified": "Email Unverified"
+        },
+        "emailCopied": "Email copied to clipboard",
+        "banned": "Banned",
+        "active": "Active",
+        "inactive": "Inactive",
+        "clearSearch": "Clear search",
+        "joined": "Joined at",
+        "updated": "Updated at",
+        "ban": {
+          "reason": "Ban Reason",
+          "reasonPlaceholder": "Enter the reason for banning this user",
+          "defaultReason": "Spamming",
+          "never": "Never",
+          "expires": "Ban Expires",
+          "selectDate": "Select Date",
+          "button": "Ban User",
+          "success": "User has been banned",
+          "error": "Failed to ban user"
+        },
+        "unban": {
+          "button": "Unban User",
+          "success": "User has been unbanned",
+          "error": "Failed to unban user"
+        },
+        "close": "Close"
+      },
+      "showcase": "Showcase review",
+      "feedback": "Feedback"
     }
   },
   "Mail": {

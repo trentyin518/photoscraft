@@ -5,6 +5,7 @@ import type { MenuItem } from '@/types';
 import {
   CreditCardIcon,
   LayoutDashboardIcon,
+  MessageSquareTextIcon,
   Settings2Icon,
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -37,6 +38,11 @@ export function useAvatarLinks(): MenuItem[] {
       title: t('settings'),
       href: Routes.SettingsProfile,
       icon: <Settings2Icon className="size-4 shrink-0" />,
+    },
+    {
+      title: t('feedback'),
+      href: Routes.SettingsFeedback,
+      icon: <MessageSquareTextIcon className="size-4 shrink-0" />,
     },
   ];
 }

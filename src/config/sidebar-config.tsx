@@ -6,9 +6,13 @@ import {
   CircleUserRoundIcon,
   CreditCardIcon,
   ImageIcon,
+  ImagesIcon,
   LayoutDashboardIcon,
   LockKeyholeIcon,
+  MessageSquareTextIcon,
   Settings2Icon,
+  ShieldCheckIcon,
+  UsersIcon,
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
@@ -52,6 +56,37 @@ export function useSidebarLinks(): NestedMenuItem[] {
           title: t('settings.security.title'),
           icon: <LockKeyholeIcon className="size-4 shrink-0" />,
           href: Routes.SettingsSecurity,
+          external: false,
+        },
+        {
+          title: t('settings.feedback.title'),
+          icon: <MessageSquareTextIcon className="size-4 shrink-0" />,
+          href: Routes.SettingsFeedback,
+          external: false,
+        },
+      ],
+    },
+    {
+      title: t('admin.title'),
+      icon: <ShieldCheckIcon className="size-4 shrink-0" />,
+      authorizeOnly: ['admin'],
+      items: [
+        {
+          title: t('admin.showcase'),
+          icon: <ImagesIcon className="size-4 shrink-0" />,
+          href: Routes.AdminShowcase,
+          external: false,
+        },
+        {
+          title: t('admin.feedback'),
+          icon: <MessageSquareTextIcon className="size-4 shrink-0" />,
+          href: Routes.AdminFeedback,
+          external: false,
+        },
+        {
+          title: t('admin.users.title'),
+          icon: <UsersIcon className="size-4 shrink-0" />,
+          href: Routes.AdminUsers,
           external: false,
         },
       ],

@@ -14,6 +14,7 @@ export function useNavbarLinks(): NestedMenuItem[] {
   return [
     { title: t('home.title'), href: Routes.Root, external: false },
     { title: t('editor.title'), href: Routes.Editor, external: false },
+    { title: t('showcase.title'), href: Routes.Showcase, external: false },
     { title: t('pricing.title'), href: Routes.Pricing, external: false },
   ];
 }

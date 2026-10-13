@@ -12,6 +12,7 @@ import {
 } from '@/config/photo-tools';
 import type { photoJob } from '@/db/photocraft.schema';
 import { deletePhotoJob, deletePhotoJobs } from '@/actions/delete-photo-job';
+import { ShareCaseButton } from '@/components/showcase/share-case-button';
 import { Routes } from '@/routes';
 import { DownloadIcon, Loader2Icon, Trash2Icon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -191,6 +192,7 @@ export function MyPhotosGrid({ jobs }: { jobs: JobRow[] }) {
                         </a>
                       </Button>
                     )}
+                    <ShareCaseButton photoJobId={job.id} disabled={!job.outputUrl} />
                     <Button
                       size="icon"
                       variant="ghost"
