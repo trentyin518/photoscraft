@@ -177,6 +177,45 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
         />
       ),
     },
+    {
+      key: 'aitoolzdir',
+      href: 'https://www.aitoolzdir.com',
+      label: 'AI Toolz Dir',
+      chipClassName:
+        'shrink-0 inline-flex items-center gap-1.5 rounded-lg border border-border bg-white px-2 py-0.5 text-[12px] font-semibold text-foreground dark:bg-slate-900',
+      img: (
+        <>
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            width={16}
+            height={16}
+            className="shrink-0"
+          >
+            <defs>
+              <linearGradient id="aitoolzdir-grad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#6366f1" />
+                <stop offset="100%" stopColor="#22d3ee" />
+              </linearGradient>
+            </defs>
+            <rect
+              x="1.5"
+              y="1.5"
+              width="21"
+              height="21"
+              rx="6"
+              fill="url(#aitoolzdir-grad)"
+            />
+            <path
+              d="M12 5.5l1.9 4.4 4.6.4-3.4 3.1 1 4.6-4.1-2.4-4.1 2.4 1-4.6L5.5 10.3l4.6-.4L12 5.5z"
+              fill="#fff"
+              fillOpacity="0.95"
+            />
+          </svg>
+          <span>AI Toolz Dir</span>
+        </>
+      ),
+    },
   ];
 
   return (
