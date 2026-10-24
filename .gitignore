@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# ── dependencies ──────────────────────────────────────────────
 /node_modules
 /.pnp
 .pnp.*
@@ -10,79 +10,84 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
+# ── testing artifacts ─────────────────────────────────────────
 /coverage
 /test-results
 /playwright-report
+/blob-report
+/playwright/.cache
+/.vitest
+/backups
 
-# next.js
+# ── next.js build output (dev + every e2e dist dir) ───────────
 /.next/
 /.next-e2e/
 /.next-production-e2e/
 /.next-stripe-e2e/
+/.next-creem-e2e/
 /.next-waffo-e2e/
+/.next-*-build/
+/.next-*-verify/
 /out/
-
-# production
 /build
 
-# misc
+# ── other build caches ────────────────────────────────────────
+/.turbo
+/.nx
+/.parcel-cache
+/.rollup.cache
+/.eslintcache
+/.biomecache
+*.tsbuildinfo
+
+# ── misc machine files ────────────────────────────────────────
 .DS_Store
+._*
 *.pem
 
-# debug
+# ── debug logs ────────────────────────────────────────────────
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.log
 
 certificates
 
-# env files (can opt-in for committing if needed)
+# ── env files (can opt-in for committing if needed) ───────────
 .env*
 env.product.txt
 
-# vercel
+# ── vercel ────────────────────────────────────────────────────
 .vercel
 
-# claude code
+# ── editor / agent tooling (local state only) ─────────────────
 .claude
-
-# codebuddy
 .codebuddy
-
-# conductor
 .conductor
-
-# kiro
 .kiro
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-# content collections
-.content-collections
-
-# fumadocs
-.source
-
-# OpenNext build output
-.open-next
-
-# wrangler files
-.wrangler
-.dev.vars
-.dev.vars*
-!.dev.vars.example
-
-# Auto Claude data directory
 .auto-claude/
-
-# Auto Claude generated files
 .auto-claude-security.json
 .auto-claude-status
 .claude_settings.json
 .worktrees/
 .security-key
 logs/security/
+
+# ── typescript ────────────────────────────────────────────────
+next-env.d.ts
+
+# ── content collections ───────────────────────────────────────
+.content-collections
+
+# ── fumadocs ──────────────────────────────────────────────────
+.source
+
+# ── OpenNext build output ─────────────────────────────────────
+.open-next
+
+# ── wrangler files ────────────────────────────────────────────
+.wrangler
+.dev.vars
+.dev.vars*
+!.dev.vars.example

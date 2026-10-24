@@ -23,7 +23,7 @@ export default defineConfig({
     trace: 'retain-on-failure',
   },
   webServer: {
-    command: 'pnpm dev',
+    command: 'pnpm exec next dev',
     env: {
       ...process.env,
       PORT: String(port),
@@ -42,7 +42,9 @@ export default defineConfig({
     },
     url: baseURL,
     reuseExistingServer: false,
-    timeout: 120_000,
+    // The first dev-server compile of this app can take a while, so allow
+    // generous startup time instead of failing the whole suite.
+    timeout: 300_000,
   },
   projects: [
     {

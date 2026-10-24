@@ -261,6 +261,8 @@ describe('Stripe provider lifecycle', () => {
         success_url: 'https://example.com/success',
         cancel_url: 'https://example.com/cancel',
         locale: 'zh',
+        billing_address_collection: 'auto',
+        automatic_tax: { enabled: true },
         metadata: {
           userId: 'user_test',
           userName: 'Buyer',
@@ -276,6 +278,9 @@ describe('Stripe provider lifecycle', () => {
           },
           trial_period_days: 7,
         },
+      }),
+      expect.objectContaining({
+        idempotencyKey: expect.any(String),
       })
     );
   });
@@ -295,18 +300,30 @@ describe('Stripe provider lifecycle', () => {
       planId: 'lifetime',
       priceId: 'price_lifetime',
       customerEmail: 'buyer@example.com',
+      successUrl: 'https://example.com/success',
+      cancelUrl: 'https://example.com/cancel',
       metadata: { userId: 'user_test' },
     });
 
     expect(stripe.customers.create).toHaveBeenCalledWith({
       email: 'buyer@example.com',
       name: undefined,
+      tax_exempt: 'none',
+      metadata: {
+        userId: 'user_test',
+        planId: 'lifetime',
+        priceId: 'price_lifetime',
+      },
     });
     expect(stripe.checkout.sessions.create).toHaveBeenCalledWith(
       expect.objectContaining({
         customer: 'cus_new',
         mode: 'payment',
         allow_promotion_codes: true,
+        success_url: 'https://example.com/success',
+        cancel_url: 'https://example.com/cancel',
+        billing_address_collection: 'auto',
+        automatic_tax: { enabled: true },
         invoice_creation: { enabled: true },
         payment_intent_data: {
           metadata: {
@@ -315,6 +332,9 @@ describe('Stripe provider lifecycle', () => {
             priceId: 'price_lifetime',
           },
         },
+      }),
+      expect.objectContaining({
+        idempotencyKey: expect.any(String),
       })
     );
   });

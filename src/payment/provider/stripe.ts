@@ -1,4 +1,4 @@
-import { randomUUID } from 'crypto';
+import { createHash, randomUUID } from 'crypto';
 import { getDb } from '@/db';
 import { payment, user } from '@/db/schema';
 import type { Payment } from '@/db/types';
@@ -67,8 +67,10 @@ export class StripeProvider implements PaymentProvider {
       throw new Error('STRIPE_WEBHOOK_SECRET environment variable is not set.');
     }
 
-    // Initialize Stripe without specifying apiVersion to use default/latest version
-    this.stripe = new Stripe(apiKey);
+    // Pin the API version so Checkout/Tax/webhook shapes don't drift.
+    // Stripe Tax (automatic_tax) requires exclusive tax_behavior on prices
+    // plus tax active in Dashboard -> Settings -> Tax.
+    this.stripe = new Stripe(apiKey, { apiVersion: '2025-01-27.acacia' });
     this.webhookSecret = webhookSecret;
   }
 
@@ -88,7 +90,8 @@ export class StripeProvider implements PaymentProvider {
    */
   private async createOrGetCustomer(
     email: string,
-    name?: string
+    name?: string,
+    checkoutContext?: { userId?: string; planId?: string; priceId?: string }
   ): Promise<string> {
     try {
       // Search for existing customer
@@ -115,10 +118,22 @@ export class StripeProvider implements PaymentProvider {
         return customerId;
       }
 
-      // Create new customer
+      // Create new customer with linking metadata for Dashboard reconciliation
       const customer = await this.stripe.customers.create({
         email,
         name: name || undefined,
+        tax_exempt: 'none',
+        metadata: {
+          ...(checkoutContext?.userId
+            ? { userId: checkoutContext.userId }
+            : {}),
+          ...(checkoutContext?.planId
+            ? { planId: checkoutContext.planId }
+            : {}),
+          ...(checkoutContext?.priceId
+            ? { priceId: checkoutContext.priceId }
+            : {}),
+        },
       });
 
       // Update user record in database with the new customer ID
@@ -214,13 +229,23 @@ export class StripeProvider implements PaymentProvider {
     try {
       const { price } = getCheckoutPlan(planId, priceId);
 
+      if (!successUrl || !cancelUrl) {
+        throw new Error('Missing success/cancel URL for checkout');
+      }
+
       // Get userName from metadata if available
       const userName = metadata?.userName;
+      const userId = metadata?.userId;
 
       // Create or get customer
       const customerId = await this.createOrGetCustomer(
         customerEmail,
-        userName
+        userName,
+        {
+          userId,
+          planId,
+          priceId,
+        }
       );
 
       // Add planId and priceId to metadata, so we can get it in the webhook event
@@ -239,10 +264,17 @@ export class StripeProvider implements PaymentProvider {
         line_items: lineItems,
         mode:
           price.type === PaymentTypes.SUBSCRIPTION ? 'subscription' : 'payment',
-        success_url: successUrl ?? '',
-        cancel_url: cancelUrl ?? '',
+        success_url: successUrl,
+        cancel_url: cancelUrl,
         metadata: customMetadata,
         allow_promotion_codes: price.allowPromotionCode ?? false,
+        // Stripe Tax (exclusive): computed at checkout from the billing address.
+        // `auto` collects only the location Stripe Tax needs (country + postal),
+        // which keeps checkout friction low. Requires tax_behavior=exclusive on
+        // the Price and Tax active in Dashboard -> Settings -> Tax.
+        billing_address_collection: 'auto',
+        customer_update: { address: 'auto', name: 'auto' },
+        automatic_tax: { enabled: true },
       };
 
       // Add customer to checkout session
@@ -280,9 +312,16 @@ export class StripeProvider implements PaymentProvider {
         }
       }
 
+      // Avoid duplicate sessions on double-click/retries
+      const idempotencyKey = createHash('sha256')
+        .update(`${customerEmail}:${planId}:${priceId}:${userId ?? ''}`)
+        .digest('hex');
+
       // Create the checkout session
-      const session =
-        await this.stripe.checkout.sessions.create(checkoutParams);
+      const session = await this.stripe.checkout.sessions.create(
+        checkoutParams,
+        { idempotencyKey }
+      );
 
       return {
         url: session.url!,
@@ -377,7 +416,15 @@ export class StripeProvider implements PaymentProvider {
             await this.onInvoicePaid(invoice);
             break;
           }
+          case 'invoice.payment_failed': {
+            const invoice = event.data.object as Stripe.Invoice;
+            await this.onInvoicePaymentFailed(invoice);
+            break;
+          }
         }
+      } else if (eventType === 'customer.subscription.trial_will_end') {
+        const subscription = event.data.object as Stripe.Subscription;
+        console.log('trial ending, subscriptionId:', subscription.id);
       } else if (eventType.startsWith('checkout.')) {
         // Handle checkout events
         if (eventType === 'checkout.session.completed') {
@@ -596,6 +643,25 @@ export class StripeProvider implements PaymentProvider {
     }
 
     console.log('<< Update subscription payment record success');
+  }
+
+  /**
+   * Mark the subscription payment past_due after a failed renewal so
+   * dunning state is visible instead of staying active forever.
+   */
+  private async onInvoicePaymentFailed(invoice: Stripe.Invoice): Promise<void> {
+    console.log('>> Handle invoice payment failed, invoiceId:', invoice.id);
+    const subscriptionId = this.extractSubscriptionId(invoice);
+    if (!subscriptionId) {
+      console.warn('<< No subscriptionId in failed invoice:', invoice.id);
+      return;
+    }
+    const db = await getDb();
+    await db
+      .update(payment)
+      .set({ status: 'past_due', updatedAt: new Date() })
+      .where(eq(payment.subscriptionId, subscriptionId));
+    console.log('<< Marked subscription payment as past_due');
   }
 
   /**

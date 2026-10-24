@@ -42,6 +42,59 @@ async function fillStripeField(page: Page, label: RegExp, value: string) {
   await field.fill(value);
 }
 
+/**
+ * Pick a billing country on Stripe Checkout.
+ *
+ * The country control is a native <select id="billingCountry"> with the
+ * accessible name "Country or region". Select it by id so the phone-number
+ * country-code select is not matched by mistake.
+ */
+async function selectBillingCountry(page: Page, country: string) {
+  const select = page.locator('#billingCountry');
+  if ((await select.count()) === 0) return false;
+  await select.selectOption({ label: country }).catch(async () => {
+    await select.selectOption('US').catch(() => {});
+  });
+  return true;
+}
+
+/**
+ * Fill the Stripe billing address fields required for tax calculation.
+ *
+ * Stripe renders the country-dependent address fields only after a country is
+ * chosen, so the country has to be selected first and the remaining inputs
+ * waited for. Every control is optional in the DOM, so each step is applied
+ * defensively.
+ */
+async function fillBillingAddress(page: Page) {
+  await selectBillingCountry(page, 'United States');
+
+  // The country-dependent fields appear only after the country is set.
+  const postal = page.locator('#billingPostalCode');
+  await postal.waitFor({ state: 'visible', timeout: 15_000 }).catch(() => {});
+
+  const state = page.locator('#billingAdministrativeArea');
+  if (await state.count()) {
+    await state.selectOption({ label: 'California' }).catch(async () => {
+      await state.selectOption('CA').catch(() => {});
+    });
+  }
+
+  const addressLine = page.locator('#billingAddressLine1');
+  if (await addressLine.count()) {
+    await addressLine.fill('123 Test Street').catch(() => {});
+  }
+
+  const locality = page.locator('#billingLocality');
+  if (await locality.count()) {
+    await locality.fill('San Francisco').catch(() => {});
+  }
+
+  if (await postal.count()) {
+    await postal.fill('94107').catch(() => {});
+  }
+}
+
 async function cleanupStripeE2ECustomers() {
   for await (const customer of stripe.customers.list({ limit: 100 })) {
     const email = customer.email ?? '';
@@ -84,13 +137,18 @@ async function fillStripeCheckout(
   await page.waitForURL(/https:\/\/checkout\.stripe\.com\//, {
     timeout: 60_000,
   });
+
+  // Stripe renders the payment methods as an accordion. The "Pay with card"
+  // control sits under a cover element that intercepts real pointer events,
+  // so dispatch the click directly to expand the card form.
   const cardNumberField = page
     .getByRole('textbox', { name: /card number/i })
     .first();
   if (!(await cardNumberField.isVisible().catch(() => false))) {
-    await page
-      .getByRole('button', { name: /pay with card/i })
-      .dispatchEvent('click');
+    const payWithCard = page.getByRole('button', { name: /pay with card/i });
+    if (await payWithCard.count()) {
+      await payWithCard.first().dispatchEvent('click');
+    }
   }
   await cardNumberField.waitFor({ state: 'visible', timeout: 60_000 });
 
@@ -112,12 +170,11 @@ async function fillStripeCheckout(
   if ((await nameField.count()) > 0 && (await nameField.isEditable())) {
     await nameField.fill(user.name);
   }
-  const postalField = page
-    .getByRole('textbox', { name: /zip|postal/i })
-    .first();
-  if ((await postalField.count()) > 0 && (await postalField.isEditable())) {
-    await postalField.fill('94107');
-  }
+
+  // Stripe Tax needs a billing location. With billing_address_collection=auto
+  // Checkout collects the minimum (country + postal), and the fuller address
+  // when tax rules require it. Fill whatever is shown, defensively.
+  await fillBillingAddress(page);
 
   return page
     .getByRole('button', { name: /^(subscribe|pay|complete order)$/i })
