@@ -14,6 +14,7 @@ export enum Routes {
   CookiePolicy = '/cookie',
   PrivacyPolicy = '/privacy',
   TermsOfService = '/terms',
+  AIGCPolicy = '/aigc',
 
   // disabled template pages (kept for reference, not linked, redirected in proxy)
   Blog = '/blog',

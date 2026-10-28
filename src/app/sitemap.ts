@@ -21,6 +21,7 @@ const staticRoutes: { path: string; priority: number; changeFrequency: 'daily' |
   { path: '/contact', priority: 0.5, changeFrequency: 'monthly' },
   { path: '/privacy', priority: 0.3, changeFrequency: 'monthly' },
   { path: '/terms', priority: 0.3, changeFrequency: 'monthly' },
+  { path: '/aigc', priority: 0.3, changeFrequency: 'monthly' },
   { path: '/cookie', priority: 0.3, changeFrequency: 'monthly' },
 ];
 

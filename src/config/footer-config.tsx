@@ -46,8 +46,8 @@ export function useFooterLinks(): NestedMenuItem[] {
       title: t('legal.title'),
       items: [
         {
-          title: t('legal.items.cookiePolicy'),
-          href: Routes.CookiePolicy,
+          title: t('legal.items.termsOfService'),
+          href: Routes.TermsOfService,
           external: false,
         },
         {
@@ -56,8 +56,13 @@ export function useFooterLinks(): NestedMenuItem[] {
           external: false,
         },
         {
-          title: t('legal.items.termsOfService'),
-          href: Routes.TermsOfService,
+          title: t('legal.items.aigcPolicy'),
+          href: Routes.AIGCPolicy,
+          external: false,
+        },
+        {
+          title: t('legal.items.cookiePolicy'),
+          href: Routes.CookiePolicy,
           external: false,
         },
       ],

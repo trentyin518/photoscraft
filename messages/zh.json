@@ -137,6 +137,21 @@
     "story1": "PhotoCraft started from a simple frustration: precious old photos fading away, and pro repair costing time and money. We packed professional restoration, enhancement and creative effects into one-click AI tools anyone can use.",
     "story2": "Today PhotoCraft offers 16 AI tools — from photo enhancement and old-photo colorization to background removal, magic erasing, sky replacement and anime generation. Upload a photo, pick a tool, download the result. That is the whole learning curve."
   },
+  "AiModels": {
+    "title": "PhotoCraft 背后的 AI 模型",
+    "description": "我们不使用“先进 AI 技术”这类笼统表述。以下是每款 PhotoCraft 工具实际依赖的模型，编辑器也会展示您所选工具使用的模型。",
+    "compactTitle": "我们使用的模型",
+    "compactDescription": "每个工具都会标明底层模型。",
+    "usedFor": "用于",
+    "note": "模型可用性和路由可能随服务商更新而变化。请参阅",
+    "policyLink": "AIGC 使用规范",
+    "roles": {
+      "generative-edit": "生成式编辑：老照片修复、上色、动漫化、卡通化、头像、场景、发型、表情、换装、背景与天空替换、室内改造。",
+      "upscale": "“画质增强”中的细节重建与 2 倍放大。",
+      "background-removal": "发丝级背景抠图与透明处理。",
+      "inpainting": "通过涂抹蒙版精准移除物体和水印。"
+    }
+  },
   "ChangelogPage": {
     "title": "更新日志",
     "description": "查看我们产品的最新动态",
@@ -398,7 +413,8 @@
         "items": {
           "cookiePolicy": "Cookie政策",
           "privacyPolicy": "隐私政策",
-          "termsOfService": "服务条款"
+          "termsOfService": "服务条款",
+          "aigcPolicy": "AIGC 使用规范"
         }
       },
       "rights": "© {year} {name}。版权所有。",
@@ -830,7 +846,7 @@
         },
         "item-4": {
           "question": "你们的退款政策是什么？",
-          "answer": "是的，我们提供30天的退款保证。"
+          "answer": "支持退款。首次购买 Pro 订阅（按月或按年）及首次购买 Lifetime 套餐，均可享受 14 天退款保证。请在购买后 14 天内提出申请，且该次购买所赠积分的使用不超过 20%。订阅续费、积分包及附加购买不予退款；如需避免 Pro 续费，请在续费日前于“设置 → 账单”中取消。申请退款请发送邮件至 support@photoscraft.top，并提供账户邮箱、订单号和购买日期。我们在 2 个工作日内确认，5 个工作日内作出决定，获批退款将在 5–10 个工作日内退回原支付方式。详情请参阅服务条款。"
         },
         "item-5": {
           "question": "找不到您想问的问题？",
@@ -1039,6 +1055,7 @@
       "balance": "积分余额",
       "insufficient": "积分不足",
       "topup": "去充值",
+      "model": "模型",
       "run": "运行"
     }
   }

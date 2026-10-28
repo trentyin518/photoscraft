@@ -49,6 +49,16 @@ export async function ShowcaseGrid({ cases, allowComment = true }: { cases: Case
             {c.description && (
               <p className="line-clamp-2 text-sm text-muted-foreground">{c.description}</p>
             )}
+            <div className="flex justify-end">
+              <a
+                href={`mailto:support@photoscraft.top?subject=${encodeURIComponent(
+                  `AIGC abuse report: ${c.id}`
+                )}`}
+                className="text-xs text-muted-foreground underline underline-offset-4 hover:text-foreground"
+              >
+                举报 / Report
+              </a>
+            </div>
             <div className="mt-1 flex flex-col gap-2 border-t pt-3">
               {(commentsMap.get(c.id) ?? []).map((cm) => (
                 <p key={cm.id} className="text-sm">

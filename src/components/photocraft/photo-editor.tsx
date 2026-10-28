@@ -7,6 +7,7 @@ import { createPhotoJob } from '@/actions/create-photo-job';
 import { MaskPainter, type MaskPainterHandle } from './mask-painter';
 import { getCreditBalanceAction } from '@/actions/get-credit-balance';
 import { PHOTO_TOOLS, getPhotoToolText } from '@/config/photo-tools';
+import { TOOL_MODEL_DISPLAY } from '@/config/ai-models';
 import {
   ANIME_STYLES,
   AVATAR_STYLES,
@@ -215,6 +216,12 @@ export function PhotoEditor({
             <h1 className="text-xl font-bold">{currentText.title}</h1>
             <p className="text-sm text-muted-foreground">
               {currentText.tagline}
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {t('editor.model')}:{' '}
+              <span className="font-medium text-foreground">
+                {TOOL_MODEL_DISPLAY[tool]}
+              </span>
             </p>
           </div>
           {needsMask && inputUrl ? (

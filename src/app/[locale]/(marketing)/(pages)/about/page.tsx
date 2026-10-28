@@ -1,3 +1,4 @@
+import { AiModelsDisclosure } from '@/components/ai/ai-models-disclosure';
 import Container from '@/components/layout/container';
 import { PHOTO_TOOLS, getPhotoToolText } from '@/config/photo-tools';
 import { websiteConfig } from '@/config/website';
@@ -74,6 +75,9 @@ export default async function AboutPage() {
             </p>
           </div>
         </div>
+
+        {/* AI model disclosure */}
+        <AiModelsDisclosure />
 
         {/* What we do */}
         <div>
